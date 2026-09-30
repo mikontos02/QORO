@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Qoro — Design &amp; Engineering Studio</title>
+  <meta name="description" content="Qoro is an independent studio designing and engineering websites, brands and interactive digital experiences — built with intent.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Qoro — Design & Engineering Studio">
+  <meta property="og:description" content="Digital experiences, built with intent.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Helvetica,Arial' font-size='40' fill='%23e1e0cc'%3Eq%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Flag JS early so reveal states never flash un-styled content -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" data-nav>
+    <nav class="nav__tab" aria-label="Primary">
+      <a class="nav__brand" href="#top" aria-label="Qoro — back to top">Qoro<sup>*</sup></a>
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#work" data-nav-link>Work</a></li>
+        <li><a class="nav__link" href="#services" data-nav-link>Services</a></li>
+        <li><a class="nav__link" href="#studio" data-nav-link>Studio</a></li>
+        <li><a class="nav__link" href="#contact" data-nav-link>Contact</a></li>
+      </ul>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="nav__toggle-label" data-menu-label>Menu</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-menu>
+    <div class="menu__frame">
+      <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+      <div class="noise noise--overlay" aria-hidden="true"></div>
+      <ol class="menu__list">
+        <li><a href="#work" data-menu-link><span class="menu__num">01</span>Work</a></li>
+        <li><a href="#services" data-menu-link><span class="menu__num">02</span>Services</a></li>
+        <li><a href="#studio" data-menu-link><span class="menu__num">03</span>Studio</a></li>
+        <li><a href="#contact" data-menu-link><span class="menu__num">04</span><em>Contact</em></a></li>
+      </ol>
+      <div class="menu__foot">
+        <a href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+        <div class="menu__social">
+          <a href="#" aria-label="Qoro on Instagram">Instagram</a>
+          <a href="#" aria-label="Qoro on LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contextual cursor (fine pointers only) -->
+  <div class="cursor" aria-hidden="true" data-cursor><span class="cursor__ball"><span data-cursor-label>View</span></span></div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="hero__frame" data-hero-frame>
+        <div class="cinematic" aria-hidden="true">
+          <div class="cinematic__blob"></div>
+          <div class="cinematic__light" data-hero-light></div>
+          <div class="cinematic__vignette"></div>
+        </div>
+        <!-- Drop a looping clip at assets/videos/hero.mp4 and uncomment to replace the gradient backdrop:
+        <video class="hero__video" src="assets/videos/hero.mp4" autoplay muted loop playsinline aria-hidden="true"></video> -->
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <p class="hero__meta hero__meta--left" data-reveal data-delay="0.9">Design &amp; engineering studio</p>
+        <p class="hero__meta hero__meta--right" data-reveal data-delay="1">
+          <span class="dot" aria-hidden="true"></span> Booking projects — Q1 2027
+        </p>
+
+        <div class="hero__content">
+          <h1 class="hero__title" data-hero-title aria-label="Qoro">
+            <span class="hero__word" aria-hidden="true" data-split-letters>Qoro</span><sup class="hero__star" aria-hidden="true">*</sup>
+          </h1>
+
+          <div class="hero__aside">
+            <p class="hero__lead" data-reveal data-delay="0.5" data-rise-only>
+              Qoro is an independent studio designing and engineering websites for brands that refuse to blend in — digital experiences, <em>built with intent.</em>
+            </p>
+            <div data-reveal data-delay="0.7">
+              <a class="pill magnetic" href="#contact">
+                <span class="pill__label">Start a project</span>
+                <span class="pill__icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                  <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTRO ============ -->
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro__panel">
+        <span class="eyebrow" data-reveal>Digital craft</span>
+        <h2 class="intro__title" id="intro-title" data-split>
+          Qoro is a design studio <em>obsessed with the details</em> <em>most people never notice.</em> We turn strategy, type and code into websites that feel inevitable.
+        </h2>
+        <p class="intro__body" data-scrub>
+          Since 2019 we have partnered with architects, founders and cultural brands across London, Athens and beyond, shaping identities, designing interfaces and writing the code that brings them to life on every screen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="work" id="work" aria-labelledby="work-title" data-section>
+      <div class="noise noise--bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow" data-reveal>Selected work <span class="eyebrow__count">(05)</span></span>
+            <h2 class="section-head__title" id="work-title" data-split>Recent projects, <em>made with intent.</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-delay="0.2">
+            A small number of projects each year, taken from first sketch to final commit by the same hands.
+          </p>
+        </header>
+      </div>
+
+      <ol class="projects" data-projects>
+        <li class="project" data-project style="--tone: #1a1815">
+          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Halden — Brand and website, 2026. View case study">
+            <div class="project__info">
+              <div class="project__top">
+                <span class="project__num">01</span>
+                <ul class="project__tags" aria-label="Disciplines"><li>Brand</li><li>Website</li></ul>
+              </div>
+              <div class="project__body">
+                <h3 class="project__title">Halden</h3>
+                <div class="project__meta">
+                  <p class="project__client">Architecture practice, Oslo</p>
+                  <p class="project__desc">A gallery-quiet website for a practice that draws buildings from the ground they stand on.</p>
+                  <p class="project__year"><span>Brand &amp; Website</span><span>2026</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="project__visual">
+              <picture class="project__media">
+                <img src="assets/images/work-halden-1200.webp"
+                     srcset="assets/images/work-halden-1200.webp 1200w, assets/images/work-halden-2400.webp 2400w"
+                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
+                     alt="Halden website shown on desktop and mobile: an off-white page with a brutalist facade grid and a large Halden wordmark.">
+              </picture>
+            </div>
+          </a>
+        </li>
+
+        <li class="project" data-project style="--tone: #1c120d">
+          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Solace — Digital experience, 2025. View case study">
+            <div class="project__info">
+              <div class="project__top">
+                <span class="project__num">02</span>
+                <ul class="project__tags" aria-label="Disciplines"><li>Experience</li><li>Booking</li></ul>
+              </div>
+              <div class="project__body">
+                <h3 class="project__title">Solace</h3>
+                <div class="project__meta">
+                  <p class="project__client">Cliffside retreat, Folegandros</p>
+                  <p class="project__desc">A slow booking journey that sells silence: light-led imagery, soft motion and nothing loud.</p>
+                  <p class="project__year"><span>Digital Experience</span><span>2025</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="project__visual">
+              <picture class="project__media">
+                <img src="assets/images/work-solace-1200.webp"
+                     srcset="assets/images/work-solace-1200.webp 1200w, assets/images/work-solace-2400.webp 2400w"
+                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
+                     alt="Solace retreat website in terracotta tones, a setting sun over layered hills and the italic line Stay still.">
+              </picture>
+            </div>
+          </a>
+        </li>
+
+        <li class="project" data-project style="--tone: #131416">
+          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Ferro — E-commerce platform, 2025. View case study">
+            <div class="project__info">
+              <div class="project__top">
+                <span class="project__num">03</span>
+                <ul class="project__tags" aria-label="Disciplines"><li>Commerce</li><li>Headless</li></ul>
+              </div>
+              <div class="project__body">
+                <h3 class="project__title">Ferro</h3>
+                <div class="project__meta">
+                  <p class="project__client">Steel furniture maker, Milan</p>
+                  <p class="project__desc">A headless storefront where every product page reads like a spread from a printed catalogue.</p>
+                  <p class="project__year"><span>E-commerce Platform</span><span>2025</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="project__visual">
+              <picture class="project__media">
+                <img src="assets/images/work-ferro-1200.webp"
+                     srcset="assets/images/work-ferro-1200.webp 1200w, assets/images/work-ferro-2400.webp 2400w"
+                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
+                     alt="Ferro online store on a graphite backdrop, showing a tubular steel chair and a grid of furniture products.">
+              </picture>
+            </div>
+          </a>
+        </li>
+
+        <li class="project" data-project style="--tone: #171611">
+          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Mono — Brand identity, 2024. View case study">
+            <div class="project__info">
+              <div class="project__top">
+                <span class="project__num">04</span>
+                <ul class="project__tags" aria-label="Disciplines"><li>Identity</li><li>Type tester</li></ul>
+              </div>
+              <div class="project__body">
+                <h3 class="project__title">Mono</h3>
+                <div class="project__meta">
+                  <p class="project__client">Independent type foundry</p>
+                  <p class="project__desc">Identity, specimen system and a live type tester for a foundry that prizes restraint.</p>
+                  <p class="project__year"><span>Brand Identity</span><span>2024</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="project__visual">
+              <picture class="project__media">
+                <img src="assets/images/work-mono-1200.webp"
+                     srcset="assets/images/work-mono-1200.webp 1200w, assets/images/work-mono-2400.webp 2400w"
+                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
+                     alt="Mono type foundry identity: a giant serif M on cream beside a black business card and a type specimen card.">
+              </picture>
+            </div>
+          </a>
+        </li>
+
+        <li class="project" data-project style="--tone: #130d09">
+          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Shift — Interactive experience, 2024. View case study">
+            <div class="project__info">
+              <div class="project__top">
+                <span class="project__num">05</span>
+                <ul class="project__tags" aria-label="Disciplines"><li>WebGL</li><li>Launch</li></ul>
+              </div>
+              <div class="project__body">
+                <h3 class="project__title">Shift</h3>
+                <div class="project__meta">
+                  <p class="project__client">Electric mobility</p>
+                  <p class="project__desc">A real-time configurator that lets drivers feel the car long before they sit in it.</p>
+                  <p class="project__year"><span>Interactive Experience</span><span>2024</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="project__visual">
+              <picture class="project__media">
+                <img src="assets/images/work-shift-1200.webp"
+                     srcset="assets/images/work-shift-1200.webp 1200w, assets/images/work-shift-2400.webp 2400w"
+                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
+                     alt="Shift launch experience: the word SHIFT glowing above an ember-orange light ring with range and charge readouts.">
+              </picture>
+            </div>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services" id="services" aria-labelledby="services-title" data-section>
+      <div class="noise noise--bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="services__head">
+          <h2 class="services__title" id="services-title" data-split>Five disciplines, one studio.</h2>
+          <p class="services__sub" data-split>Designed in the browser. Built to last.</p>
+        </header>
+
+        <div class="services__grid">
+          <div class="svc svc--visual" data-scale-in data-index="0">
+            <div class="cinematic cinematic--card" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+            <svg class="svc__asterisk" viewBox="0 0 100 100" aria-hidden="true" data-asterisk>
+              <g stroke="currentColor" stroke-width="11" stroke-linecap="round"><path d="M50 12v76"/><path d="M17.1 31 82.9 69"/><path d="M17.1 69 82.9 31"/></g>
+            </svg>
+            <div class="svc__visual-shade" aria-hidden="true"></div>
+            <p class="svc__visual-text">Where ideas<br><em>get their edges.</em></p>
+          </div>
+
+          <article class="svc" data-scale-in data-index="1" data-spotlight>
+            <div class="svc__top">
+              <span class="svc__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8.5h18M8 8.5V20"/></svg>
+              </span>
+              <span class="svc__num">01</span>
+            </div>
+            <h3 class="svc__title">Web Design.</h3>
+            <ul class="svc__list">
+              <li>Art direction for the screen</li>
+              <li>Design systems that scale</li>
+              <li>Prototypes that already move</li>
+            </ul>
+            <a class="svc__link" href="#work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+          </article>
+
+          <article class="svc" data-scale-in data-index="2" data-spotlight>
+            <div class="svc__top">
+              <span class="svc__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>
+              </span>
+              <span class="svc__num">02</span>
+            </div>
+            <h3 class="svc__title">Web Development.</h3>
+            <ul class="svc__list">
+              <li>Hand-written, fast front-ends</li>
+              <li>Headless CMS &amp; commerce</li>
+              <li>Accessibility built in, not bolted on</li>
+            </ul>
+            <a class="svc__link" href="#work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+          </article>
+
+          <article class="svc" data-scale-in data-index="3" data-spotlight>
+            <div class="svc__top">
+              <span class="svc__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
+              </span>
+              <span class="svc__num">03</span>
+            </div>
+            <h3 class="svc__title">Creative Direction.</h3>
+            <ul class="svc__list">
+              <li>Concept, narrative &amp; tone</li>
+              <li>Launch and campaign thinking</li>
+              <li>One voice across every medium</li>
+            </ul>
+            <a class="svc__link" href="#studio">How we think <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+          </article>
+
+          <article class="svc" data-scale-in data-index="4" data-spotlight>
+            <div class="svc__top">
+              <span class="svc__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>
+              </span>
+              <span class="svc__num">04</span>
+            </div>
+            <h3 class="svc__title">Brand Identity.</h3>
+            <ul class="svc__list">
+              <li>Naming &amp; verbal identity</li>
+              <li>Logo, type &amp; colour systems</li>
+              <li>Guidelines that live online</li>
+            </ul>
+            <a class="svc__link" href="#work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+          </article>
+
+          <article class="svc" data-scale-in data-index="5" data-spotlight>
+            <div class="svc__top">
+              <span class="svc__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>
+              </span>
+              <span class="svc__num">05</span>
+            </div>
+            <h3 class="svc__title">Interactive Experiences.</h3>
+            <ul class="svc__list">
+              <li>Scroll storytelling &amp; WebGL</li>
+              <li>Motion &amp; micro-interaction</li>
+              <li>Product launches people remember</li>
+            </ul>
+            <a class="svc__link" href="#work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+          </article>
+
+          <a class="svc svc--cta" href="#contact" data-scale-in data-index="6">
+            <span class="svc__num">06</span>
+            <span class="svc__cta-text">Have a brief?<br><em>Let’s talk.</em></span>
+            <span class="svc__cta-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STUDIO ============ -->
+    <section class="studio" id="studio" aria-labelledby="studio-title" data-section>
+      <div class="studio__panel">
+        <div class="studio__intro">
+          <span class="eyebrow" data-reveal>The studio</span>
+          <h2 class="studio__title" id="studio-title" data-split>Small by design. <em>Senior by default.</em></h2>
+          <p class="studio__text" data-reveal data-delay="0.15">
+            Qoro is a compact team of designers and engineers working as one. No hand-offs, no account layers: the people you meet are the people who build. Five disciplines, one continuous practice.
+          </p>
+          <ul class="studio__principles">
+            <li data-reveal data-delay="0.2"><span>01</span>Strategy before pixels</li>
+            <li data-reveal data-delay="0.28"><span>02</span>Code is a design material</li>
+            <li data-reveal data-delay="0.36"><span>03</span>Motion with meaning</li>
+          </ul>
+        </div>
+
+        <ol class="disciplines" aria-label="What Qoro combines" data-disciplines>
+          <li class="discipline" data-discipline><span class="discipline__num">i.</span><span class="discipline__name">Strategy</span><em class="discipline__note">why it exists</em></li>
+          <li class="discipline" data-discipline><span class="discipline__num">ii.</span><span class="discipline__name">Design</span><em class="discipline__note">how it feels</em></li>
+          <li class="discipline" data-discipline><span class="discipline__num">iii.</span><span class="discipline__name">Technology</span><em class="discipline__note">what makes it possible</em></li>
+          <li class="discipline" data-discipline><span class="discipline__num">iv.</span><span class="discipline__name">Motion</span><em class="discipline__note">how it breathes</em></li>
+          <li class="discipline" data-discipline><span class="discipline__num">v.</span><span class="discipline__name">Development</span><em class="discipline__note">how it ships</em></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="contact" aria-labelledby="cta-title" data-section>
+      <div class="cta__frame">
+        <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <div class="cta__top">
+          <span class="eyebrow" data-reveal>Contact</span>
+          <p class="cta__reply" data-reveal data-delay="0.1">Replies within two working days</p>
+        </div>
+
+        <h2 class="cta__title" id="cta-title" data-split data-stagger="0.1">Let’s build something <em>different.</em></h2>
+
+        <div class="cta__bottom">
+          <div class="cta__email" data-reveal data-delay="0.3">
+            <a class="cta__email-link" href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+            <button class="cta__copy" type="button" data-copy="hello@qoro.studio">
+              <span data-copy-label>Copy</span>
+            </button>
+            <span class="sr-only" aria-live="polite" data-copy-status></span>
+          </div>
+          <div data-reveal data-delay="0.4">
+            <a class="pill magnetic" href="mailto:hello@qoro.studio?subject=New%20project%20with%20Qoro">
+              <span class="pill__label">Start a project</span>
+              <span class="pill__icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg>
+                <svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="noise noise--bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer__lead">
+        <p class="footer__statement" data-reveal>Independent design &amp; engineering studio. <em>Digital experiences, built with intent.</em></p>
+        <a class="footer__top" href="#top">Back to top
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg>
+        </a>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h3 class="footer__heading">Studio</h3>
+          <ul>
+            <li><a class="link" href="#work">Work</a></li>
+            <li><a class="link" href="#services">Services</a></li>
+            <li><a class="link" href="#studio">Studio</a></li>
+            <li><a class="link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Connect</h3>
+          <ul>
+            <li><a class="link" href="mailto:hello@qoro.studio">Email</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on Instagram">Instagram</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__col--wide">
+          <h3 class="footer__heading">Visit</h3>
+          <p>London, Athens and wherever the work is.<br>
+            <a class="link" href="mailto:hello@qoro.studio">hello@qoro.studio</a></p>
+          <p class="footer__clock">London <time data-clock>--:--</time></p>
+        </div>
+      </nav>
+
+      <div class="footer__mark" aria-hidden="true" data-footer-mark>
+        <span>Q</span><span>o</span><span>r</span><span>o</span><sup>*</sup>
+      </div>
+
+      <div class="footer__base">
+        <p>© <span data-year>2026</span> Qoro Studio. All rights reserved.</p>
+        <div class="footer__legal">
+          <a class="link" href="#">Privacy</a>
+          <a class="link" href="#">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
