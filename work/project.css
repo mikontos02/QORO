@@ -585,3 +585,11 @@
   [data-parallax] { transform: none !important; }
   .cs-phone__float { animation: none !important; }
 }
+
+/* Responsive text floor — nothing below 14px on phones & tablets */
+@media (max-width: 1023px) {
+  .cs-hero__count,
+  .cs-did .discipline__num,
+  .cs-outcome__num,
+  .cs-next__hint a { font-size: 14px; }
+}

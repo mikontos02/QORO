@@ -1240,3 +1240,28 @@ html.is-lifting .curtain__label > span { transform: translate3d(0, -110%, 0); tr
 @media (min-width: 640px) {
   .nav__brand:focus-visible { max-width: 80px; opacity: 1; margin-right: 28px; }
 }
+
+/* ==========================================================================
+   Responsive text floor — nothing below 14px on phones & tablets
+   (each range ends where the desktop size already takes over)
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .nav__toggle,
+  .project__num,
+  .cta__reply,
+  .cta__copy,
+  .footer__base,
+  .footer__legal .link { font-size: 14px; }
+  .footer__clock { font-size: 14px !important; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .eyebrow { font-size: 14px; }
+}
+@media (max-width: 767px) {
+  .nav__link { font-size: 14px; }
+}
+@media (max-width: 639px) {
+  .intro__body,
+  .svc__list li,
+  .svc__link { font-size: 14px; }
+}
