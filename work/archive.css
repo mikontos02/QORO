@@ -1,0 +1,194 @@
+/* ==========================================================================
+   QORO — Work page (work.html)
+   Extends ../style.css. The hero reuses the homepage hero; this file only
+   adds the project index and the archive compositions.
+   ========================================================================== */
+
+/* ---------- Hero additions ---------- */
+.wk-hero__count {
+  font-family: var(--serif);
+  font-style: italic;
+  letter-spacing: 0;
+  margin: 0.35em 0 0 0.18em;
+}
+/* The count rises in rather than spinning like the homepage asterisk */
+.js .wk-hero .wk-hero__count { opacity: 0; transform: translate3d(0, 40%, 0); transition: opacity 0.8s var(--ease-expo) 0.5s, transform 1s var(--ease-expo) 0.5s; }
+.is-ready .wk-hero .wk-hero__count { opacity: 1; transform: none; }
+.is-ready .wk-hero .hero__title:hover .wk-hero__count { transform: none; }
+
+.wk-index { border-top: 1px solid rgba(225, 224, 204, 0.16); max-width: 28rem; }
+.wk-index__row {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: baseline; gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(225, 224, 204, 0.16);
+  font-size: 16px; color: var(--cream);
+  transition: padding 0.5s var(--ease-expo), color 0.3s ease;
+}
+.wk-index__num { font-size: 12px; letter-spacing: 0.1em; color: var(--muted); font-variant-numeric: tabular-nums; }
+.wk-index__cat { display: none; font-size: 14px; color: var(--muted); }
+.wk-index__year { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+@media (min-width: 640px) {
+  .wk-index__row { grid-template-columns: 30px minmax(0, 1fr) auto 44px; }
+  .wk-index__cat { display: block; }
+  .wk-index__year { text-align: right; }
+}
+@media (hover: hover) {
+  .wk-index__row:hover { padding-left: 8px; }
+  .wk-index__row:hover .wk-index__num { color: var(--cream); }
+}
+/* Short screens: the index would crowd the wordmark */
+@media (max-height: 760px) and (max-width: 1023px) { .wk-index { display: none; } }
+
+/* ---------- Archive ---------- */
+.wk-archive { padding: 72px 0 96px; background: #000; }
+.wk-list { display: flex; flex-direction: column; gap: 96px; }
+.wp { scroll-margin-top: 96px; }
+
+.wp__link {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 12px; row-gap: 24px;
+  color: var(--cream);
+}
+.wp__link > * { grid-column: 1 / -1; }
+
+.wp__fig {
+  --clip-r: var(--radius-card);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: #0b0b0b;
+  aspect-ratio: 4 / 3;
+}
+.wp__fig-inner { position: absolute; inset: -7% 0; }
+.wp__fig img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Second image overlaps the first on small screens */
+.wp__fig--second {
+  grid-column: 6 / -1;
+  aspect-ratio: 4 / 5;
+  margin-top: -32%;
+  z-index: 2;
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.9);
+}
+.wp__fig--phone { grid-column: 8 / -1; aspect-ratio: 780 / 1688; border-radius: 22px; --clip-r: 22px; margin-top: -48%; }
+
+.wp__heading { display: flex; align-items: flex-start; gap: 12px; }
+.wp__num {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(20px, 2.2vw, 34px); line-height: 1;
+  color: var(--muted);
+  padding-top: 0.25em;
+  transition: color 0.4s ease;
+}
+.wp__title {
+  font-size: clamp(64px, 19vw, 150px); font-weight: 400;
+  line-height: 0.8; letter-spacing: -0.07em;
+  transition: letter-spacing 1s var(--ease-expo), transform 1s var(--ease-expo);
+}
+
+.wp__meta { display: flex; flex-direction: column; gap: 14px; max-width: 28rem; }
+.wp__row {
+  position: relative;
+  display: flex; justify-content: space-between; gap: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(225, 224, 204, 0.16);
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted);
+}
+.wp__row::before { /* accent line that draws across on hover */
+  content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px;
+  background: var(--cream);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.9s var(--ease-expo);
+}
+.wp__desc { font-size: 16px; line-height: 1.45; color: rgba(222, 219, 200, 0.7); }
+.wp__cta { display: inline-flex; align-items: center; gap: 14px; width: fit-content; font-size: 16px; margin-top: 4px; }
+.wp__arrow {
+  position: relative; overflow: hidden;
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--ink);
+  transition: transform 0.5s var(--ease-expo);
+}
+.wp__arrow svg {
+  grid-area: 1 / 1;
+  width: 16px; height: 16px;
+  fill: none; stroke: #0c0c0b; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.55s var(--ease-expo);
+}
+.wp__arrow svg + svg { transform: translate(-200%, 0); }
+
+/* Hover — image pushes in, type eases open, line draws, arrow passes through */
+@media (hover: hover) {
+  .js .wp__link:hover [data-img-reveal].is-in img { transform: scale(1.07); }
+  .wp__link:hover .wp__title { letter-spacing: -0.055em; }
+  .wp__link:hover .wp__num { color: var(--cream); }
+  .wp__link:hover .wp__row::before { transform: none; }
+  .wp__link:hover .wp__arrow { transform: scale(1.1); }
+  .wp__link:hover .wp__arrow svg:first-child { transform: translate(200%, 0); }
+  .wp__link:hover .wp__arrow svg + svg { transform: none; }
+}
+/* Touch & keyboard: the active project shows its accent line */
+.wp__link:focus-visible .wp__row::before, .wp__link:active .wp__row::before { transform: none; }
+
+/* Tablet: keep the overlapping phone in proportion */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .wp__fig--phone { grid-column: 9 / -1; margin-top: -30%; }
+  .wp__fig--second:not(.wp__fig--phone) { grid-column: 7 / -1; margin-top: -26%; }
+  /* Title and meta sit in the space beside the overlapping image */
+  .wp--duo .wp__fig--main, .wp--vertical .wp__fig--main { grid-row: 1; }
+  .wp--duo .wp__fig--second, .wp--vertical .wp__fig--second { grid-row: 2 / span 2; }
+  .wp--duo .wp__heading, .wp--vertical .wp__heading { grid-column: 1 / 7; grid-row: 2; align-self: end; }
+  .wp--duo .wp__meta, .wp--vertical .wp__meta { grid-column: 1 / 7; grid-row: 3; align-self: start; }
+  .wp--vertical .wp__heading, .wp--vertical .wp__meta { grid-column: 1 / 9; }
+}
+
+/* ---------- Desktop compositions ---------- */
+@media (min-width: 768px) {
+  .wk-list { gap: 144px; }
+  .wp__link { column-gap: 24px; row-gap: 32px; }
+  .wp__title { font-size: clamp(96px, 14vw, 180px); }
+}
+
+@media (min-width: 1024px) {
+  .wk-archive { padding: 120px 0 160px; }
+  .wk-list { gap: 200px; }
+  .wp__title { font-size: clamp(110px, 10vw, 230px); }
+
+  /* 01 — full-width visual, title left, meta right */
+  .wp--full .wp__fig--main { grid-column: 1 / -1; aspect-ratio: 16 / 8; }
+  .wp--full .wp__heading { grid-column: 1 / 8; }
+  .wp--full .wp__meta { grid-column: 9 / -1; align-self: end; }
+
+  /* 02 — asymmetric pair: wide image + vertical study stepping down */
+  .wp--duo .wp__fig--main { grid-column: 1 / 9; grid-row: 1; aspect-ratio: 4 / 3; }
+  .wp--duo .wp__fig--second { grid-column: 9 / -1; grid-row: 1; align-self: start; margin-top: 34%; box-shadow: none; }
+  .wp--duo .wp__heading { grid-column: 1 / 9; grid-row: 2; }
+  .wp--duo .wp__meta { grid-column: 9 / -1; grid-row: 2; align-self: start; }
+
+  /* 03 — information beside a large screen */
+  .wp--side .wp__fig--main { grid-column: 5 / -1; grid-row: 1 / span 2; aspect-ratio: 16 / 11; }
+  .wp--side .wp__heading { grid-column: 1 / 5; grid-row: 1; align-self: end; flex-direction: column; gap: 16px; }
+  .wp--side .wp__meta { grid-column: 1 / 5; grid-row: 2; align-self: start; }
+  .wp--side .wp__title { font-size: clamp(88px, 8vw, 180px); }
+
+  /* 04 — vertical composition: tall study, info and phone to the right */
+  .wp--vertical .wp__fig--main { grid-column: 1 / 7; grid-row: 1 / span 3; aspect-ratio: 4 / 5; }
+  .wp--vertical .wp__heading { grid-column: 8 / -1; grid-row: 1; }
+  .wp--vertical .wp__meta { grid-column: 8 / -1; grid-row: 2; }
+  .wp--vertical .wp__fig--phone { grid-column: 10 / 12; grid-row: 3; align-self: end; margin-top: 0; box-shadow: none; }
+
+  /* 05 — full-width visual with oversized title cutting across it */
+  .wp--overlay .wp__fig--main { grid-column: 1 / -1; grid-row: 1; aspect-ratio: 21 / 9; }
+  .wp--overlay .wp__heading { grid-column: 1 / -1; grid-row: 2; position: relative; z-index: 2; margin-top: -0.5em; font-size: clamp(140px, 19vw, 400px); }
+  .wp--overlay .wp__title { font-size: 1em; text-shadow: 0 20px 60px rgba(0, 0, 0, 0.45); }
+  .wp--overlay .wp__meta { grid-column: 8 / -1; grid-row: 3; }
+}
+
+/* ---------- Ultrawide: hold the composition, don't stretch it ---------- */
+@media (min-width: 1920px) {
+  .wp--overlay .wp__heading { font-size: min(19vw, 420px); }
+}

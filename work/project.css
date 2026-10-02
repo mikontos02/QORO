@@ -8,19 +8,7 @@
 .cs .container { --gutter: 16px; }
 @media (min-width: 768px) { .cs .container { --gutter: 24px; } }
 
-/* ---------- Shared image reveal (clip opens, image settles) ---------- */
-.js [data-img-reveal] {
-  clip-path: inset(10% 6% 10% 6% round var(--clip-r, var(--radius-frame)));
-  transition: clip-path 1.3s var(--ease-expo);
-}
-.js [data-img-reveal] img {
-  transform: scale(1.14);
-  transition: transform 1.6s var(--ease-expo);
-}
-.js [data-img-reveal].is-in { clip-path: inset(0 0 0 0 round var(--clip-r, var(--radius-frame))); }
-.js [data-img-reveal].is-in img { transform: scale(1.02); }
-
-[data-parallax] { transform: translate3d(0, var(--py, 0px), 0); will-change: transform; }
+/* Image reveal + parallax utilities live in ../style.css (shared) */
 
 /* ==========================================================================
    HERO — the Work card, opened to full size
@@ -580,9 +568,7 @@
    Reduced motion
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  .js [data-img-reveal] { clip-path: none !important; }
-  .js [data-img-reveal] img, .cs-hero__media img { transform: none !important; }
-  [data-parallax] { transform: none !important; }
+  .cs-hero__media img { transform: none !important; }
   .cs-phone__float { animation: none !important; }
 }
 

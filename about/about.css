@@ -1,0 +1,279 @@
+/* ==========================================================================
+   QORO — About page (about.html)
+   Extends ../style.css (hero, studio panel, disciplines, row-cta, CTA frame)
+   and ../work/archive.css (project compositions). Adds the manifesto layouts.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.ab-hero { height: 92vh; height: 92svh; min-height: 620px; }
+.ab-hero .ab-hero__title {
+  display: block;
+  font-size: clamp(60px, 12.5vw, 120px);
+  line-height: 0.86; letter-spacing: -0.06em;
+}
+.ab-hero__title .w--em { letter-spacing: -0.025em; }
+@media (min-width: 1024px) { .ab-hero .ab-hero__title { font-size: clamp(104px, 9.6vw, 210px); } }
+
+/* ---------- Section label: number + eyebrow ---------- */
+.ab-label { display: flex; align-items: baseline; gap: 12px; }
+.ab-label__num { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--muted); }
+.ab-label .eyebrow { font-weight: 400; }
+
+/* ---------- 01 Who we are ---------- */
+.ab-who { padding: 96px 0 88px; background: #000; scroll-margin-top: 72px; }
+.ab-who__grid { display: grid; gap: 32px; }
+.ab-who__body { display: flex; flex-direction: column; gap: 28px; }
+.ab-who__lead {
+  max-width: 20ch;
+  font-size: clamp(32px, 4.6vw, 80px);
+  line-height: 1; letter-spacing: -0.035em;
+  color: var(--cream);
+}
+.ab-who__text { max-width: 34rem; font-size: 18px; line-height: 1.5; color: rgba(222, 219, 200, 0.72); }
+.ab-who__visual { position: relative; display: grid; gap: 12px; margin-top: 24px; }
+.ab-who__visual figure { position: relative; overflow: hidden; border-radius: var(--radius-card); --clip-r: var(--radius-card); background: #0b0b0b; }
+.ab-who__a { width: 70%; aspect-ratio: 4 / 5; }
+.ab-who__b { width: 88%; justify-self: end; aspect-ratio: 16 / 10; margin-top: -26%; z-index: 2; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.9); }
+.ab-who__inner { position: absolute; inset: -6% 0; }
+.ab-who__visual img { width: 100%; height: 100%; object-fit: cover; }
+.ab-who__caption { font-size: 14px; color: var(--muted); justify-self: end; }
+@media (min-width: 1024px) {
+  .ab-who { padding: 160px 0 128px; }
+  .ab-who__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 64px; }
+  .ab-who__grid > .ab-label { grid-column: 1 / 4; padding-top: 0.6em; }
+  .ab-who__body { grid-column: 4 / -1; }
+  .ab-who__visual { grid-column: 1 / -1; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; margin-top: 32px; }
+  .ab-who__a { grid-column: 2 / 6; grid-row: 1; width: auto; }
+  .ab-who__b { grid-column: 6 / -1; grid-row: 1; width: auto; margin-top: 28%; align-self: start; justify-self: stretch; }
+  .ab-who__caption { grid-column: 6 / -1; grid-row: 2; justify-self: start; }
+}
+
+/* ---------- 02 Philosophy — scroll-scrubbed type ---------- */
+.ab-philosophy { padding: 48px 0 112px; background: #000; }
+.ab-philosophy .container { display: grid; gap: 32px; }
+.ab-philosophy__text {
+  max-width: 24ch;
+  font-size: clamp(32px, 4.8vw, 84px);
+  line-height: 1.04; letter-spacing: -0.035em;
+  color: var(--cream);
+}
+@media (min-width: 1024px) {
+  .ab-philosophy { padding: 64px 0 176px; }
+  .ab-philosophy .container { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; }
+  .ab-philosophy .ab-label { grid-column: 1 / 4; padding-top: 0.8em; }
+  .ab-philosophy__text { grid-column: 4 / -1; }
+}
+
+/* ---------- 03 Principles (studio panel + disciplines from style.css) ---------- */
+.ab-principles { padding: 0 16px 96px; background: #000; }
+.ab-panel .studio__intro { gap: 22px; }
+.ab-panel .discipline__num { font-family: var(--sans); font-style: normal; font-size: 13px; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
+.ab-panel .discipline__name { font-size: clamp(32px, 8vw, 84px); }
+@media (min-width: 640px) { .ab-principles { padding: 0 24px 128px; } .ab-panel .discipline__name { font-size: clamp(40px, 6vw, 84px); } }
+@media (min-width: 1024px) { .ab-panel .discipline__name { font-size: clamp(44px, 4.6vw, 92px); } }
+
+/* ---------- 04 How we think — vertical stack, pinned horizontal on desktop ---------- */
+.ab-think { position: relative; background: #000; }
+.ab-think__sticky { padding: 32px var(--gutter) 96px; }
+.ab-think__track { display: flex; flex-direction: column; gap: 40px; }
+.ab-think__intro { display: flex; flex-direction: column; gap: 24px; }
+.ab-think__title {
+  font-weight: 400;
+  max-width: 14ch;
+  font-size: clamp(44px, 6.4vw, 120px);
+  line-height: 0.92; letter-spacing: -0.05em;
+  color: var(--cream);
+}
+.ab-think__title .w--em { letter-spacing: -0.02em; }
+.ab-think__hint { display: none; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.ab-think__hint span { display: inline-block; animation: ab-nudge 1.6s var(--ease-expo) infinite; }
+@keyframes ab-nudge { 0%, 100% { transform: none; } 50% { transform: translateX(8px); } }
+
+.ab-steps { display: grid; border-top: 1px solid var(--line); }
+.ab-step {
+  display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 12px; row-gap: 8px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.ab-step__num { grid-row: 1 / span 3; font-family: var(--serif); font-style: italic; font-size: 44px; line-height: 0.9; color: var(--muted); transition: color 0.4s ease; }
+.ab-step__name { font-size: clamp(32px, 4vw, 64px); font-weight: 400; line-height: 0.95; letter-spacing: -0.045em; color: var(--cream); }
+.ab-step__q { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.15; color: var(--cream); }
+.ab-step__a { max-width: 30ch; font-size: 16px; line-height: 1.45; color: rgba(222, 219, 200, 0.68); }
+@media (hover: hover) { .ab-step:hover .ab-step__num { color: var(--cream); } }
+
+.ab-think__end { display: flex; flex-direction: column; gap: 28px; }
+.ab-think__end-text { max-width: 16ch; font-size: clamp(32px, 4vw, 64px); line-height: 1; letter-spacing: -0.035em; color: var(--cream); }
+.ab-think__links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.ab-outline {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 12px 22px;
+  border-radius: 999px; border: 1px solid rgba(225, 224, 204, 0.3);
+  font-size: 16px; color: var(--cream);
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+@media (hover: hover) { .ab-outline:hover { background: var(--cream); color: var(--black); border-color: var(--cream); } }
+
+/* Pinned mode (set by about.js on desktop when motion is allowed) */
+.ab-think.is-pinned .ab-think__sticky {
+  position: sticky; top: 0;
+  height: 100vh; height: 100svh;
+  padding: 0;
+  overflow: hidden;
+  overflow: clip; /* clip can't be scrolled by focus, so the transform stays in charge */
+  display: flex; align-items: center;
+}
+.ab-think.is-pinned .ab-think__track {
+  flex-direction: row; align-items: stretch; gap: 0;
+  width: max-content;
+  padding-left: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+  will-change: transform;
+}
+.ab-think.is-pinned .ab-think__intro { width: min(44vw, 720px); padding-right: 6vw; justify-content: center; }
+.ab-think.is-pinned .ab-think__hint { display: block; }
+.ab-think.is-pinned .ab-steps { display: flex; border-top: 0; }
+.ab-think.is-pinned .ab-step {
+  width: clamp(300px, 26vw, 460px);
+  height: min(68vh, 640px);
+  grid-template-columns: 1fr; grid-template-rows: 1fr auto auto auto; row-gap: 14px;
+  padding: 0 40px 8px;
+  border-bottom: 0; border-left: 1px solid var(--line);
+}
+.ab-think.is-pinned .ab-step__num { grid-row: auto; align-self: start; font-size: clamp(88px, 8vw, 150px); }
+.ab-think.is-pinned .ab-step__a { min-height: 4.4em; } /* equal answer height keeps the step names on one line */
+.ab-think.is-pinned .ab-think__end { width: min(40vw, 640px); padding: 0 6vw 0 64px; justify-content: center; border-left: 1px solid var(--line); }
+
+/* ---------- 05 Design meets code ---------- */
+.ab-code { padding: 72px 0 96px; background: #000; }
+.ab-code__grid { display: grid; gap: 40px; }
+.ab-code__intro { display: flex; flex-direction: column; gap: 24px; }
+.ab-code__title { font-weight: 400; font-size: clamp(56px, 9vw, 168px); line-height: 0.86; letter-spacing: -0.06em; color: var(--cream); }
+.ab-code__title .w--em { letter-spacing: -0.02em; }
+.ab-code__text { max-width: 30rem; font-size: 18px; line-height: 1.5; color: rgba(222, 219, 200, 0.72); }
+.ab-code__demo { display: grid; gap: 4px; }
+.ab-code__stage, .ab-code__source {
+  position: relative;
+  border-radius: var(--radius-card);
+  background: var(--panel);
+}
+.ab-code__stage {
+  display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 48px;
+  min-height: 220px; padding: 24px;
+}
+.ab-code__stage .pill { transform: scale(1.25); transform-origin: left center; }
+.ab-code__cap { font-size: 14px; color: var(--muted); }
+.ab-code__source { display: flex; flex-direction: column; gap: 14px; padding: 24px; }
+.ab-code__pre {
+  margin: 0; overflow-x: auto;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 14px; line-height: 1.7;
+  color: rgba(225, 224, 204, 0.82);
+  tab-size: 2;
+}
+.ab-code__pre:focus-visible { outline-offset: 4px; }
+.t-c { color: var(--muted); }
+.t-s { color: var(--cream); }
+.t-p { color: var(--accent); }
+.t-v { color: rgba(222, 219, 200, 0.6); }
+.ab-code__hover {
+  display: inline-block; width: 100%;
+  margin: 2px -8px; padding: 2px 8px;
+  border-radius: 6px;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+.ab-code__demo.is-hover .ab-code__hover { background: rgba(196, 162, 120, 0.16); box-shadow: inset 2px 0 0 var(--accent); }
+@media (min-width: 1024px) {
+  .ab-code { padding: 144px 0 176px; }
+  .ab-code__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: center; }
+  .ab-code__intro { grid-column: 1 / 6; }
+  .ab-code__demo { grid-column: 7 / -1; }
+  .ab-code__stage { min-height: 260px; padding: 32px; }
+  .ab-code__source { padding: 32px; }
+  .ab-code__pre { font-size: 15px; }
+}
+
+/* ---------- 06 People ---------- */
+.ab-people { padding: 48px 0 96px; background: #000; }
+.ab-people .container { display: flex; flex-direction: column; gap: 28px; }
+.ab-people__title { font-weight: 400; max-width: 14ch; font-size: clamp(44px, 7vw, 132px); line-height: 0.9; letter-spacing: -0.05em; color: var(--cream); }
+.ab-people__title .w--em { letter-spacing: -0.02em; }
+.ab-people__fallback { display: flex; flex-direction: column; gap: 8px; }
+.ab-people__fallback[hidden], .ab-team[hidden] { display: none; }
+.ab-people__text { max-width: 34rem; font-size: 20px; line-height: 1.45; color: rgba(222, 219, 200, 0.75); }
+.ab-people__fallback .row-cta { margin-top: 40px; }
+
+.ab-team { display: grid; border-top: 1px solid var(--line); margin-top: 24px; }
+.ab-member {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 12px; row-gap: 6px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.ab-member__num { grid-row: 1 / span 3; font-size: 14px; color: var(--muted); padding-top: 0.6em; font-variant-numeric: tabular-nums; }
+.ab-member__name { font-size: clamp(36px, 5.6vw, 96px); font-weight: 400; line-height: 0.95; letter-spacing: -0.05em; color: var(--cream); transition: transform 0.8s var(--ease-expo), opacity 0.5s ease; }
+.ab-member__role { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--cream); }
+.ab-member__bio { max-width: 40rem; font-size: 16px; line-height: 1.5; color: rgba(222, 219, 200, 0.7); }
+.ab-member__photo { grid-column: 2; width: min(220px, 60%); aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius-card); margin-top: 12px; }
+.ab-member__photo img { width: 100%; height: 100%; object-fit: cover; }
+@media (hover: hover) {
+  .ab-team:hover .ab-member:not(:hover) .ab-member__name { opacity: 0.35; }
+  .ab-member:hover .ab-member__name { transform: translateX(14px); }
+}
+@media (min-width: 1024px) {
+  .ab-people { padding: 96px 0 160px; }
+  .ab-member { grid-template-columns: 88px minmax(0, 6fr) minmax(0, 5fr); column-gap: 24px; align-items: baseline; }
+  .ab-member__num { grid-row: 1 / span 2; }
+  .ab-member__role { grid-column: 3; grid-row: 1; }
+  .ab-member__bio { grid-column: 3; grid-row: 2; }
+  .ab-member__name { grid-column: 2; grid-row: 1 / span 2; }
+}
+/* Desktop with a fine pointer: the portrait follows the cursor instead */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) { .ab-member__photo { display: none; } }
+@media (min-width: 1024px) and (hover: none), (min-width: 1024px) and (pointer: coarse) {
+  .ab-member__photo { grid-column: 3; grid-row: 3; width: 180px; }
+}
+
+/* ---------- 07 Work (archive compositions from work/archive.css) ---------- */
+.ab-work { padding: 32px 0 96px; background: #000; }
+.ab-work__list { margin-bottom: 96px; }
+@media (min-width: 1024px) { .ab-work { padding: 64px 0 160px; } .ab-work__list { margin-bottom: 144px; } }
+
+/* ---------- 08 What we believe — statements light up as they rise ---------- */
+.ab-believe { padding: 32px 0 120px; background: #000; }
+.ab-believe .container { display: grid; gap: 28px; }
+.ab-beliefs { border-top: 1px solid var(--line); }
+.ab-belief {
+  --a: 1;
+  padding: 26px 0 30px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(36px, 7vw, 132px);
+  line-height: 0.95; letter-spacing: -0.05em;
+  color: var(--cream);
+  opacity: calc(0.16 + var(--a) * 0.84);
+  transition: transform 0.8s var(--ease-expo);
+}
+@media (hover: hover) { .ab-belief:hover { transform: translateX(14px); opacity: 1; } }
+@media (min-width: 1024px) {
+  .ab-believe { padding: 64px 0 176px; }
+  .ab-believe .container { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; }
+  .ab-believe .ab-label { grid-column: 1 / 4; padding-top: 0.8em; }
+  .ab-beliefs { grid-column: 4 / -1; }
+}
+
+/* ---------- Floating portrait (team) ---------- */
+.ab-preview { position: fixed; top: 0; left: 0; z-index: 55; width: 0; height: 0; pointer-events: none; display: none; will-change: transform; }
+.ab-preview__inner {
+  position: absolute; left: 28px; top: -160px;
+  width: 240px; aspect-ratio: 4 / 5;
+  border-radius: 14px; overflow: hidden;
+  background: #0b0b0b;
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.85);
+  opacity: 0; transform: scale(0.85) rotate(-3deg);
+  transition: opacity 0.35s ease, transform 0.6s var(--ease-expo);
+}
+.ab-preview__inner img { width: 100%; height: 100%; object-fit: cover; }
+.ab-preview.is-on .ab-preview__inner { opacity: 1; transform: none; }
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) { .ab-preview { display: block; } }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ab-think__hint span { animation: none; }
+  .ab-belief { opacity: 1; }
+}

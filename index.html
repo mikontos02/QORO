@@ -25,11 +25,12 @@
     <nav class="nav__tab" aria-label="Primary">
       <a class="nav__brand" href="#top" aria-label="Qoro — back to top">Qoro<sup>*</sup></a>
       <ul class="nav__list">
-        <li><a class="nav__link" href="#work" data-nav-link>Work</a></li>
-        <li><a class="nav__link" href="#services" data-nav-link>Services</a></li>
+        <li><a class="nav__link" href="about.html" data-transition="About">About</a></li>
+        <li><a class="nav__link" href="work.html" data-transition="Work">Work</a></li>
+        <li><a class="nav__link" href="services.html" data-transition="Services">Services</a></li>
         <li><a class="nav__link" href="#studio" data-nav-link>Studio</a></li>
         <li><a class="nav__link" href="#pricing" data-nav-link>Pricing</a></li>
-        <li><a class="nav__link" href="#contact" data-nav-link>Contact</a></li>
+        <li><a class="nav__link" href="contact.html" data-transition="Contact">Contact</a></li>
       </ul>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
         <span class="nav__toggle-label" data-menu-label>Menu</span>
@@ -44,11 +45,12 @@
       <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
       <div class="noise noise--overlay" aria-hidden="true"></div>
       <ol class="menu__list">
-        <li><a href="#work" data-menu-link><span class="menu__num">01</span>Work</a></li>
-        <li><a href="#services" data-menu-link><span class="menu__num">02</span>Services</a></li>
-        <li><a href="#studio" data-menu-link><span class="menu__num">03</span>Studio</a></li>
-        <li><a href="#pricing" data-menu-link><span class="menu__num">04</span>Pricing</a></li>
-        <li><a href="#contact" data-menu-link><span class="menu__num">05</span><em>Contact</em></a></li>
+        <li><a href="about.html" data-menu-link data-transition="About"><span class="menu__num">01</span>About</a></li>
+        <li><a href="work.html" data-menu-link data-transition="Work"><span class="menu__num">02</span>Work</a></li>
+        <li><a href="services.html" data-menu-link data-transition="Services"><span class="menu__num">03</span>Services</a></li>
+        <li><a href="#studio" data-menu-link><span class="menu__num">04</span>Studio</a></li>
+        <li><a href="#pricing" data-menu-link><span class="menu__num">05</span>Pricing</a></li>
+        <li><a href="contact.html" data-menu-link data-transition="Contact"><span class="menu__num">06</span><em>Contact</em></a></li>
       </ol>
       <div class="menu__foot">
         <a href="mailto:hello@qoro.studio">hello@qoro.studio</a>
@@ -93,7 +95,7 @@
               Qoro is an independent studio designing and engineering websites for brands that refuse to blend in — digital experiences, <em>built with intent.</em>
             </p>
             <div data-reveal data-delay="0.7">
-              <a class="pill magnetic" href="#contact">
+              <a class="pill magnetic" href="contact.html" data-transition="Contact">
                 <span class="pill__label">Start a project</span>
                 <span class="pill__icon" aria-hidden="true">
                   <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
@@ -117,159 +119,6 @@
           Since 2019 we have partnered with architects, founders and cultural brands across London, Athens and beyond, shaping identities, designing interfaces and writing the code that brings them to life on every screen.
         </p>
       </div>
-    </section>
-
-    <!-- ============ WORK ============ -->
-    <section class="work" id="work" aria-labelledby="work-title" data-section>
-      <div class="noise noise--bg" aria-hidden="true"></div>
-      <div class="container">
-        <header class="section-head">
-          <div class="section-head__main">
-            <span class="eyebrow" data-reveal>Selected work <span class="eyebrow__count">(05)</span></span>
-            <h2 class="section-head__title" id="work-title" data-split>Recent projects, <em>made with intent.</em></h2>
-          </div>
-          <p class="section-head__note" data-reveal data-delay="0.2">
-            A small number of projects each year, taken from first sketch to final commit by the same hands.
-          </p>
-        </header>
-      </div>
-
-      <ol class="projects" data-projects>
-        <li class="project" data-project style="--tone: #1a1815">
-          <a class="project__card" href="work/halden.html" data-transition="Halden" data-cursor-target="View case" aria-label="Halden — Brand and website, 2026. View case study">
-            <div class="project__info">
-              <div class="project__top">
-                <span class="project__num">01</span>
-                <ul class="project__tags" aria-label="Disciplines"><li>Brand</li><li>Website</li></ul>
-              </div>
-              <div class="project__body">
-                <h3 class="project__title">Halden</h3>
-                <div class="project__meta">
-                  <p class="project__client">Architecture practice, Oslo</p>
-                  <p class="project__desc">A gallery-quiet website for a practice that draws buildings from the ground they stand on.</p>
-                  <p class="project__year"><span>Brand &amp; Website</span><span>2026</span></p>
-                </div>
-              </div>
-            </div>
-            <div class="project__visual">
-              <picture class="project__media">
-                <img src="assets/images/work-halden-1200.webp"
-                     srcset="assets/images/work-halden-1200.webp 1200w, assets/images/work-halden-2400.webp 2400w"
-                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
-                     alt="Halden website shown on desktop and mobile: an off-white page with a brutalist facade grid and a large Halden wordmark.">
-              </picture>
-            </div>
-          </a>
-        </li>
-
-        <li class="project" data-project style="--tone: #1c120d">
-          <a class="project__card" href="work/solace.html" data-transition="Solace" data-cursor-target="View case" aria-label="Solace — Digital experience, 2025. View case study">
-            <div class="project__info">
-              <div class="project__top">
-                <span class="project__num">02</span>
-                <ul class="project__tags" aria-label="Disciplines"><li>Experience</li><li>Booking</li></ul>
-              </div>
-              <div class="project__body">
-                <h3 class="project__title">Solace</h3>
-                <div class="project__meta">
-                  <p class="project__client">Cliffside retreat, Folegandros</p>
-                  <p class="project__desc">A slow booking journey that sells silence: light-led imagery, soft motion and nothing loud.</p>
-                  <p class="project__year"><span>Digital Experience</span><span>2025</span></p>
-                </div>
-              </div>
-            </div>
-            <div class="project__visual">
-              <picture class="project__media">
-                <img src="assets/images/work-solace-1200.webp"
-                     srcset="assets/images/work-solace-1200.webp 1200w, assets/images/work-solace-2400.webp 2400w"
-                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
-                     alt="Solace retreat website in terracotta tones, a setting sun over layered hills and the italic line Stay still.">
-              </picture>
-            </div>
-          </a>
-        </li>
-
-        <li class="project" data-project style="--tone: #131416">
-          <a class="project__card" href="work/ferro.html" data-transition="Ferro" data-cursor-target="View case" aria-label="Ferro — E-commerce platform, 2025. View case study">
-            <div class="project__info">
-              <div class="project__top">
-                <span class="project__num">03</span>
-                <ul class="project__tags" aria-label="Disciplines"><li>Commerce</li><li>Headless</li></ul>
-              </div>
-              <div class="project__body">
-                <h3 class="project__title">Ferro</h3>
-                <div class="project__meta">
-                  <p class="project__client">Steel furniture maker, Milan</p>
-                  <p class="project__desc">A headless storefront where every product page reads like a spread from a printed catalogue.</p>
-                  <p class="project__year"><span>E-commerce Platform</span><span>2025</span></p>
-                </div>
-              </div>
-            </div>
-            <div class="project__visual">
-              <picture class="project__media">
-                <img src="assets/images/work-ferro-1200.webp"
-                     srcset="assets/images/work-ferro-1200.webp 1200w, assets/images/work-ferro-2400.webp 2400w"
-                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
-                     alt="Ferro online store on a graphite backdrop, showing a tubular steel chair and a grid of furniture products.">
-              </picture>
-            </div>
-          </a>
-        </li>
-
-        <li class="project" data-project style="--tone: #171611">
-          <a class="project__card" href="work/mono.html" data-transition="Mono" data-cursor-target="View case" aria-label="Mono — Brand identity, 2024. View case study">
-            <div class="project__info">
-              <div class="project__top">
-                <span class="project__num">04</span>
-                <ul class="project__tags" aria-label="Disciplines"><li>Identity</li><li>Type tester</li></ul>
-              </div>
-              <div class="project__body">
-                <h3 class="project__title">Mono</h3>
-                <div class="project__meta">
-                  <p class="project__client">Independent type foundry</p>
-                  <p class="project__desc">Identity, specimen system and a live type tester for a foundry that prizes restraint.</p>
-                  <p class="project__year"><span>Brand Identity</span><span>2024</span></p>
-                </div>
-              </div>
-            </div>
-            <div class="project__visual">
-              <picture class="project__media">
-                <img src="assets/images/work-mono-1200.webp"
-                     srcset="assets/images/work-mono-1200.webp 1200w, assets/images/work-mono-2400.webp 2400w"
-                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
-                     alt="Mono type foundry identity: a giant serif M on cream beside a black business card and a type specimen card.">
-              </picture>
-            </div>
-          </a>
-        </li>
-
-        <li class="project" data-project style="--tone: #130d09">
-          <a class="project__card" href="work/shift.html" data-transition="Shift" data-cursor-target="View case" aria-label="Shift — Interactive experience, 2024. View case study">
-            <div class="project__info">
-              <div class="project__top">
-                <span class="project__num">05</span>
-                <ul class="project__tags" aria-label="Disciplines"><li>WebGL</li><li>Launch</li></ul>
-              </div>
-              <div class="project__body">
-                <h3 class="project__title">Shift</h3>
-                <div class="project__meta">
-                  <p class="project__client">Electric mobility</p>
-                  <p class="project__desc">A real-time configurator that lets drivers feel the car long before they sit in it.</p>
-                  <p class="project__year"><span>Interactive Experience</span><span>2024</span></p>
-                </div>
-              </div>
-            </div>
-            <div class="project__visual">
-              <picture class="project__media">
-                <img src="assets/images/work-shift-1200.webp"
-                     srcset="assets/images/work-shift-1200.webp 1200w, assets/images/work-shift-2400.webp 2400w"
-                     sizes="(min-width: 1024px) 62vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async"
-                     alt="Shift launch experience: the word SHIFT glowing above an ember-orange light ring with range and charge readouts.">
-              </picture>
-            </div>
-          </a>
-        </li>
-      </ol>
     </section>
 
     <!-- ============ SERVICES ============ -->
@@ -304,7 +153,7 @@
               <li>Design systems that scale</li>
               <li>Prototypes that already move</li>
             </ul>
-            <a class="svc__link" href="#work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a class="svc__link" href="work.html" data-transition="Work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
           </article>
 
           <article class="svc" data-scale-in data-index="2" data-spotlight>
@@ -320,7 +169,7 @@
               <li>Headless CMS &amp; commerce</li>
               <li>Accessibility built in, not bolted on</li>
             </ul>
-            <a class="svc__link" href="#work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a class="svc__link" href="work.html" data-transition="Work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
           </article>
 
           <article class="svc" data-scale-in data-index="3" data-spotlight>
@@ -352,7 +201,7 @@
               <li>Logo, type &amp; colour systems</li>
               <li>Guidelines that live online</li>
             </ul>
-            <a class="svc__link" href="#work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a class="svc__link" href="work.html" data-transition="Work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
           </article>
 
           <article class="svc" data-scale-in data-index="5" data-spotlight>
@@ -368,10 +217,10 @@
               <li>Motion &amp; micro-interaction</li>
               <li>Product launches people remember</li>
             </ul>
-            <a class="svc__link" href="#work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
+            <a class="svc__link" href="work.html" data-transition="Work">See the work <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></a>
           </article>
 
-          <a class="svc svc--cta" href="#contact" data-scale-in data-index="6">
+          <a class="svc svc--cta" href="contact.html" data-transition="Contact" data-scale-in data-index="6">
             <span class="svc__num">06</span>
             <span class="svc__cta-text">Have a brief?<br><em>Let’s talk.</em></span>
             <span class="svc__cta-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
@@ -436,7 +285,7 @@
               <button class="tier__toggle" type="button" aria-expanded="false" aria-controls="tier-starter-details" data-tier-toggle>
                 <span data-tier-toggle-label>View details</span><span class="tier__toggle-icon" aria-hidden="true"></span>
               </button>
-              <a class="pill magnetic" href="mailto:hello@qoro.studio?subject=Starter%20project">
+              <a class="pill magnetic" href="contact.html?plan=starter" data-transition="Starter">
                 <span class="pill__label">Start a project</span>
                 <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
               </a>
@@ -459,7 +308,7 @@
               <button class="tier__toggle" type="button" aria-expanded="false" aria-controls="tier-signature-details" data-tier-toggle>
                 <span data-tier-toggle-label>View details</span><span class="tier__toggle-icon" aria-hidden="true"></span>
               </button>
-              <a class="pill pill--dark magnetic" href="mailto:hello@qoro.studio?subject=Signature%20project">
+              <a class="pill pill--dark magnetic" href="contact.html?plan=signature" data-transition="Signature">
                 <span class="pill__label">Start a project</span>
                 <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
               </a>
@@ -482,7 +331,7 @@
               <button class="tier__toggle" type="button" aria-expanded="false" aria-controls="tier-custom-details" data-tier-toggle>
                 <span data-tier-toggle-label>View details</span><span class="tier__toggle-icon" aria-hidden="true"></span>
               </button>
-              <a class="pill magnetic" href="mailto:hello@qoro.studio?subject=Custom%20project">
+              <a class="pill magnetic" href="contact.html?plan=custom" data-transition="Custom">
                 <span class="pill__label">Let’s talk</span>
                 <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
               </a>
@@ -492,11 +341,11 @@
 
         <p class="pricing__fine" data-reveal>Prices exclude VAT. Every proposal is shaped around your scope, timeline and ambition.</p>
 
-        <a class="pricing-cta" href="#contact" data-reveal>
-          <span class="pricing-cta__text">Not sure where your project fits? <em>Let’s talk.</em></span>
-          <span class="pricing-cta__action">
-            <span class="pricing-cta__label">Start a conversation</span>
-            <span class="pricing-cta__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <a class="row-cta" href="contact.html" data-transition="Contact" data-reveal>
+          <span class="row-cta__text">Not sure where your project fits? <em>Let’s talk.</em></span>
+          <span class="row-cta__action">
+            <span class="row-cta__label">Start a conversation</span>
+            <span class="row-cta__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
           </span>
         </a>
       </div>
@@ -525,7 +374,7 @@
             <span class="sr-only" aria-live="polite" data-copy-status></span>
           </div>
           <div data-reveal data-delay="0.4">
-            <a class="pill magnetic" href="mailto:hello@qoro.studio?subject=New%20project%20with%20Qoro">
+            <a class="pill magnetic" href="contact.html" data-transition="Contact">
               <span class="pill__label">Start a project</span>
               <span class="pill__icon" aria-hidden="true">
                 <svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg>
@@ -553,11 +402,12 @@
         <div class="footer__col">
           <h3 class="footer__heading">Studio</h3>
           <ul>
-            <li><a class="link" href="#work">Work</a></li>
-            <li><a class="link" href="#services">Services</a></li>
+            <li><a class="link" href="about.html" data-transition="About">About</a></li>
+            <li><a class="link" href="work.html" data-transition="Work">Work</a></li>
+            <li><a class="link" href="services.html" data-transition="Services">Services</a></li>
             <li><a class="link" href="#studio">Studio</a></li>
             <li><a class="link" href="#pricing">Pricing</a></li>
-            <li><a class="link" href="#contact">Contact</a></li>
+            <li><a class="link" href="contact.html" data-transition="Contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer__col">

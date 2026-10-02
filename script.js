@@ -112,6 +112,7 @@
   let lenis = null;
   if (!reduceMotion && typeof window.Lenis === 'function') {
     lenis = new window.Lenis({ duration: 1.15, smoothWheel: true, autoRaf: true });
+    window.QORO = Object.assign(window.QORO || {}, { lenis }); // lets page scripts scroll in step with Lenis
   }
 
   const scrollToTarget = (target) => {
@@ -142,22 +143,23 @@
     });
   }, { rootMargin: '0px 0px -100px 0px' });
 
-  const projectObserver = new IntersectionObserver((entries) => {
+  // Images: clip opens and the image settles, once
+  const imageObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('is-in');
-      projectObserver.unobserve(entry.target);
+      imageObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.35 });
+  }, { rootMargin: '0px 0px -12% 0px' });
 
   const startReveals = () => {
     // Hero content is part of the load sequence, not the scroll sequence
-    $$('#top [data-reveal]').forEach((el) => el.classList.add('is-in'));
+    $$('#top [data-reveal], #top [data-split]').forEach((el) => el.classList.add('is-in'));
     $$('[data-reveal], [data-split], [data-footer-mark]').forEach((el) => {
       if (!el.closest('#top')) revealObserver.observe(el);
     });
     $$('[data-scale-in]').forEach((el) => cardObserver.observe(el));
-    $$('[data-project]').forEach((el) => projectObserver.observe(el));
+    $$('[data-img-reveal]').forEach((el) => imageObserver.observe(el));
   };
 
   // Page-load: wait for fonts so the wordmark mask never jumps
@@ -181,18 +183,11 @@
      ------------------------------------------------------------------------ */
   const nav = $('[data-nav]');
   const heroFrame = $('[data-hero-frame]');
-  const projects = $$('[data-project]');
   const disciplines = $$('[data-discipline]');
   const asterisk = $('[data-asterisk]');
+  const parallax = $$('[data-parallax]');
 
-  projects.forEach((p, i) => p.style.setProperty('--i', i));
-
-  let projectStickTops = [];
-  const measure = () => {
-    vh = innerHeight;
-    projectStickTops = projects.map((p) => parseFloat(getComputedStyle(p).top) || 0);
-  };
-  measure();
+  const measure = () => { vh = innerHeight; };
 
   let ticking = false;
 
@@ -218,19 +213,14 @@
       el.style.setProperty('--p', p.toFixed(4));
     });
 
-    // Stacked project frames: read everything first, then write
-    if (projects.length) {
-      const tops = projects.map((p) => p.getBoundingClientRect().top);
-      projects.forEach((p, i) => {
-        const stick = projectStickTops[i];
-        const enter = clamp(1 - (tops[i] - stick) / (vh - stick), 0, 1);
-        let cover = 0;
-        if (i < projects.length - 1) {
-          const nextStick = projectStickTops[i + 1];
-          cover = clamp(1 - (tops[i + 1] - nextStick) / (vh - nextStick), 0, 1);
-        }
-        p.style.setProperty('--e', enter.toFixed(4));
-        p.style.setProperty('--p', cover.toFixed(4));
+    // Parallax images: read every rect first, then write (skips off-screen ones)
+    if (parallax.length) {
+      const rects = parallax.map((el) => el.getBoundingClientRect());
+      parallax.forEach((el, i) => {
+        const r = rects[i];
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        const offset = (r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.parallax);
+        el.style.setProperty('--py', `${offset.toFixed(1)}px`);
       });
     }
 
@@ -371,6 +361,7 @@
   addEventListener('pageshow', (e) => {
     if (!e.persisted) return;
     root.classList.remove('is-leaving', 'is-arriving', 'is-lifting');
+    $$('[data-transition-active]').forEach((el) => el.removeAttribute('data-transition-active'));
     const cursorEl = $('[data-cursor]');
     if (cursorEl) cursorEl.classList.remove('is-active');
   });
@@ -385,6 +376,7 @@
     if (!hash.startsWith('#')) {
       if (isPageLink(link, e)) {
         e.preventDefault();
+        link.setAttribute('data-transition-active', '');
         leaveTo(link.href, link.dataset.transition || '');
       }
       return;
@@ -495,11 +487,14 @@
         status.textContent = 'Email address copied to clipboard';
       } catch {
         label.textContent = 'Press ⌘C';
-        const range = doc.createRange();
-        range.selectNodeContents($('.cta__email-link'));
-        const sel = getSelection();
-        sel.removeAllRanges();
-        sel.addRange(range);
+        const target = $('.cta__email-link') || $(`a[href="mailto:${value}"]`);
+        if (target) {
+          const range = doc.createRange();
+          range.selectNodeContents(target);
+          const sel = getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
       }
       clearTimeout(timer);
       timer = setTimeout(() => { label.textContent = 'Copy'; status.textContent = ''; }, 2200);
@@ -524,10 +519,10 @@
   /* ------------------------------------------------------------------------
      Footer: live London time + year
      ------------------------------------------------------------------------ */
-  const clock = $('[data-clock]');
-  if (clock) {
+  const clocks = $$('[data-clock]');
+  if (clocks.length) {
     const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' });
-    const tick = () => { clock.textContent = fmt.format(new Date()); };
+    const tick = () => { const t = fmt.format(new Date()); clocks.forEach((c) => { c.textContent = t; }); };
     tick();
     setInterval(tick, 30000);
   }

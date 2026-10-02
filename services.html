@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Services — What we do | Qoro</title>
+  <meta name="description" content="Strategy, brand, UX/UI, web design, development and motion — how Qoro builds distinctive digital experiences.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Services — Qoro">
+  <meta property="og:description" content="Digital experiences, built with intent.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Helvetica,Arial' font-size='40' fill='%23e1e0cc'%3Eq%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="services/services.css">
+
+  <!-- Flag JS early so reveal states never flash un-styled content -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="curtain" aria-hidden="true" data-curtain><span class="curtain__label"><span data-curtain-label></span></span></div>
+  <script>try{var t=sessionStorage.getItem('qoro:transition');if(t!==null){sessionStorage.removeItem('qoro:transition');document.documentElement.classList.add('is-arriving');document.querySelector('[data-curtain-label]').textContent=t;}}catch(e){}</script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav nav--brand" data-nav>
+    <nav class="nav__tab" aria-label="Primary">
+      <a class="nav__brand" href="index.html" aria-label="Qoro — home" data-transition="Qoro">Qoro<sup>*</sup></a>
+      <ul class="nav__list">
+        <li><a class="nav__link" href="about.html" data-transition="About">About</a></li>
+        <li><a class="nav__link" href="work.html" data-transition="Work">Work</a></li>
+        <li><a class="nav__link" href="services.html" aria-current="page">Services</a></li>
+        <li><a class="nav__link" href="index.html#studio" data-transition="Studio">Studio</a></li>
+        <li><a class="nav__link" href="index.html#pricing" data-transition="Pricing">Pricing</a></li>
+        <li><a class="nav__link" href="contact.html" data-transition="Contact">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="nav__toggle-label" data-menu-label>Menu</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-menu>
+    <div class="menu__frame">
+      <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+      <div class="noise noise--overlay" aria-hidden="true"></div>
+      <ol class="menu__list">
+        <li><a href="about.html" data-menu-link data-transition="About"><span class="menu__num">01</span>About</a></li>
+        <li><a href="work.html" data-menu-link data-transition="Work"><span class="menu__num">02</span>Work</a></li>
+        <li><a href="services.html" data-menu-link><span class="menu__num">03</span>Services</a></li>
+        <li><a href="index.html#studio" data-menu-link data-transition="Studio"><span class="menu__num">04</span>Studio</a></li>
+        <li><a href="index.html#pricing" data-menu-link data-transition="Pricing"><span class="menu__num">05</span>Pricing</a></li>
+        <li><a href="contact.html" data-menu-link data-transition="Contact"><span class="menu__num">06</span><em>Contact</em></a></li>
+      </ol>
+      <div class="menu__foot">
+        <a href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+        <div class="menu__social">
+          <a href="#" aria-label="Qoro on Instagram">Instagram</a>
+          <a href="#" aria-label="Qoro on LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contextual cursor (fine pointers only) -->
+  <div class="cursor" aria-hidden="true" data-cursor><span class="cursor__ball"><span data-cursor-label>View</span></span></div>
+
+  <main id="main">
+
+    <!-- ============ SERVICES HERO (reuses the hero frame system) ============ -->
+    <section class="hero sv-hero" id="top" aria-labelledby="sv-title">
+      <div class="hero__frame" data-hero-frame>
+        <div class="cinematic" aria-hidden="true">
+          <div class="cinematic__blob"></div>
+          <div class="cinematic__light" data-hero-light></div>
+          <div class="cinematic__vignette"></div>
+        </div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <p class="hero__meta hero__meta--left" data-reveal data-delay="0.9">Services</p>
+        <p class="hero__meta hero__meta--right" data-reveal data-delay="1">Strategy + Design + Technology + Motion</p>
+
+        <div class="hero__content">
+          <h1 class="hero__title sv-hero__title" id="sv-title" data-split data-stagger="0.09">We build digital <em>experiences.</em></h1>
+          <div class="hero__aside">
+            <p class="hero__lead" data-reveal data-delay="0.5" data-rise-only>
+              From strategy and identity to design, development and motion: everything a brand needs to be <em>impossible to ignore</em> online.
+            </p>
+            <ol class="sv-index" aria-label="Services" data-reveal data-delay="0.7">
+              <li><a class="sv-index__row" href="#strategy"><span class="sv-index__num">01</span><span class="sv-index__name">Digital Strategy</span></a></li>
+              <li><a class="sv-index__row" href="#brand"><span class="sv-index__num">02</span><span class="sv-index__name">Brand &amp; Creative Direction</span></a></li>
+              <li><a class="sv-index__row" href="#ux-ui"><span class="sv-index__num">03</span><span class="sv-index__name">UX / UI Design</span></a></li>
+              <li><a class="sv-index__row" href="#web-design"><span class="sv-index__num">04</span><span class="sv-index__name">Web Design</span></a></li>
+              <li><a class="sv-index__row" href="#development"><span class="sv-index__num">05</span><span class="sv-index__name">Development</span></a></li>
+              <li><a class="sv-index__row" href="#motion"><span class="sv-index__num">06</span><span class="sv-index__name">Motion &amp; Interaction</span></a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTRO ============ -->
+    <section class="intro" aria-labelledby="sv-intro-title">
+      <div class="intro__panel">
+        <span class="eyebrow" data-reveal>What we do</span>
+        <h2 class="intro__title" id="sv-intro-title" data-split>One studio, four crafts — <em>strategy, design, technology and motion</em> — working as one.</h2>
+        <p class="intro__body" data-scrub>
+          Most projects get passed from strategist to designer to developer, losing a little at every hand-off. We keep the same small team on the work from first question to launch, so the idea that started it is still there when it ships.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ PRIMARY SERVICES ============ -->
+    <section class="sv-services" aria-labelledby="sv-services-title">
+      <div class="noise noise--bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow" data-reveal>Capabilities <span class="eyebrow__count">(06)</span></span>
+            <h2 class="section-head__title" id="sv-services-title" data-split>Six disciplines, <em>one continuous practice.</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-delay="0.2">Open any discipline to see what it covers and where we’ve used it.</p>
+        </header>
+        <ol class="svx-list" data-svx-list>
+          <li class="svx is-open" id="strategy" data-svx>
+            <h3 class="svx__heading">
+              <button class="svx__toggle" type="button" id="svx-strategy-toggle" aria-expanded="true" aria-controls="svx-strategy-panel"
+                      data-svx-toggle data-preview="assets/projects/halden/screens/index-1200.webp">
+                <span class="svx__num">01</span>
+                <span class="svx__name">Digital Strategy</span>
+                <span class="svx__lead">What the experience needs to say, who it’s for, and why it should exist.</span>
+                <span class="svx__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="svx__panel" id="svx-strategy-panel" role="region" aria-labelledby="svx-strategy-toggle" data-svx-panel>
+              <div class="svx__panel-inner">
+                <div class="svx__body">
+                  <p class="svx__statement">Strategy comes first because every later decision depends on it. We define what the experience needs to say, who it needs to reach and why it should exist, before a single pixel is placed.</p>
+                  <ul class="svx__caps" aria-label="Digital Strategy capabilities"><li>Digital positioning</li><li>Brand direction</li><li>User journeys</li><li>Information architecture</li><li>Content strategy</li><li>Digital product direction</li><li>Conversion strategy</li></ul>
+                  <a class="svx__more" href="contact.html?service=Digital%20Strategy" data-transition="Contact">Start a digital strategy project <span class="svx__more-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+                </div>
+                <figure class="svx__fig">
+                  <div class="svx__media" data-img-reveal>
+                    <img src="assets/projects/halden/screens/index-1200.webp" srcset="assets/projects/halden/screens/index-1200.webp 1200w, assets/projects/halden/screens/index-2400.webp 2400w" sizes="(min-width: 1024px) 40vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async" alt="Halden project index page showing four projects as facade studies.">
+                  </div>
+                  <figcaption>Halden — a project index structured like a drawing register.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+          <li class="svx" id="brand" data-svx>
+            <h3 class="svx__heading">
+              <button class="svx__toggle" type="button" id="svx-brand-toggle" aria-expanded="false" aria-controls="svx-brand-panel"
+                      data-svx-toggle data-preview="assets/projects/mono/gallery/brand-1200.webp">
+                <span class="svx__num">02</span>
+                <span class="svx__name">Brand &amp; Creative Direction</span>
+                <span class="svx__lead">A brand’s personality, translated into one coherent visual language.</span>
+                <span class="svx__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="svx__panel" id="svx-brand-panel" role="region" aria-labelledby="svx-brand-toggle" data-svx-panel>
+              <div class="svx__panel-inner">
+                <div class="svx__body">
+                  <p class="svx__statement">We turn what a brand believes into how it looks, moves and speaks on screen: one visual language, carried consistently from identity to interface.</p>
+                  <ul class="svx__caps" aria-label="Brand &amp; Creative Direction capabilities"><li>Brand identity</li><li>Art direction</li><li>Visual systems</li><li>Brand guidelines</li><li>Creative concepts</li><li>Campaign direction</li><li>Digital brand expression</li></ul>
+                  <a class="svx__more" href="contact.html?service=Brand%20Identity" data-transition="Contact">Start a brand project <span class="svx__more-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+                </div>
+                <figure class="svx__fig">
+                  <div class="svx__media" data-img-reveal>
+                    <img src="assets/projects/mono/gallery/brand-1200.webp" srcset="assets/projects/mono/gallery/brand-1200.webp 1200w, assets/projects/mono/gallery/brand-2400.webp 2400w" sizes="(min-width: 1024px) 40vw, 100vw" width="2400" height="1200" loading="lazy" decoding="async" alt="Mono brand composition: a serif wordmark beside a large ampersand on black.">
+                  </div>
+                  <figcaption>Mono — an identity built from the letters themselves.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+          <li class="svx" id="ux-ui" data-svx>
+            <h3 class="svx__heading">
+              <button class="svx__toggle" type="button" id="svx-ux-ui-toggle" aria-expanded="false" aria-controls="svx-ux-ui-panel"
+                      data-svx-toggle data-preview="assets/projects/solace/details/ui-900.webp">
+                <span class="svx__num">03</span>
+                <span class="svx__name">UX / UI Design</span>
+                <span class="svx__lead">Interfaces where clarity and character are the same decision.</span>
+                <span class="svx__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="svx__panel" id="svx-ux-ui-panel" role="region" aria-labelledby="svx-ux-ui-toggle" data-svx-panel>
+              <div class="svx__panel-inner">
+                <div class="svx__body">
+                  <p class="svx__statement">Good UX makes an experience effortless; good UI makes it memorable. We design both together, so usability never flattens personality and expression never gets in the way.</p>
+                  <ul class="svx__caps" aria-label="UX / UI Design capabilities"><li>User research</li><li>User flows</li><li>Wireframes</li><li>Information architecture</li><li>Interface design</li><li>Design systems</li><li>Prototyping</li><li>Responsive design</li><li>Interaction design</li></ul>
+                  <a class="svx__more" href="contact.html?service=UX%2FUI%20Design" data-transition="Contact">Start a UX/UI project <span class="svx__more-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+                </div>
+                <figure class="svx__fig">
+                  <div class="svx__media" data-img-reveal>
+                    <img src="assets/projects/solace/details/ui-900.webp" srcset="assets/projects/solace/details/ui-900.webp 900w, assets/projects/solace/details/ui-1800.webp 1800w" sizes="(min-width: 1024px) 40vw, 100vw" width="1800" height="2250" loading="lazy" decoding="async" alt="Solace interface components: buttons, navigation, fields and a room card in hover state.">
+                  </div>
+                  <figcaption>Solace — components and states from the booking flow.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+          <li class="svx" id="web-design" data-svx>
+            <h3 class="svx__heading">
+              <button class="svx__toggle" type="button" id="svx-web-design-toggle" aria-expanded="false" aria-controls="svx-web-design-panel"
+                      data-svx-toggle data-preview="assets/projects/ferro/screens/home-1200.webp">
+                <span class="svx__num">04</span>
+                <span class="svx__name">Web Design</span>
+                <span class="svx__lead">Websites designed as experiences, not collections of pages.</span>
+                <span class="svx__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="svx__panel" id="svx-web-design-panel" role="region" aria-labelledby="svx-web-design-toggle" data-svx-panel>
+              <div class="svx__panel-inner">
+                <div class="svx__body">
+                  <p class="svx__statement">We design the journey, not just the screens: pacing, rhythm, typography and motion working together, so a site feels like one considered experience from first scroll to last click.</p>
+                  <ul class="svx__caps" aria-label="Web Design capabilities"><li>Art direction</li><li>Web design</li><li>Responsive layouts</li><li>Editorial layouts</li><li>Interaction design</li><li>Motion systems</li><li>Component systems</li><li>Design systems</li></ul>
+                  <a class="svx__more" href="contact.html?service=Website" data-transition="Contact">Start a web design project <span class="svx__more-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+                </div>
+                <figure class="svx__fig">
+                  <div class="svx__media" data-img-reveal>
+                    <img src="assets/projects/ferro/screens/home-1200.webp" srcset="assets/projects/ferro/screens/home-1200.webp 1200w, assets/projects/ferro/screens/home-2400.webp 2400w" sizes="(min-width: 1024px) 40vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async" alt="Ferro homepage featuring the Tube No.4 chair.">
+                  </div>
+                  <figcaption>Ferro — a storefront that reads like a printed catalogue.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+          <li class="svx" id="development" data-svx>
+            <h3 class="svx__heading">
+              <button class="svx__toggle" type="button" id="svx-development-toggle" aria-expanded="false" aria-controls="svx-development-panel"
+                      data-svx-toggle data-preview="assets/projects/shift/screens/detail-1200.webp">
+                <span class="svx__num">05</span>
+                <span class="svx__name">Development</span>
+                <span class="svx__lead">Code as part of the creative process, not the step after it.</span>
+                <span class="svx__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="svx__panel" id="svx-development-panel" role="region" aria-labelledby="svx-development-toggle" data-svx-panel>
+              <div class="svx__panel-inner">
+                <div class="svx__body">
+                  <p class="svx__statement">Our developers sit inside the design process, prototyping early and shaping what’s possible. What ships is fast, accessible and built to last, and it looks exactly as designed.</p>
+                  <ul class="svx__caps" aria-label="Development capabilities"><li>Frontend development</li><li>CMS integration</li><li>E-commerce</li><li>Web applications</li><li>API integrations</li><li>Performance optimisation</li><li>Accessibility</li><li>Technical architecture</li></ul>
+                  <a class="svx__more" href="contact.html?service=Web%20Application" data-transition="Contact">Start a development project <span class="svx__more-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+                </div>
+                <figure class="svx__fig">
+                  <div class="svx__media" data-img-reveal>
+                    <img src="assets/projects/shift/screens/detail-1200.webp" srcset="assets/projects/shift/screens/detail-1200.webp 1200w, assets/projects/shift/screens/detail-2400.webp 2400w" sizes="(min-width: 1024px) 40vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async" alt="Shift One configurator page with specifications.">
+                  </div>
+                  <figcaption>Shift — a configurator that renders every change live.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+          <li class="svx" id="motion" data-svx>
+            <h3 class="svx__heading">
+              <button class="svx__toggle" type="button" id="svx-motion-toggle" aria-expanded="false" aria-controls="svx-motion-panel"
+                      data-svx-toggle data-preview="assets/images/work-shift-1200.webp">
+                <span class="svx__num">06</span>
+                <span class="svx__name">Motion &amp; Interaction</span>
+                <span class="svx__lead">Movement that explains, guides and rewards attention.</span>
+                <span class="svx__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="svx__panel" id="svx-motion-panel" role="region" aria-labelledby="svx-motion-toggle" data-svx-panel>
+              <div class="svx__panel-inner">
+                <div class="svx__body">
+                  <p class="svx__statement">Motion has to earn its place. We use it to guide attention, explain change and make interfaces feel alive, and reach for 3D or creative code only when it genuinely makes the experience better.</p>
+                  <ul class="svx__caps" aria-label="Motion &amp; Interaction capabilities"><li>Micro-interactions</li><li>Scroll animations</li><li>Page transitions</li><li>Hover interactions</li><li>Interactive storytelling</li><li>Motion systems</li><li>Creative coding</li><li>3D &amp; experimental work, where it fits</li></ul>
+                  <a class="svx__more" href="contact.html" data-transition="Contact">Start a motion project <span class="svx__more-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+                </div>
+                <figure class="svx__fig">
+                  <div class="svx__media" data-img-reveal>
+                    <img src="assets/images/work-shift-1200.webp" srcset="assets/images/work-shift-1200.webp 1200w, assets/images/work-shift-2400.webp 2400w" sizes="(min-width: 1024px) 40vw, 100vw" width="2400" height="1500" loading="lazy" decoding="async" alt="Shift launch experience: the word SHIFT glowing above an ember-orange light ring.">
+                  </div>
+                  <figcaption>Shift — a single ember light that follows the story.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="sv-caps">
+          <h3 class="eyebrow" data-reveal>Full capabilities</h3>
+          <ul class="sv-caps__list" data-reveal data-delay="0.1"><li><span>01</span>Creative Strategy</li><li><span>02</span>Brand Identity</li><li><span>03</span>Art Direction</li><li><span>04</span>UX Research</li><li><span>05</span>UX Design</li><li><span>06</span>UI Design</li><li><span>07</span>Web Design</li><li><span>08</span>Design Systems</li><li><span>09</span>Frontend Development</li><li><span>10</span>CMS</li><li><span>11</span>E-commerce</li><li><span>12</span>Motion Design</li><li><span>13</span>Creative Coding</li><li><span>14</span>3D</li><li><span>15</span>SEO</li><li><span>16</span>Performance</li><li><span>17</span>Accessibility</li><li><span>18</span>Maintenance &amp; Support</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW WE WORK ============ -->
+    <section class="sv-process" aria-labelledby="sv-process-title">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow" data-reveal>How we work</span>
+            <h2 class="section-head__title" id="sv-process-title" data-split>Six steps, <em>no hand-offs.</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-delay="0.2">The same people carry the work from the first conversation to launch, and stay close after it.</p>
+        </header>
+        <ol class="sv-steps" data-reveal>
+          <li class="sv-step" style="--s:0">
+            <span class="sv-step__num">01</span>
+            <h3 class="sv-step__name">Discover</h3>
+            <p class="sv-step__text">Understand the business, the audience and the opportunity.</p>
+          </li>
+          <li class="sv-step" style="--s:1">
+            <span class="sv-step__num">02</span>
+            <h3 class="sv-step__name">Define</h3>
+            <p class="sv-step__text">Shape the strategy and set the creative direction.</p>
+          </li>
+          <li class="sv-step" style="--s:2">
+            <span class="sv-step__num">03</span>
+            <h3 class="sv-step__name">Design</h3>
+            <p class="sv-step__text">Turn the direction into a distinctive experience.</p>
+          </li>
+          <li class="sv-step" style="--s:3">
+            <span class="sv-step__num">04</span>
+            <h3 class="sv-step__name">Build</h3>
+            <p class="sv-step__text">Develop it with precision, in the browser.</p>
+          </li>
+          <li class="sv-step" style="--s:4">
+            <span class="sv-step__num">05</span>
+            <h3 class="sv-step__name">Refine</h3>
+            <p class="sv-step__text">Test, optimise and polish every detail.</p>
+          </li>
+          <li class="sv-step" style="--s:5">
+            <span class="sv-step__num">06</span>
+            <h3 class="sv-step__name">Launch</h3>
+            <p class="sv-step__text">Release it into the world, and stay close after.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CUSTOM APPROACH ============ -->
+    <section class="sv-custom" aria-labelledby="sv-custom-title">
+      <div class="container sv-custom__grid">
+        <h2 class="sv-custom__title" id="sv-custom-title" data-split data-stagger="0.06">No two projects <em>are the same.</em></h2>
+        <div class="sv-custom__aside">
+          <p class="sv-custom__text" data-reveal data-delay="0.15">We don’t force projects into packages. We shape the team and the process around the problem, bringing the right mix of strategy, design, technology and motion to each one.</p>
+          <p class="sv-formula" data-reveal data-delay="0.25" aria-label="Strategy plus design plus technology plus motion">
+            <span>Strategy</span><i aria-hidden="true">+</i><span>Design</span><i aria-hidden="true">+</i><span>Technology</span><i aria-hidden="true">+</i><span>Motion</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES × PROJECTS (rendered from work/data.js) ============ -->
+    <section class="sv-action" aria-labelledby="sv-action-title">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow" data-reveal>Services × Work</span>
+            <h2 class="section-head__title" id="sv-action-title" data-split>See it <em>in action.</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-delay="0.2">What we did on each project, and the case study behind it.</p>
+        </header>
+        <ol class="sv-projects" data-sv-projects>
+          <noscript><li><a class="link" href="work.html">View all work</a></li></noscript>
+        </ol>
+        <a class="row-cta" href="work.html" data-transition="Work" data-reveal>
+          <span class="row-cta__text">Every project, <em>start to finish.</em></span>
+          <span class="row-cta__action">
+            <span class="row-cta__label">View all work</span>
+            <span class="row-cta__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ WHY QORO ============ -->
+    <section class="sv-why" aria-labelledby="sv-why-title">
+      <div class="container">
+        <span class="eyebrow" id="sv-why-title" data-reveal>Why Qoro</span>
+        <ol class="sv-principles">
+          <li class="sv-principle" data-reveal data-delay="0.00">
+            <span class="sv-principle__num">01</span>
+            <h3 class="sv-principle__title">Design with purpose</h3>
+            <p class="sv-principle__text">Every visual decision has a reason.</p>
+          </li>
+          <li class="sv-principle" data-reveal data-delay="0.08">
+            <span class="sv-principle__num">02</span>
+            <h3 class="sv-principle__title">Technology as a creative tool</h3>
+            <p class="sv-principle__text">Code is part of the creative process.</p>
+          </li>
+          <li class="sv-principle" data-reveal data-delay="0.16">
+            <span class="sv-principle__num">03</span>
+            <h3 class="sv-principle__title">Detail matters</h3>
+            <p class="sv-principle__text">The smallest interaction can change the experience.</p>
+          </li>
+          <li class="sv-principle" data-reveal data-delay="0.24">
+            <span class="sv-principle__num">04</span>
+            <h3 class="sv-principle__title">Built around the project</h3>
+            <p class="sv-principle__text">No formulas, no templates, no padding.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CTA (reuses the homepage contact frame) ============ -->
+    <section class="cta" id="start" aria-labelledby="cta-title">
+      <div class="cta__frame">
+        <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="cta__top">
+          <span class="eyebrow" data-reveal>Next step</span>
+          <p class="cta__reply" data-reveal data-delay="0.1">Replies within two working days</p>
+        </div>
+        <h2 class="cta__title" id="cta-title" data-split data-stagger="0.1">Have a project in mind? <em>Let’s build something.</em></h2>
+        <div class="cta__bottom">
+          <div class="cta__email" data-reveal data-delay="0.3">
+            <a class="cta__email-link" href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+            <button class="cta__copy" type="button" data-copy="hello@qoro.studio"><span data-copy-label>Copy</span></button>
+            <span class="sr-only" aria-live="polite" data-copy-status></span>
+          </div>
+          <div data-reveal data-delay="0.4">
+            <a class="pill magnetic" href="contact.html" data-transition="Contact">
+              <span class="pill__label">Start a project</span>
+              <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating preview for service & project rows (fine pointers only) -->
+  <div class="sv-preview" aria-hidden="true" data-sv-preview><div class="sv-preview__inner"><img alt="" data-sv-preview-img></div></div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="noise noise--bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer__lead">
+        <p class="footer__statement" data-reveal>Independent design &amp; engineering studio. <em>Digital experiences, built with intent.</em></p>
+        <a class="footer__top" href="#top">Back to top
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg>
+        </a>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h3 class="footer__heading">Studio</h3>
+          <ul>
+            <li><a class="link" href="about.html" data-transition="About">About</a></li>
+            <li><a class="link" href="work.html" data-transition="Work">Work</a></li>
+            <li><a class="link" href="services.html">Services</a></li>
+            <li><a class="link" href="index.html#studio" data-transition="Studio">Studio</a></li>
+            <li><a class="link" href="index.html#pricing" data-transition="Pricing">Pricing</a></li>
+            <li><a class="link" href="contact.html" data-transition="Contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Connect</h3>
+          <ul>
+            <li><a class="link" href="mailto:hello@qoro.studio">Email</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on Instagram">Instagram</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__col--wide">
+          <h3 class="footer__heading">Visit</h3>
+          <p>London, Athens and wherever the work is.<br>
+            <a class="link" href="mailto:hello@qoro.studio">hello@qoro.studio</a></p>
+          <p class="footer__clock">London <time data-clock>--:--</time></p>
+        </div>
+      </nav>
+
+      <div class="footer__mark" aria-hidden="true" data-footer-mark>
+        <span>Q</span><span>o</span><span>r</span><span>o</span><sup>*</sup>
+      </div>
+
+      <div class="footer__base">
+        <p>© <span data-year>2026</span> Qoro Studio. All rights reserved.</p>
+        <div class="footer__legal">
+          <a class="link" href="#">Privacy</a>
+          <a class="link" href="#">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="work/data.js" defer></script>
+  <script src="services/services.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

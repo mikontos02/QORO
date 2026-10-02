@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contact — Start a project | Qoro</title>
+  <meta name="description" content="Start a project with Qoro. Tell us what you are building and we will take it from there.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Contact — Qoro">
+  <meta property="og:description" content="Digital experiences, built with intent.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Helvetica,Arial' font-size='40' fill='%23e1e0cc'%3Eq%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contact/contact.css">
+
+  <!-- Flag JS early so reveal states never flash un-styled content -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="curtain" aria-hidden="true" data-curtain><span class="curtain__label"><span data-curtain-label></span></span></div>
+  <script>try{var t=sessionStorage.getItem('qoro:transition');if(t!==null){sessionStorage.removeItem('qoro:transition');document.documentElement.classList.add('is-arriving');document.querySelector('[data-curtain-label]').textContent=t;}}catch(e){}</script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav nav--brand" data-nav>
+    <nav class="nav__tab" aria-label="Primary">
+      <a class="nav__brand" href="index.html" aria-label="Qoro — home" data-transition="Qoro">Qoro<sup>*</sup></a>
+      <ul class="nav__list">
+        <li><a class="nav__link" href="about.html" data-transition="About">About</a></li>
+        <li><a class="nav__link" href="work.html" data-transition="Work">Work</a></li>
+        <li><a class="nav__link" href="services.html" data-transition="Services">Services</a></li>
+        <li><a class="nav__link" href="index.html#studio" data-transition="Studio">Studio</a></li>
+        <li><a class="nav__link" href="index.html#pricing" data-transition="Pricing">Pricing</a></li>
+        <li><a class="nav__link" href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="nav__toggle-label" data-menu-label>Menu</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-menu>
+    <div class="menu__frame">
+      <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+      <div class="noise noise--overlay" aria-hidden="true"></div>
+      <ol class="menu__list">
+        <li><a href="about.html" data-menu-link data-transition="About"><span class="menu__num">01</span>About</a></li>
+        <li><a href="work.html" data-menu-link data-transition="Work"><span class="menu__num">02</span>Work</a></li>
+        <li><a href="services.html" data-menu-link data-transition="Services"><span class="menu__num">03</span>Services</a></li>
+        <li><a href="index.html#studio" data-menu-link data-transition="Studio"><span class="menu__num">04</span>Studio</a></li>
+        <li><a href="index.html#pricing" data-menu-link data-transition="Pricing"><span class="menu__num">05</span>Pricing</a></li>
+        <li><a href="contact.html" data-menu-link><span class="menu__num">06</span><em>Contact</em></a></li>
+      </ol>
+      <div class="menu__foot">
+        <a href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+        <div class="menu__social">
+          <a href="#" aria-label="Qoro on Instagram">Instagram</a>
+          <a href="#" aria-label="Qoro on LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contextual cursor (fine pointers only) -->
+  <div class="cursor" aria-hidden="true" data-cursor><span class="cursor__ball"><span data-cursor-label>View</span></span></div>
+
+  <main id="main">
+
+    <!-- ============ CONTACT HERO (reuses the hero frame system) ============ -->
+    <section class="hero ct-hero" id="top" aria-labelledby="ct-title">
+      <div class="hero__frame" data-hero-frame>
+        <div class="cinematic" aria-hidden="true">
+          <div class="cinematic__blob"></div>
+          <div class="cinematic__light" data-hero-light></div>
+          <div class="cinematic__vignette"></div>
+        </div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <p class="hero__meta hero__meta--left" data-reveal data-delay="0.9">Contact</p>
+        <!-- Availability — matches the homepage hero; update both together -->
+        <p class="hero__meta hero__meta--right" data-reveal data-delay="1"><span class="dot" aria-hidden="true"></span> Booking projects — Q1 2027</p>
+
+        <div class="hero__content">
+          <h1 class="hero__title ct-hero__title" id="ct-title" data-split data-stagger="0.09">Let’s make <em>something.</em></h1>
+          <div class="hero__aside">
+            <p class="hero__lead" data-reveal data-delay="0.5" data-rise-only>
+              Tell us what you’re building, what it needs to solve, or simply where you want to go. <em>We’ll take it from there.</em>
+            </p>
+            <div data-reveal data-delay="0.7">
+              <a class="pill magnetic" href="#brief">
+                <span class="pill__label">Start the brief</span>
+                <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECT ENQUIRY ============ -->
+    <section class="ct-brief" aria-labelledby="brief-title">
+      <div class="noise noise--bg" aria-hidden="true"></div>
+      <div class="container ct-brief__grid">
+        <aside class="ct-brief__aside">
+          <span class="eyebrow" data-reveal>Project enquiry</span>
+          <h2 class="ct-brief__title" id="brief-title" data-split>A short brief, <em>not a long form.</em></h2>
+          <p class="ct-brief__text" data-reveal data-delay="0.15">Seven questions, about three minutes. The more you share, the more useful our first reply will be.</p>
+          <p class="ct-brief__plan" data-plan-note hidden></p>
+          <div class="ct-progress" data-reveal data-delay="0.25" aria-hidden="true">
+            <span class="ct-progress__count"><span data-progress-count>00</span> / 07</span>
+            <span class="ct-progress__bar"><span data-progress-bar></span></span>
+          </div>
+        </aside>
+        <div class="ct-brief__main">
+        <form class="brief" id="brief" novalidate data-brief aria-labelledby="brief-title">
+          <input type="hidden" name="plan" id="f-plan" data-plan>
+          <!-- Spam trap: hidden from people, irresistible to bots -->
+          <div class="brief__trap" aria-hidden="true">
+            <label for="f-website">Leave this empty</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field " data-field data-reveal>
+            <label class="field__label" for="f-name"><span class="field__num">01</span><span class="field__text">Your name</span><span class="field__req" aria-hidden="true">*</span></label>
+            <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required aria-required="true"
+                   placeholder="Jane Doe" aria-describedby="f-name-error">
+            <span class="field__line" aria-hidden="true"></span>
+            <p class="field__error" id="f-name-error"></p>
+          </div>
+
+          <div class="field " data-field data-reveal>
+            <label class="field__label" for="f-email"><span class="field__num">02</span><span class="field__text">Email</span><span class="field__req" aria-hidden="true">*</span></label>
+            <input class="field__input" id="f-email" name="email" type="email" autocomplete="email" required aria-required="true" inputmode="email" spellcheck="false"
+                   placeholder="jane@studio.com" aria-describedby="f-email-error">
+            <span class="field__line" aria-hidden="true"></span>
+            <p class="field__error" id="f-email-error"></p>
+          </div>
+
+          <div class="field field--wide" data-field data-reveal>
+            <label class="field__label" for="f-company"><span class="field__num">03</span><span class="field__text">Company</span><span class="field__opt">Optional</span></label>
+            <input class="field__input" id="f-company" name="company" type="text" autocomplete="organization"
+                   placeholder="Studio or brand name" aria-describedby="f-company-error">
+            <span class="field__line" aria-hidden="true"></span>
+            <p class="field__error" id="f-company-error"></p>
+          </div>
+
+          <div class="field field--select " data-field data-select data-reveal>
+            <span class="field__label" id="f-service-label"><span class="field__num">04</span><span class="field__text">What do you need?</span><span class="field__req" aria-hidden="true">*</span></span>
+            <input type="hidden" name="service" id="f-service" data-select-input data-required>
+            <button class="select__button field__input" type="button" role="combobox" id="f-service-button"
+                    aria-haspopup="listbox" aria-expanded="false" aria-controls="f-service-list"
+                    aria-labelledby="f-service-label f-service-button" aria-describedby="f-service-error" aria-required="true" data-select-button>
+              <span class="select__value" data-select-value data-placeholder="Choose one">Choose one</span><svg class="select__chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+            </button>
+            <span class="field__line" aria-hidden="true"></span>
+            <ul class="select__list" id="f-service-list" role="listbox" aria-labelledby="f-service-label" tabindex="-1" data-select-list><li class="select__option" id="f-service-opt-0" role="option" aria-selected="false" data-value="Website">Website</li><li class="select__option" id="f-service-opt-1" role="option" aria-selected="false" data-value="Web Application">Web Application</li><li class="select__option" id="f-service-opt-2" role="option" aria-selected="false" data-value="Brand Identity">Brand Identity</li><li class="select__option" id="f-service-opt-3" role="option" aria-selected="false" data-value="UX/UI Design">UX/UI Design</li><li class="select__option" id="f-service-opt-4" role="option" aria-selected="false" data-value="Digital Strategy">Digital Strategy</li><li class="select__option" id="f-service-opt-5" role="option" aria-selected="false" data-value="E-commerce">E-commerce</li><li class="select__option" id="f-service-opt-6" role="option" aria-selected="false" data-value="Other">Other</li></ul>
+            <p class="field__error" id="f-service-error"></p>
+          </div>
+
+          <div class="field field--select " data-field data-select data-reveal>
+            <span class="field__label" id="f-budget-label"><span class="field__num">05</span><span class="field__text">Project budget</span><span class="field__opt">Optional</span></span>
+            <input type="hidden" name="budget" id="f-budget" data-select-input>
+            <button class="select__button field__input" type="button" role="combobox" id="f-budget-button"
+                    aria-haspopup="listbox" aria-expanded="false" aria-controls="f-budget-list"
+                    aria-labelledby="f-budget-label f-budget-button" aria-describedby="f-budget-error" data-select-button>
+              <span class="select__value" data-select-value data-placeholder="Choose one">Choose one</span><svg class="select__chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+            </button>
+            <span class="field__line" aria-hidden="true"></span>
+            <ul class="select__list" id="f-budget-list" role="listbox" aria-labelledby="f-budget-label" tabindex="-1" data-select-list><li class="select__option" id="f-budget-opt-0" role="option" aria-selected="false" data-value="€2,500 — €5,000">€2,500 — €5,000</li><li class="select__option" id="f-budget-opt-1" role="option" aria-selected="false" data-value="€5,000 — €10,000">€5,000 — €10,000</li><li class="select__option" id="f-budget-opt-2" role="option" aria-selected="false" data-value="€10,000 — €25,000">€10,000 — €25,000</li><li class="select__option" id="f-budget-opt-3" role="option" aria-selected="false" data-value="€25,000+">€25,000+</li><li class="select__option" id="f-budget-opt-4" role="option" aria-selected="false" data-value="Not sure yet">Not sure yet</li></ul>
+            <p class="field__error" id="f-budget-error"></p>
+          </div>
+          <div class="field field--wide field--area" data-field data-reveal>
+            <label class="field__label" for="f-message"><span class="field__num">06</span><span class="field__text">Tell us about the project</span><span class="field__req" aria-hidden="true">*</span></label>
+            <textarea class="field__input field__textarea" id="f-message" name="message" rows="3" required aria-required="true" maxlength="2000"
+                      placeholder="What are you building, what should it solve, and when would you like to launch?" aria-describedby="f-message-hint f-message-error" data-autogrow></textarea>
+            <span class="field__line" aria-hidden="true"></span>
+            <p class="field__hint" id="f-message-hint"><span data-count>0</span> / 2000</p>
+            <p class="field__error" id="f-message-error"></p>
+          </div>
+
+          <div class="field field--select " data-field data-select data-reveal>
+            <span class="field__label" id="f-source-label"><span class="field__num">07</span><span class="field__text">How did you find us?</span><span class="field__opt">Optional</span></span>
+            <input type="hidden" name="source" id="f-source" data-select-input>
+            <button class="select__button field__input" type="button" role="combobox" id="f-source-button"
+                    aria-haspopup="listbox" aria-expanded="false" aria-controls="f-source-list"
+                    aria-labelledby="f-source-label f-source-button" aria-describedby="f-source-error" data-select-button>
+              <span class="select__value" data-select-value data-placeholder="Choose one">Choose one</span><svg class="select__chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+            </button>
+            <span class="field__line" aria-hidden="true"></span>
+            <ul class="select__list" id="f-source-list" role="listbox" aria-labelledby="f-source-label" tabindex="-1" data-select-list><li class="select__option" id="f-source-opt-0" role="option" aria-selected="false" data-value="Google">Google</li><li class="select__option" id="f-source-opt-1" role="option" aria-selected="false" data-value="Instagram">Instagram</li><li class="select__option" id="f-source-opt-2" role="option" aria-selected="false" data-value="LinkedIn">LinkedIn</li><li class="select__option" id="f-source-opt-3" role="option" aria-selected="false" data-value="Referral">Referral</li><li class="select__option" id="f-source-opt-4" role="option" aria-selected="false" data-value="Other">Other</li></ul>
+            <p class="field__error" id="f-source-error"></p>
+          </div>
+
+          <div class="brief__submit field--wide" data-reveal>
+            <p class="brief__note">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required. We only use your details to reply.</p>
+            <button class="row-cta brief__button" type="submit" data-cursor-target="Send" data-submit>
+              <span class="row-cta__text" data-submit-label>Send enquiry</span>
+              <span class="row-cta__action">
+                <span class="row-cta__label" data-submit-hint>Takes about three minutes</span>
+                <span class="row-cta__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+              </span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Result states: only "sent" claims delivery, and only after the endpoint confirms it -->
+        <div class="brief-state" data-state="sent" hidden tabindex="-1" role="status">
+          <span class="eyebrow">Enquiry sent</span>
+          <p class="brief-state__title">Thanks for reaching out. <em>We’ll be in touch shortly.</em></p>
+          <a class="pill magnetic" href="index.html" data-transition="Qoro"><span class="pill__label">Back to Qoro</span><span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+        </div>
+        <div class="brief-state" data-state="offline" hidden tabindex="-1" role="status">
+          <span class="eyebrow">Almost there</span>
+          <p class="brief-state__title">Our online form isn’t connected yet, <em>so nothing has been sent.</em></p>
+          <p class="brief-state__text">Your brief is ready. Send it from your email app and it will reach us directly.</p>
+          <div class="brief-state__actions">
+            <a class="pill magnetic" href="mailto:hello@qoro.studio" data-mailto><span class="pill__label">Send by email</span><span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <button class="cs-outline brief-state__back" type="button" data-edit>Edit the brief</button>
+          </div>
+        </div>
+        <div class="brief-state brief-state--error" data-state="error" hidden tabindex="-1" role="alert">
+          <span class="eyebrow">Not sent</span>
+          <p class="brief-state__title">Something went wrong, <em>and your enquiry wasn’t sent.</em></p>
+          <p class="brief-state__text">Please try again in a moment, or email us at <a class="link" href="mailto:hello@qoro.studio">hello@qoro.studio</a>.</p>
+          <div class="brief-state__actions">
+            <button class="cs-outline brief-state__back" type="button" data-edit>Back to the brief</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIRECT CONTACT ============ -->
+    <section class="ct-direct" aria-labelledby="ct-direct-title">
+      <div class="container">
+        <div class="ct-direct__email">
+          <span class="eyebrow" id="ct-direct-title" data-reveal>Prefer email?</span>
+          <a class="ct-direct__link" href="mailto:hello@qoro.studio" data-cursor-target="Write" data-reveal>
+            <span class="ct-direct__address">hello@qoro.studio</span>
+            <span class="row-cta__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </a>
+          <div class="cta__email" data-reveal data-delay="0.1">
+            <button class="cta__copy" type="button" data-copy="hello@qoro.studio"><span data-copy-label>Copy address</span></button>
+            <span class="sr-only" aria-live="polite" data-copy-status></span>
+          </div>
+        </div>
+
+        <dl class="ct-details">
+          <div class="ct-detail" data-reveal>
+            <dt>Email</dt>
+            <dd><a class="link" href="mailto:hello@qoro.studio">hello@qoro.studio</a></dd>
+          </div>
+          <div class="ct-detail" data-reveal data-delay="0.08">
+            <dt>Location</dt>
+            <dd>London, Athens<br>and wherever the work is.</dd>
+          </div>
+          <div class="ct-detail" data-reveal data-delay="0.16">
+            <dt>Social</dt>
+            <!-- Placeholder profile links — replace "#" with the real URLs -->
+            <dd><a class="link" href="#" aria-label="Qoro on Instagram">Instagram</a><br><a class="link" href="#" aria-label="Qoro on LinkedIn">LinkedIn</a></dd>
+          </div>
+          <div class="ct-detail" data-reveal data-delay="0.24">
+            <dt>Local time</dt>
+            <dd>London <time data-clock>--:--</time><br>Replies within two working days</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ CLOSING ============ -->
+    <section class="ct-close" aria-label="Closing">
+      <div class="container">
+        <p class="ct-close__statement" data-split data-stagger="0.05">Every project we’re proud of <em>started with a conversation.</em></p>
+        <a class="row-cta" href="work.html" data-transition="Work" data-reveal>
+          <span class="row-cta__text">Rather see the work first?</span>
+          <span class="row-cta__action">
+            <span class="row-cta__label">View all work</span>
+            <span class="row-cta__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="noise noise--bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer__lead">
+        <p class="footer__statement" data-reveal>Independent design &amp; engineering studio. <em>Digital experiences, built with intent.</em></p>
+        <a class="footer__top" href="#top">Back to top
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg>
+        </a>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h3 class="footer__heading">Studio</h3>
+          <ul>
+            <li><a class="link" href="about.html" data-transition="About">About</a></li>
+            <li><a class="link" href="work.html" data-transition="Work">Work</a></li>
+            <li><a class="link" href="services.html" data-transition="Services">Services</a></li>
+            <li><a class="link" href="index.html#studio" data-transition="Studio">Studio</a></li>
+            <li><a class="link" href="index.html#pricing" data-transition="Pricing">Pricing</a></li>
+            <li><a class="link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Connect</h3>
+          <ul>
+            <li><a class="link" href="mailto:hello@qoro.studio">Email</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on Instagram">Instagram</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__col--wide">
+          <h3 class="footer__heading">Visit</h3>
+          <p>London, Athens and wherever the work is.<br>
+            <a class="link" href="mailto:hello@qoro.studio">hello@qoro.studio</a></p>
+          <p class="footer__clock">London <time data-clock>--:--</time></p>
+        </div>
+      </nav>
+
+      <div class="footer__mark" aria-hidden="true" data-footer-mark>
+        <span>Q</span><span>o</span><span>r</span><span>o</span><sup>*</sup>
+      </div>
+
+      <div class="footer__base">
+        <p>© <span data-year>2026</span> Qoro Studio. All rights reserved.</p>
+        <div class="footer__legal">
+          <a class="link" href="#">Privacy</a>
+          <a class="link" href="#">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="contact/contact.js" defer></script>
+</body>
+</html>

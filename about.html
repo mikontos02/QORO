@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>About — Who we are | Qoro</title>
+  <meta name="description" content="Qoro is an independent studio designing and engineering distinctive digital experiences through strategy, design and technology.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="About — Qoro">
+  <meta property="og:description" content="Digital experiences, built with intent.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Helvetica,Arial' font-size='40' fill='%23e1e0cc'%3Eq%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="work/archive.css">
+  <link rel="stylesheet" href="about/about.css">
+
+  <!-- Flag JS early so reveal states never flash un-styled content -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="curtain" aria-hidden="true" data-curtain><span class="curtain__label"><span data-curtain-label></span></span></div>
+  <script>try{var t=sessionStorage.getItem('qoro:transition');if(t!==null){sessionStorage.removeItem('qoro:transition');document.documentElement.classList.add('is-arriving');document.querySelector('[data-curtain-label]').textContent=t;}}catch(e){}</script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav nav--brand" data-nav>
+    <nav class="nav__tab" aria-label="Primary">
+      <a class="nav__brand" href="index.html" aria-label="Qoro — home" data-transition="Qoro">Qoro<sup>*</sup></a>
+      <ul class="nav__list">
+        <li><a class="nav__link" href="about.html" aria-current="page">About</a></li>
+        <li><a class="nav__link" href="work.html" data-transition="Work">Work</a></li>
+        <li><a class="nav__link" href="services.html" data-transition="Services">Services</a></li>
+        <li><a class="nav__link" href="index.html#studio" data-transition="Studio">Studio</a></li>
+        <li><a class="nav__link" href="index.html#pricing" data-transition="Pricing">Pricing</a></li>
+        <li><a class="nav__link" href="contact.html" data-transition="Contact">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="nav__toggle-label" data-menu-label>Menu</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-menu>
+    <div class="menu__frame">
+      <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+      <div class="noise noise--overlay" aria-hidden="true"></div>
+      <ol class="menu__list">
+        <li><a href="about.html" data-menu-link><span class="menu__num">01</span>About</a></li>
+        <li><a href="work.html" data-menu-link data-transition="Work"><span class="menu__num">02</span>Work</a></li>
+        <li><a href="services.html" data-menu-link data-transition="Services"><span class="menu__num">03</span>Services</a></li>
+        <li><a href="index.html#studio" data-menu-link data-transition="Studio"><span class="menu__num">04</span>Studio</a></li>
+        <li><a href="index.html#pricing" data-menu-link data-transition="Pricing"><span class="menu__num">05</span>Pricing</a></li>
+        <li><a href="contact.html" data-menu-link data-transition="Contact"><span class="menu__num">06</span><em>Contact</em></a></li>
+      </ol>
+      <div class="menu__foot">
+        <a href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+        <div class="menu__social">
+          <a href="#" aria-label="Qoro on Instagram">Instagram</a>
+          <a href="#" aria-label="Qoro on LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contextual cursor (fine pointers only) -->
+  <div class="cursor" aria-hidden="true" data-cursor><span class="cursor__ball"><span data-cursor-label>View</span></span></div>
+
+  <main id="main">
+
+    <!-- ============ ABOUT HERO (reuses the hero frame system) ============ -->
+    <section class="hero ab-hero" id="top" aria-labelledby="ab-title">
+      <div class="hero__frame" data-hero-frame>
+        <div class="cinematic" aria-hidden="true">
+          <div class="cinematic__blob"></div>
+          <div class="cinematic__light" data-hero-light></div>
+          <div class="cinematic__vignette"></div>
+        </div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <p class="hero__meta hero__meta--left" data-reveal data-delay="0.9">About</p>
+        <p class="hero__meta hero__meta--right" data-reveal data-delay="1">Independent design &amp; engineering studio</p>
+
+        <div class="hero__content">
+          <h1 class="hero__title ab-hero__title" id="ab-title" data-split data-stagger="0.09">Digital is more than <em>a screen.</em></h1>
+          <div class="hero__aside">
+            <p class="hero__lead" data-reveal data-delay="0.5" data-rise-only>
+              Qoro is an independent studio building distinctive digital experiences through strategy, design and technology, <em>for brands that refuse to blend in.</em>
+            </p>
+            <div data-reveal data-delay="0.7">
+              <a class="pill magnetic" href="#who">
+                <span class="pill__label">Who we are</span>
+                <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 01 WHO WE ARE ============ -->
+    <section class="ab-who" id="who" aria-labelledby="ab-who-title">
+      <div class="container ab-who__grid">
+        <div class="ab-label" data-reveal>
+          <span class="ab-label__num">01</span>
+          <h2 class="eyebrow" id="ab-who-title">Who we are</h2>
+        </div>
+        <div class="ab-who__body">
+          <p class="ab-who__lead" data-split data-stagger="0.03">Qoro is a creative digital studio that builds brands, websites and experiences <em>people remember.</em></p>
+          <p class="ab-who__text" data-reveal data-delay="0.15">We bring strategy, creative direction, design and technology into one practice, carried by one compact team. No hand-offs, no account layers: the people you meet are the people who build.</p>
+        </div>
+        <div class="ab-who__visual" aria-label="From the work">
+          <figure class="ab-who__a" data-img-reveal>
+            <div class="ab-who__inner" data-parallax="0.06"><img src="assets/projects/halden/details/study-900.webp" srcset="assets/projects/halden/details/study-900.webp 900w, assets/projects/halden/details/study-1800.webp 1800w" sizes="(min-width: 1024px) 30vw, 60vw" width="1800" height="2250" loading="lazy" decoding="async" alt="Facade study from the Halden project: a grid of dark windows with two lit in warm oak."></div>
+          </figure>
+          <figure class="ab-who__b" data-img-reveal data-parallax="-0.08">
+            <div class="ab-who__inner"><img src="assets/projects/ferro/screens/detail-1200.webp" srcset="assets/projects/ferro/screens/detail-1200.webp 1200w, assets/projects/ferro/screens/detail-2400.webp 2400w" sizes="(min-width: 1024px) 46vw, 90vw" width="2400" height="1500" loading="lazy" decoding="async" alt="Product page designed for Ferro, showing a steel mirror and its specifications."></div>
+          </figure>
+          <p class="ab-who__caption" data-reveal>From the work — Halden, Ferro</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 PHILOSOPHY — type that reacts to scroll ============ -->
+    <section class="ab-philosophy" aria-labelledby="ab-philosophy-title">
+      <div class="container">
+        <div class="ab-label" data-reveal>
+          <span class="ab-label__num">02</span>
+          <h2 class="eyebrow" id="ab-philosophy-title">Our philosophy</h2>
+        </div>
+        <p class="ab-philosophy__text" data-scrub>Good design isn’t decoration. It’s a decision about what matters, and the discipline to leave out what doesn’t. Technology should open doors, not show off. Every interaction should mean something. Simplicity takes more thought, not less, and people feel the details even when they can’t name them.</p>
+      </div>
+    </section>
+
+    <!-- ============ 03 PRINCIPLES (reuses the Studio list) ============ -->
+    <section class="ab-principles" aria-labelledby="ab-principles-title">
+      <div class="studio__panel ab-panel">
+        <div class="studio__intro">
+          <div class="ab-label" data-reveal>
+            <span class="ab-label__num">03</span>
+            <span class="eyebrow">Principles</span>
+          </div>
+          <h2 class="studio__title" id="ab-principles-title" data-split>Five rules <em>we actually keep.</em></h2>
+          <p class="studio__text" data-reveal data-delay="0.15">Not values on a wall. These shape how we scope, design, build and decide what to leave out.</p>
+        </div>
+        <ol class="disciplines" aria-label="Qoro principles">
+          <li class="discipline" data-discipline><span class="discipline__num">01</span><span class="discipline__name">Purpose over polish</span><em class="discipline__note">every visual decision earns its place</em></li>
+          <li class="discipline" data-discipline><span class="discipline__num">02</span><span class="discipline__name">The idea leads</span><em class="discipline__note">technology serves it, never replaces it</em></li>
+          <li class="discipline" data-discipline><span class="discipline__num">03</span><span class="discipline__name">Details are the design</span><em class="discipline__note">small moments change how it all feels</em></li>
+          <li class="discipline" data-discipline><span class="discipline__num">04</span><span class="discipline__name">Less, but sharper</span><em class="discipline__note">remove until only what matters is left</em></li>
+          <li class="discipline" data-discipline><span class="discipline__num">05</span><span class="discipline__name">Built to outlast launch</span><em class="discipline__note">systems that stay useful after go-live</em></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 04 HOW WE THINK — pinned horizontal on desktop ============ -->
+    <section class="ab-think" aria-labelledby="ab-think-title" data-hscroll>
+      <div class="ab-think__sticky">
+        <div class="ab-think__track" data-hscroll-track>
+          <div class="ab-think__intro">
+            <div class="ab-label" data-reveal>
+              <span class="ab-label__num">04</span>
+              <span class="eyebrow">How we think</span>
+            </div>
+            <h2 class="ab-think__title" id="ab-think-title" data-split data-stagger="0.06">We don’t start with a template. <em>We start with the problem.</em></h2>
+            <p class="ab-think__hint" aria-hidden="true">Scroll <span>→</span></p>
+          </div>
+          <ol class="ab-steps">
+            <li class="ab-step">
+              <span class="ab-step__num">01</span>
+              <h3 class="ab-step__name">Understand</h3>
+              <p class="ab-step__q">What are we really solving?</p>
+              <p class="ab-step__a">We start with the business, the audience and the problem behind the brief.</p>
+            </li>
+            <li class="ab-step">
+              <span class="ab-step__num">02</span>
+              <h3 class="ab-step__name">Define</h3>
+              <p class="ab-step__q">What should the experience become?</p>
+              <p class="ab-step__a">Strategy and direction, agreed before anyone opens a design file.</p>
+            </li>
+            <li class="ab-step">
+              <span class="ab-step__num">03</span>
+              <h3 class="ab-step__name">Explore</h3>
+              <p class="ab-step__q">What could it look and feel like?</p>
+              <p class="ab-step__a">Type, motion and interaction, tested in the browser early.</p>
+            </li>
+            <li class="ab-step">
+              <span class="ab-step__num">04</span>
+              <h3 class="ab-step__name">Build</h3>
+              <p class="ab-step__q">How do we make the idea real?</p>
+              <p class="ab-step__a">Design and code move together, so nothing is lost in translation.</p>
+            </li>
+            <li class="ab-step">
+              <span class="ab-step__num">05</span>
+              <h3 class="ab-step__name">Refine</h3>
+              <p class="ab-step__q">How do we make every detail count?</p>
+              <p class="ab-step__a">Timing, spacing, performance and accessibility, polished until it feels inevitable.</p>
+            </li>
+          </ol>
+          <div class="ab-think__end">
+            <p class="ab-think__end-text">See how this shapes <em>what we do, and what we’ve made.</em></p>
+            <div class="ab-think__links">
+              <a class="pill magnetic" href="services.html" data-transition="Services"><span class="pill__label">Our services</span><span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+              <a class="ab-outline" href="work.html" data-transition="Work">View the work</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 DESIGN MEETS CODE ============ -->
+    <section class="ab-code" aria-labelledby="ab-code-title">
+      <div class="container ab-code__grid">
+        <div class="ab-code__intro">
+          <div class="ab-label" data-reveal>
+            <span class="ab-label__num">05</span>
+            <span class="eyebrow">Design + technology</span>
+          </div>
+          <h2 class="ab-code__title" id="ab-code-title" data-split data-stagger="0.08">Design <em>meets</em> code.</h2>
+          <p class="ab-code__text" data-reveal data-delay="0.15">Design defines the experience. Technology gives it movement, depth and possibility. We work across both, so what you see is exactly what gets built.</p>
+        </div>
+        <div class="ab-code__demo" data-reveal data-delay="0.1" data-code-demo>
+          <div class="ab-code__stage">
+            <span class="ab-code__cap">Design — the button on this site. Hover or focus it.</span>
+            <a class="pill" href="contact.html" data-transition="Contact" data-code-trigger>
+              <span class="pill__label">Start a project</span>
+              <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </a>
+          </div>
+          <figure class="ab-code__source">
+            <figcaption class="ab-code__cap">Code — the CSS that draws it</figcaption>
+            <pre class="ab-code__pre" aria-label="CSS for the button"><code><span class="t-c">/* style.css */</span>
+<span class="t-s">.pill</span> {
+  <span class="t-p">gap</span>: 8px;
+  <span class="t-p">padding</span>: 6px 6px 6px 20px;
+  <span class="t-p">border-radius</span>: 999px;
+  <span class="t-p">background</span>: <span class="t-v">var(--ink)</span>;
+  <span class="t-p">transition</span>: gap 0.3s <span class="t-v">var(--ease-expo)</span>;
+}
+<span class="ab-code__hover" data-code-hover><span class="t-s">.pill:hover</span> {
+  <span class="t-p">gap</span>: 12px;
+  <span class="t-p">background</span>: <span class="t-v">var(--cream)</span>;
+}</span>
+<span class="t-c">/* the curve behind every movement */</span>
+<span class="t-p">--ease-expo</span>: cubic-bezier(0.16, 1, 0.3, 1);</code></pre>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 PEOPLE (edit TEAM in about/about.js) ============ -->
+    <section class="ab-people" aria-labelledby="ab-people-title">
+      <div class="container">
+        <div class="ab-label" data-reveal>
+          <span class="ab-label__num">06</span>
+          <span class="eyebrow">The people</span>
+        </div>
+        <h2 class="ab-people__title" id="ab-people-title" data-split>The people <em>behind the work.</em></h2>
+        <!-- Shown until team members are added in about/about.js -->
+        <div class="ab-people__fallback" data-team-fallback>
+          <p class="ab-people__text" data-reveal>A compact team of designers and engineers working as one. Senior hands on every project, from the first conversation to the final commit.</p>
+          <a class="row-cta" href="contact.html" data-transition="Contact" data-reveal>
+            <span class="row-cta__text">Meet us properly. <em>Start a conversation.</em></span>
+            <span class="row-cta__action">
+              <span class="row-cta__label">Get in touch</span>
+              <span class="row-cta__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </span>
+          </a>
+        </div>
+        <ol class="ab-team" data-team hidden></ol>
+      </div>
+    </section>
+
+    <!-- ============ 07 THE WORK (reuses the Work archive) ============ -->
+    <section class="ab-work" aria-labelledby="ab-work-title">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head__main">
+            <div class="ab-label" data-reveal>
+              <span class="ab-label__num">07</span>
+              <span class="eyebrow">Selected work</span>
+            </div>
+            <h2 class="section-head__title" id="ab-work-title" data-split>The work <em>speaks too.</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-delay="0.2">Three projects that show how we think. Every case study tells the full story.</p>
+        </header>
+        <ol class="wk-list ab-work__list" data-archive-root data-archive-pick="halden,solace,ferro">
+          <noscript><li><a class="link" href="work.html">View all work</a></li></noscript>
+        </ol>
+        <a class="row-cta" href="work.html" data-transition="Work" data-reveal>
+          <span class="row-cta__text">Every project, <em>start to finish.</em></span>
+          <span class="row-cta__action">
+            <span class="row-cta__label">View all work</span>
+            <span class="row-cta__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ 08 WHAT WE BELIEVE ============ -->
+    <section class="ab-believe" aria-labelledby="ab-believe-title">
+      <div class="container">
+        <div class="ab-label" data-reveal>
+          <span class="ab-label__num">08</span>
+          <h2 class="eyebrow" id="ab-believe-title">What we believe</h2>
+        </div>
+        <ul class="ab-beliefs">
+          <li class="ab-belief" data-discipline>Digital should feel human.</li>
+          <li class="ab-belief" data-discipline>Good experiences don’t need to shout.</li>
+          <li class="ab-belief" data-discipline>Design and technology belong together.</li>
+          <li class="ab-belief" data-discipline>The details are the difference.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CTA (reuses the homepage contact frame) ============ -->
+    <section class="cta" id="start" aria-labelledby="cta-title">
+      <div class="cta__frame">
+        <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="cta__top">
+          <span class="eyebrow" data-reveal>Next step</span>
+          <p class="cta__reply" data-reveal data-delay="0.1">Replies within two working days</p>
+        </div>
+        <h2 class="cta__title" id="cta-title" data-split data-stagger="0.1">Like what you see? <em>Let’s build something.</em></h2>
+        <div class="cta__bottom">
+          <div class="cta__email" data-reveal data-delay="0.3">
+            <a class="cta__email-link" href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+            <button class="cta__copy" type="button" data-copy="hello@qoro.studio"><span data-copy-label>Copy</span></button>
+            <span class="sr-only" aria-live="polite" data-copy-status></span>
+          </div>
+          <div data-reveal data-delay="0.4">
+            <a class="pill magnetic" href="contact.html" data-transition="Contact">
+              <span class="pill__label">Start a project</span>
+              <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating portrait preview for team rows (used once TEAM has photos) -->
+  <div class="ab-preview" aria-hidden="true" data-ab-preview><div class="ab-preview__inner"><img alt="" data-ab-preview-img></div></div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="noise noise--bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer__lead">
+        <p class="footer__statement" data-reveal>Independent design &amp; engineering studio. <em>Digital experiences, built with intent.</em></p>
+        <a class="footer__top" href="#top">Back to top
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg>
+        </a>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h3 class="footer__heading">Studio</h3>
+          <ul>
+            <li><a class="link" href="about.html">About</a></li>
+            <li><a class="link" href="work.html" data-transition="Work">Work</a></li>
+            <li><a class="link" href="services.html" data-transition="Services">Services</a></li>
+            <li><a class="link" href="index.html#studio" data-transition="Studio">Studio</a></li>
+            <li><a class="link" href="index.html#pricing" data-transition="Pricing">Pricing</a></li>
+            <li><a class="link" href="contact.html" data-transition="Contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Connect</h3>
+          <ul>
+            <li><a class="link" href="mailto:hello@qoro.studio">Email</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on Instagram">Instagram</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__col--wide">
+          <h3 class="footer__heading">Visit</h3>
+          <p>London, Athens and wherever the work is.<br>
+            <a class="link" href="mailto:hello@qoro.studio">hello@qoro.studio</a></p>
+          <p class="footer__clock">London <time data-clock>--:--</time></p>
+        </div>
+      </nav>
+
+      <div class="footer__mark" aria-hidden="true" data-footer-mark>
+        <span>Q</span><span>o</span><span>r</span><span>o</span><sup>*</sup>
+      </div>
+
+      <div class="footer__base">
+        <p>© <span data-year>2026</span> Qoro Studio. All rights reserved.</p>
+        <div class="footer__legal">
+          <a class="link" href="#">Privacy</a>
+          <a class="link" href="#">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="work/data.js" defer></script>
+  <script src="work/archive.js" defer></script>
+  <script src="about/about.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

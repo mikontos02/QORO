@@ -17,7 +17,6 @@
   const next = projects[(index + 1) % projects.length];
   const total = String(projects.length).padStart(2, '0');
   const ROOT = '../';
-  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.title = `${p.name} — ${p.category} | Qoro`;
   document.documentElement.style.setProperty('--case-tone', p.tone);
@@ -56,14 +55,22 @@
   const fontStyle = (f) => `font-family:'${f.family}';font-weight:${f.weight};font-style:${f.style};letter-spacing:${f.tracking}`;
 
   /* ---------- shared chrome (same markup as the homepage) ---------- */
-  const navLinks = [['Work', 'work'], ['Services', 'services'], ['Studio', 'studio'], ['Pricing', 'pricing'], ['Contact', 'contact']];
+  // [label, href, is-current]. Work is its own page; the rest are homepage sections.
+  const navLinks = [
+    ['About', `${ROOT}about.html`],
+    ['Work', `${ROOT}work.html`, true],
+    ['Services', `${ROOT}services.html`],
+    ['Studio', `${ROOT}index.html#studio`],
+    ['Pricing', `${ROOT}index.html#pricing`],
+    ['Contact', `${ROOT}contact.html`]
+  ];
 
   const nav = `
   <header class="nav nav--brand" data-nav>
     <nav class="nav__tab" aria-label="Primary">
       <a class="nav__brand" href="${ROOT}index.html" aria-label="Qoro — home" data-transition="Qoro">Qoro<sup>*</sup></a>
       <ul class="nav__list">
-        ${navLinks.map(([l, id]) => `<li><a class="nav__link" href="${ROOT}index.html#${id}" ${id === 'work' ? 'aria-current="page"' : ''} data-transition="${l}">${l}</a></li>`).join('')}
+        ${navLinks.map(([l, href, current]) => `<li><a class="nav__link" href="${href}" ${current ? 'aria-current="page"' : ''} data-transition="${l}">${l}</a></li>`).join('')}
       </ul>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
         <span class="nav__toggle-label" data-menu-label>Menu</span>
@@ -77,7 +84,7 @@
       <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
       <div class="noise noise--overlay" aria-hidden="true"></div>
       <ol class="menu__list">
-        ${navLinks.map(([l, id], i) => `<li><a href="${ROOT}index.html#${id}" data-menu-link data-transition="${l}"><span class="menu__num">0${i + 1}</span>${id === 'contact' ? `<em>${l}</em>` : l}</a></li>`).join('')}
+        ${navLinks.map(([l, href], i) => `<li><a href="${href}" data-menu-link data-transition="${l}"><span class="menu__num">0${i + 1}</span>${l === 'Contact' ? `<em>${l}</em>` : l}</a></li>`).join('')}
       </ol>
       <div class="menu__foot">
         <a href="mailto:hello@qoro.studio">hello@qoro.studio</a>
@@ -102,7 +109,7 @@
       <nav class="footer__nav" aria-label="Footer">
         <div class="footer__col">
           <h3 class="footer__heading">Studio</h3>
-          <ul>${navLinks.map(([l, id]) => `<li><a class="link" href="${ROOT}index.html#${id}" data-transition="${l}">${l}</a></li>`).join('')}</ul>
+          <ul>${navLinks.map(([l, href]) => `<li><a class="link" href="${href}" data-transition="${l}">${l}</a></li>`).join('')}</ul>
         </div>
         <div class="footer__col">
           <h3 class="footer__heading">Connect</h3>
@@ -134,7 +141,7 @@
     <div class="cs-hero__frame">
       <div class="cs-hero__info">
         <div class="cs-hero__top" data-reveal data-delay="0.6">
-          <a class="cs-back" href="${ROOT}index.html#work" data-transition="Work">
+          <a class="cs-back" href="${ROOT}work.html" data-transition="Work">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg>All work
           </a>
           <span class="cs-hero__count">${p.number} / ${total}</span>
@@ -393,7 +400,7 @@
       </div>
     </a>
     <div class="cs-next__actions container">
-      <a class="cs-outline magnetic" href="${ROOT}index.html#work" data-transition="Work">
+      <a class="cs-outline magnetic" href="${ROOT}work.html" data-transition="Work">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
         Back to work
       </a>
@@ -422,36 +429,6 @@
      Case-study-only behaviour (everything else comes from ../script.js)
      ========================================================================== */
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
-
-  // Image reveal: clip opens and image settles, once
-  const imgObserver = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('is-in');
-      imgObserver.unobserve(e.target);
-    });
-  }, { rootMargin: '0px 0px -12% 0px' });
-  $$('[data-img-reveal]').forEach((el) => imgObserver.observe(el));
-
-  // Parallax (transform only, rAF-throttled, skipped off-screen)
-  const parallax = $$('[data-parallax]');
-  let ticking = false;
-  const update = () => {
-    ticking = false;
-    const vh = innerHeight;
-    const rects = parallax.map((el) => el.getBoundingClientRect());
-    parallax.forEach((el, i) => {
-      const r = rects[i];
-      if (r.bottom < -200 || r.top > vh + 200) return;
-      const offset = (r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.parallax);
-      el.style.setProperty('--py', `${offset.toFixed(1)}px`);
-    });
-  };
-  if (!reduceMotion && parallax.length) {
-    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    addEventListener('resize', update, { passive: true });
-    update();
-  }
 
   // Copy colour values
   const hexStatus = document.querySelector('[data-hex-status]');

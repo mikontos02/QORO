@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Work — Selected projects | Qoro</title>
+  <meta name="description" content="Selected digital experiences, brands and websites designed and built by Qoro.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Work — Qoro">
+  <meta property="og:description" content="Digital experiences, built with intent.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Helvetica,Arial' font-size='40' fill='%23e1e0cc'%3Eq%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="work/archive.css">
+
+  <!-- Flag JS early so reveal states never flash un-styled content -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="curtain" aria-hidden="true" data-curtain><span class="curtain__label"><span data-curtain-label></span></span></div>
+  <script>try{var t=sessionStorage.getItem('qoro:transition');if(t!==null){sessionStorage.removeItem('qoro:transition');document.documentElement.classList.add('is-arriving');document.querySelector('[data-curtain-label]').textContent=t;}}catch(e){}</script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav nav--brand" data-nav>
+    <nav class="nav__tab" aria-label="Primary">
+      <a class="nav__brand" href="index.html" aria-label="Qoro — home" data-transition="Qoro">Qoro<sup>*</sup></a>
+      <ul class="nav__list">
+        <li><a class="nav__link" href="about.html" data-transition="About">About</a></li>
+        <li><a class="nav__link" href="work.html" aria-current="page">Work</a></li>
+        <li><a class="nav__link" href="services.html" data-transition="Services">Services</a></li>
+        <li><a class="nav__link" href="index.html#studio" data-transition="Studio">Studio</a></li>
+        <li><a class="nav__link" href="index.html#pricing" data-transition="Pricing">Pricing</a></li>
+        <li><a class="nav__link" href="contact.html" data-transition="Contact">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="nav__toggle-label" data-menu-label>Menu</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-menu>
+    <div class="menu__frame">
+      <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+      <div class="noise noise--overlay" aria-hidden="true"></div>
+      <ol class="menu__list">
+        <li><a href="about.html" data-menu-link data-transition="About"><span class="menu__num">01</span>About</a></li>
+        <li><a href="work.html" data-menu-link data-transition="Work"><span class="menu__num">02</span>Work</a></li>
+        <li><a href="services.html" data-menu-link data-transition="Services"><span class="menu__num">03</span>Services</a></li>
+        <li><a href="index.html#studio" data-menu-link data-transition="Studio"><span class="menu__num">04</span>Studio</a></li>
+        <li><a href="index.html#pricing" data-menu-link data-transition="Pricing"><span class="menu__num">05</span>Pricing</a></li>
+        <li><a href="contact.html" data-menu-link data-transition="Contact"><span class="menu__num">06</span><em>Contact</em></a></li>
+      </ol>
+      <div class="menu__foot">
+        <a href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+        <div class="menu__social">
+          <a href="#" aria-label="Qoro on Instagram">Instagram</a>
+          <a href="#" aria-label="Qoro on LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contextual cursor (fine pointers only) -->
+  <div class="cursor" aria-hidden="true" data-cursor><span class="cursor__ball"><span data-cursor-label>View</span></span></div>
+
+  <main id="main">
+
+    <!-- ============ WORK HERO (reuses the homepage hero system) ============ -->
+    <section class="hero wk-hero" id="top" aria-label="Work">
+      <div class="hero__frame" data-hero-frame>
+        <div class="cinematic" aria-hidden="true">
+          <div class="cinematic__blob"></div>
+          <div class="cinematic__light" data-hero-light></div>
+          <div class="cinematic__vignette"></div>
+        </div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <p class="hero__meta hero__meta--left" data-reveal data-delay="0.9">Selected projects</p>
+        <p class="hero__meta hero__meta--right" data-reveal data-delay="1">2024 — 2026</p>
+
+        <div class="hero__content">
+          <h1 class="hero__title" aria-label="Work">
+            <span class="hero__word" aria-hidden="true" data-split-letters>Work</span><sup class="hero__star wk-hero__count" aria-hidden="true" data-archive-count>(05)</sup>
+          </h1>
+          <div class="hero__aside">
+            <p class="hero__lead" data-reveal data-delay="0.5" data-rise-only>
+              Selected digital experiences, brands and websites, <em>designed and built by Qoro.</em>
+            </p>
+            <ol class="wk-index" aria-label="Project index" data-reveal data-delay="0.7" data-archive-index></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARCHIVE (rendered from work/data.js by work/archive.js) ============ -->
+    <section class="wk-archive" aria-label="Projects">
+      <div class="container">
+        <ol class="wk-list" data-archive-root>
+          <noscript><li><a class="link" href="work/halden.html">Halden</a> · <a class="link" href="work/solace.html">Solace</a> · <a class="link" href="work/ferro.html">Ferro</a> · <a class="link" href="work/mono.html">Mono</a> · <a class="link" href="work/shift.html">Shift</a></li></noscript>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CTA (reuses the homepage contact frame) ============ -->
+    <section class="cta" id="start" aria-labelledby="cta-title">
+      <div class="cta__frame">
+        <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <div class="cta__top">
+          <span class="eyebrow" data-reveal>Next step</span>
+          <p class="cta__reply" data-reveal data-delay="0.1">Replies within two working days</p>
+        </div>
+
+        <h2 class="cta__title" id="cta-title" data-split data-stagger="0.1">Have a project in mind? <em>Let’s build it.</em></h2>
+
+        <div class="cta__bottom">
+          <div class="cta__email" data-reveal data-delay="0.3">
+            <a class="cta__email-link" href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+            <button class="cta__copy" type="button" data-copy="hello@qoro.studio">
+              <span data-copy-label>Copy</span>
+            </button>
+            <span class="sr-only" aria-live="polite" data-copy-status></span>
+          </div>
+          <div data-reveal data-delay="0.4">
+            <a class="pill magnetic" href="contact.html" data-transition="Contact">
+              <span class="pill__label">Start a project</span>
+              <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="noise noise--bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer__lead">
+        <p class="footer__statement" data-reveal>Independent design &amp; engineering studio. <em>Digital experiences, built with intent.</em></p>
+        <a class="footer__top" href="#top">Back to top
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg>
+        </a>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h3 class="footer__heading">Studio</h3>
+          <ul>
+            <li><a class="link" href="about.html" data-transition="About">About</a></li>
+            <li><a class="link" href="work.html" data-transition="Work">Work</a></li>
+            <li><a class="link" href="services.html" data-transition="Services">Services</a></li>
+            <li><a class="link" href="index.html#studio" data-transition="Studio">Studio</a></li>
+            <li><a class="link" href="index.html#pricing" data-transition="Pricing">Pricing</a></li>
+            <li><a class="link" href="contact.html" data-transition="Contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Connect</h3>
+          <ul>
+            <li><a class="link" href="mailto:hello@qoro.studio">Email</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on Instagram">Instagram</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__col--wide">
+          <h3 class="footer__heading">Visit</h3>
+          <p>London, Athens and wherever the work is.<br>
+            <a class="link" href="mailto:hello@qoro.studio">hello@qoro.studio</a></p>
+          <p class="footer__clock">London <time data-clock>--:--</time></p>
+        </div>
+      </nav>
+
+      <div class="footer__mark" aria-hidden="true" data-footer-mark>
+        <span>Q</span><span>o</span><span>r</span><span>o</span><sup>*</sup>
+      </div>
+
+      <div class="footer__base">
+        <p>© <span data-year>2026</span> Qoro Studio. All rights reserved.</p>
+        <div class="footer__legal">
+          <a class="link" href="#">Privacy</a>
+          <a class="link" href="#">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="work/data.js" defer></script>
+  <script src="work/archive.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
