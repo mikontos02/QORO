@@ -28,6 +28,7 @@
         <li><a class="nav__link" href="#work" data-nav-link>Work</a></li>
         <li><a class="nav__link" href="#services" data-nav-link>Services</a></li>
         <li><a class="nav__link" href="#studio" data-nav-link>Studio</a></li>
+        <li><a class="nav__link" href="#pricing" data-nav-link>Pricing</a></li>
         <li><a class="nav__link" href="#contact" data-nav-link>Contact</a></li>
       </ul>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
@@ -46,7 +47,8 @@
         <li><a href="#work" data-menu-link><span class="menu__num">01</span>Work</a></li>
         <li><a href="#services" data-menu-link><span class="menu__num">02</span>Services</a></li>
         <li><a href="#studio" data-menu-link><span class="menu__num">03</span>Studio</a></li>
-        <li><a href="#contact" data-menu-link><span class="menu__num">04</span><em>Contact</em></a></li>
+        <li><a href="#pricing" data-menu-link><span class="menu__num">04</span>Pricing</a></li>
+        <li><a href="#contact" data-menu-link><span class="menu__num">05</span><em>Contact</em></a></li>
       </ol>
       <div class="menu__foot">
         <a href="mailto:hello@qoro.studio">hello@qoro.studio</a>
@@ -404,6 +406,102 @@
       </div>
     </section>
 
+    <!-- ============ PRICING ============ -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title" data-section>
+      <div class="noise noise--bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-head pricing__head">
+          <div class="section-head__main">
+            <span class="eyebrow" data-reveal>Pricing</span>
+            <h2 class="section-head__title pricing__title" id="pricing-title" data-split>Choose the level of involvement <em>that fits your ambition.</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-delay="0.2">Every project is different. These starting points show where we begin — and how far we can take it.</p>
+        </header>
+
+        <div class="tiers" data-reveal>
+          <article class="tier tier--starter" data-tier style="--t:0" aria-labelledby="tier-starter-name">
+            <svg class="tier__star" viewBox="0 0 100 100" aria-hidden="true"><g stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M50 12v76"/><path d="M17.1 31 82.9 69"/><path d="M17.1 69 82.9 31"/></g></svg>
+            <header class="tier__head">
+              <span class="tier__num">01</span>
+              <h3 class="tier__name" id="tier-starter-name">Starter</h3>
+            </header>
+            <p class="tier__price"><span class="tier__from">From</span><span class="tier__amount"><span class="tier__amount-inner">€2,500</span></span></p>
+            <span class="tier__rule" aria-hidden="true"></span>
+            <p class="tier__fit">For smaller businesses and brands that need a strong digital foundation.</p>
+            <ul class="tier__list" aria-label="Starter includes"><li>Strategy</li><li>Art Direction</li><li>Responsive Web Design</li><li>Development</li><li>Basic Motion</li><li>SEO Foundations</li></ul>
+            <div class="tier__details" id="tier-starter-details" data-tier-details>
+              <dl class="tier__details-inner"><div><dt>Typical scope</dt><dd>Up to 5 pages</dd></div><div><dt>Timeline</dt><dd>4–6 weeks</dd></div><div><dt>Deliverables</dt><dd>Design system, responsive site, launch</dd></div><div><dt>Revisions</dt><dd>2 rounds</dd></div><div><dt>CMS</dt><dd>Optional</dd></div><div><dt>Motion</dt><dd>Subtle transitions</dd></div><div><dt>Support</dt><dd>30 days after launch</dd></div></dl>
+            </div>
+            <div class="tier__actions">
+              <button class="tier__toggle" type="button" aria-expanded="false" aria-controls="tier-starter-details" data-tier-toggle>
+                <span data-tier-toggle-label>View details</span><span class="tier__toggle-icon" aria-hidden="true"></span>
+              </button>
+              <a class="pill magnetic" href="mailto:hello@qoro.studio?subject=Starter%20project">
+                <span class="pill__label">Start a project</span>
+                <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+              </a>
+            </div>
+          </article>
+          <article class="tier tier--signature" data-tier style="--t:1" aria-labelledby="tier-signature-name">
+            <svg class="tier__star" viewBox="0 0 100 100" aria-hidden="true"><g stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M50 12v76"/><path d="M17.1 31 82.9 69"/><path d="M17.1 69 82.9 31"/></g></svg>
+            <header class="tier__head">
+              <span class="tier__num">02</span>
+              <h3 class="tier__name" id="tier-signature-name">Signature</h3>
+            </header>
+            <p class="tier__price"><span class="tier__from">From</span><span class="tier__amount"><span class="tier__amount-inner">€5,000</span></span></p>
+            <span class="tier__rule" aria-hidden="true"></span>
+            <p class="tier__fit">For brands that want a distinctive, high-end digital experience.</p>
+            <ul class="tier__list" aria-label="Signature includes"><li>Strategy</li><li>Creative Direction</li><li>UX/UI Design</li><li>Custom Web Design</li><li>Advanced Development</li><li>Motion &amp; Interactions</li><li>CMS / Content System</li><li>SEO Foundations</li></ul>
+            <div class="tier__details" id="tier-signature-details" data-tier-details>
+              <dl class="tier__details-inner"><div><dt>Typical scope</dt><dd>6–12 pages</dd></div><div><dt>Timeline</dt><dd>8–12 weeks</dd></div><div><dt>Deliverables</dt><dd>UX, design system, custom build</dd></div><div><dt>Revisions</dt><dd>3 rounds</dd></div><div><dt>CMS</dt><dd>Included</dd></div><div><dt>Motion</dt><dd>Custom interactions</dd></div><div><dt>Support</dt><dd>60 days after launch</dd></div></dl>
+            </div>
+            <div class="tier__actions">
+              <button class="tier__toggle" type="button" aria-expanded="false" aria-controls="tier-signature-details" data-tier-toggle>
+                <span data-tier-toggle-label>View details</span><span class="tier__toggle-icon" aria-hidden="true"></span>
+              </button>
+              <a class="pill pill--dark magnetic" href="mailto:hello@qoro.studio?subject=Signature%20project">
+                <span class="pill__label">Start a project</span>
+                <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+              </a>
+            </div>
+          </article>
+          <article class="tier tier--custom" data-tier style="--t:2" aria-labelledby="tier-custom-name">
+            <svg class="tier__star" viewBox="0 0 100 100" aria-hidden="true"><g stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M50 12v76"/><path d="M17.1 31 82.9 69"/><path d="M17.1 69 82.9 31"/></g></svg>
+            <header class="tier__head">
+              <span class="tier__num">03</span>
+              <h3 class="tier__name" id="tier-custom-name">Custom</h3>
+            </header>
+            <p class="tier__price"><span class="tier__from">Scope-led</span><span class="tier__amount"><span class="tier__amount-inner"><em>Let’s talk.</em></span></span></p>
+            <span class="tier__rule" aria-hidden="true"></span>
+            <p class="tier__fit">For ambitious digital projects that need a completely tailored approach.</p>
+            <ul class="tier__list" aria-label="Custom includes"><li>Brand &amp; Digital Strategy</li><li>Creative Direction</li><li>Bespoke UX/UI</li><li>Custom Digital Experience</li><li>Advanced Development</li><li>Motion &amp; Interaction</li><li>3D / Experimental Work</li><li>Ongoing Digital Support</li></ul>
+            <div class="tier__details" id="tier-custom-details" data-tier-details>
+              <dl class="tier__details-inner"><div><dt>Typical scope</dt><dd>Defined together</dd></div><div><dt>Timeline</dt><dd>From 12 weeks</dd></div><div><dt>Deliverables</dt><dd>Tailored to the brief</dd></div><div><dt>Revisions</dt><dd>Iterative</dd></div><div><dt>CMS</dt><dd>Bespoke or headless</dd></div><div><dt>Motion</dt><dd>3D &amp; WebGL where it fits</dd></div><div><dt>Support</dt><dd>Ongoing partnership</dd></div></dl>
+            </div>
+            <div class="tier__actions">
+              <button class="tier__toggle" type="button" aria-expanded="false" aria-controls="tier-custom-details" data-tier-toggle>
+                <span data-tier-toggle-label>View details</span><span class="tier__toggle-icon" aria-hidden="true"></span>
+              </button>
+              <a class="pill magnetic" href="mailto:hello@qoro.studio?subject=Custom%20project">
+                <span class="pill__label">Let’s talk</span>
+                <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <p class="pricing__fine" data-reveal>Prices exclude VAT. Every proposal is shaped around your scope, timeline and ambition.</p>
+
+        <a class="pricing-cta" href="#contact" data-reveal>
+          <span class="pricing-cta__text">Not sure where your project fits? <em>Let’s talk.</em></span>
+          <span class="pricing-cta__action">
+            <span class="pricing-cta__label">Start a conversation</span>
+            <span class="pricing-cta__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
     <!-- ============ CTA ============ -->
     <section class="cta" id="contact" aria-labelledby="cta-title" data-section>
       <div class="cta__frame">
@@ -458,6 +556,7 @@
             <li><a class="link" href="#work">Work</a></li>
             <li><a class="link" href="#services">Services</a></li>
             <li><a class="link" href="#studio">Studio</a></li>
+            <li><a class="link" href="#pricing">Pricing</a></li>
             <li><a class="link" href="#contact">Contact</a></li>
           </ul>
         </div>

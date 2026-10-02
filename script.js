@@ -507,6 +507,21 @@
   }
 
   /* ------------------------------------------------------------------------
+     Pricing: expandable tier details
+     ------------------------------------------------------------------------ */
+  $$('[data-tier-toggle]').forEach((btn) => {
+    const panel = doc.getElementById(btn.getAttribute('aria-controls'));
+    const label = $('[data-tier-toggle-label]', btn);
+    if (!panel) return;
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', String(open));
+      panel.classList.toggle('is-open', open);
+      label.textContent = open ? 'Hide details' : 'View details';
+    });
+  });
+
+  /* ------------------------------------------------------------------------
      Footer: live London time + year
      ------------------------------------------------------------------------ */
   const clock = $('[data-clock]');

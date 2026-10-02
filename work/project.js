@@ -56,7 +56,7 @@
   const fontStyle = (f) => `font-family:'${f.family}';font-weight:${f.weight};font-style:${f.style};letter-spacing:${f.tracking}`;
 
   /* ---------- shared chrome (same markup as the homepage) ---------- */
-  const navLinks = [['Work', 'work'], ['Services', 'services'], ['Studio', 'studio'], ['Contact', 'contact']];
+  const navLinks = [['Work', 'work'], ['Services', 'services'], ['Studio', 'studio'], ['Pricing', 'pricing'], ['Contact', 'contact']];
 
   const nav = `
   <header class="nav nav--brand" data-nav>
