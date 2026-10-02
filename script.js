@@ -166,6 +166,7 @@
     requestAnimationFrame(() => {
       root.classList.add('is-ready');
       startReveals();
+      liftCurtain();
     });
   };
   if (doc.fonts && doc.fonts.ready) {
@@ -205,7 +206,7 @@
     if (reduceMotion) return;
 
     // Hero recedes as it leaves
-    if (y < vh * 1.2) {
+    if (heroFrame && y < vh * 1.2) {
       heroFrame.style.setProperty('--hp', clamp(y / vh, 0, 1).toFixed(4));
     }
 
@@ -286,7 +287,7 @@
   const heroObserver = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) navLinks.forEach((l) => l.removeAttribute('aria-current'));
   }, { rootMargin: '-45% 0px -50% 0px' });
-  heroObserver.observe($('#top'));
+  if (heroFrame) heroObserver.observe($('#top'));
 
   /* ------------------------------------------------------------------------
      Mobile menu
@@ -330,12 +331,64 @@
   matchMedia('(min-width: 640px)').addEventListener('change', (e) => { if (e.matches) closeMenu({ restoreFocus: false }); });
 
   /* ------------------------------------------------------------------------
+     Page transitions — a curtain rises over the page, the next page lifts it
+     ------------------------------------------------------------------------ */
+  const curtainLabel = $('[data-curtain-label]');
+  const TRANSITION_KEY = 'qoro:transition';
+  const LEAVE_MS = 560;
+
+  // Same-site page navigations only (not hashes on this page, new tabs or downloads)
+  function isPageLink(link, e) {
+    if (reduceMotion || e.defaultPrevented || e.button !== 0) return false;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return false;
+    if (link.target && link.target !== '_self') return false;
+    if (link.hasAttribute('download')) return false;
+    if (link.protocol !== location.protocol || link.host !== location.host) return false;
+    return link.pathname !== location.pathname;
+  }
+
+  function leaveTo(url, label) {
+    try { sessionStorage.setItem(TRANSITION_KEY, label); } catch (err) { /* storage unavailable */ }
+    if (curtainLabel) curtainLabel.textContent = label;
+    if (menuOpen) closeMenu({ restoreFocus: false });
+    root.classList.remove('is-arriving', 'is-lifting');
+    root.classList.add('is-leaving');
+    const cursorEl = $('[data-cursor]');
+    if (cursorEl) cursorEl.classList.remove('is-active');
+    setTimeout(() => { location.href = url; }, LEAVE_MS);
+  }
+
+  function liftCurtain() {
+    if (!root.classList.contains('is-arriving')) return;
+    requestAnimationFrame(() => {
+      root.classList.add('is-lifting');
+      root.classList.remove('is-arriving');
+      setTimeout(() => root.classList.remove('is-lifting'), 1000);
+    });
+  }
+
+  // Returning via the back button restores a frozen page — drop the curtain
+  addEventListener('pageshow', (e) => {
+    if (!e.persisted) return;
+    root.classList.remove('is-leaving', 'is-arriving', 'is-lifting');
+    const cursorEl = $('[data-cursor]');
+    if (cursorEl) cursorEl.classList.remove('is-active');
+  });
+
+  /* ------------------------------------------------------------------------
      In-page anchors (smooth + focus management)
      ------------------------------------------------------------------------ */
   doc.addEventListener('click', (e) => {
-    const link = e.target.closest('a[href^="#"]');
+    const link = e.target.closest('a[href]');
     if (!link) return;
     const hash = link.getAttribute('href');
+    if (!hash.startsWith('#')) {
+      if (isPageLink(link, e)) {
+        e.preventDefault();
+        leaveTo(link.href, link.dataset.transition || '');
+      }
+      return;
+    }
     e.preventDefault();
     if (hash === '#') return; // placeholder links
 
@@ -381,7 +434,7 @@
     // Hero light follows the pointer
     const hero = $('#top');
     const light = $('[data-hero-light]');
-    if (hero && light) {
+    if (hero && light && heroFrame) {
       const moveLight = follower((x, y) => { light.style.transform = `translate3d(${x}px, ${y}px, 0)`; }, 0.07);
       hero.addEventListener('pointermove', (e) => {
         const r = heroFrame.getBoundingClientRect();
@@ -397,7 +450,8 @@
     const moveCursor = follower((x, y) => { cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`; }, 0.2);
     addEventListener('pointermove', (e) => moveCursor(e.clientX, e.clientY), { passive: true });
     $$('[data-cursor-target]').forEach((el) => {
-      el.addEventListener('pointerenter', () => {
+      el.addEventListener('pointerenter', (e) => {
+        moveCursor(e.clientX, e.clientY); // first position, in case the pointer hasn't moved yet
         cursorLabel.textContent = el.dataset.cursorTarget || 'View';
         cursor.classList.add('is-active');
       });

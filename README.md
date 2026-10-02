@@ -14,8 +14,21 @@ Open `index.html` in a browser. No build step.
 index.html
 style.css
 script.js
+work/
+  data.js       all case-study content (one entry per project)
+  project.js    renders a case study from data.js
+  project.css   case-study layouts (extends style.css)
+  <slug>.html   thin page shells (halden, solace, ferro, mono, shift)
 assets/
-  fonts/    Almarai, Instrument Serif (self-hosted)
-  images/   project visuals (WebP)
-  videos/   optional hero clip (assets/videos/hero.mp4)
+  fonts/        Almarai, Instrument Serif (self-hosted)
+  images/       Work section visuals (WebP)
+  projects/     per-project screens, mobile, details, gallery
+  videos/       optional hero clip (assets/videos/hero.mp4)
 ```
+
+## Adding a project
+
+1. Add an entry to `work/data.js` (order sets the Work and "Next project" order).
+2. Put its images in `assets/projects/<slug>/`.
+3. Copy any `work/<slug>.html` and change `data-case="<slug>"`.
+4. Add a card linking to `work/<slug>.html` in the Work section of `index.html`.

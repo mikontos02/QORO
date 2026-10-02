@@ -16,6 +16,8 @@
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+  <div class="curtain" aria-hidden="true" data-curtain><span class="curtain__label"><span data-curtain-label></span></span></div>
+  <script>try{var t=sessionStorage.getItem('qoro:transition');if(t!==null){sessionStorage.removeItem('qoro:transition');document.documentElement.classList.add('is-arriving');document.querySelector('[data-curtain-label]').textContent=t;}}catch(e){}</script>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============ NAVIGATION ============ -->
@@ -132,7 +134,7 @@
 
       <ol class="projects" data-projects>
         <li class="project" data-project style="--tone: #1a1815">
-          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Halden — Brand and website, 2026. View case study">
+          <a class="project__card" href="work/halden.html" data-transition="Halden" data-cursor-target="View case" aria-label="Halden — Brand and website, 2026. View case study">
             <div class="project__info">
               <div class="project__top">
                 <span class="project__num">01</span>
@@ -159,7 +161,7 @@
         </li>
 
         <li class="project" data-project style="--tone: #1c120d">
-          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Solace — Digital experience, 2025. View case study">
+          <a class="project__card" href="work/solace.html" data-transition="Solace" data-cursor-target="View case" aria-label="Solace — Digital experience, 2025. View case study">
             <div class="project__info">
               <div class="project__top">
                 <span class="project__num">02</span>
@@ -186,7 +188,7 @@
         </li>
 
         <li class="project" data-project style="--tone: #131416">
-          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Ferro — E-commerce platform, 2025. View case study">
+          <a class="project__card" href="work/ferro.html" data-transition="Ferro" data-cursor-target="View case" aria-label="Ferro — E-commerce platform, 2025. View case study">
             <div class="project__info">
               <div class="project__top">
                 <span class="project__num">03</span>
@@ -213,7 +215,7 @@
         </li>
 
         <li class="project" data-project style="--tone: #171611">
-          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Mono — Brand identity, 2024. View case study">
+          <a class="project__card" href="work/mono.html" data-transition="Mono" data-cursor-target="View case" aria-label="Mono — Brand identity, 2024. View case study">
             <div class="project__info">
               <div class="project__top">
                 <span class="project__num">04</span>
@@ -240,7 +242,7 @@
         </li>
 
         <li class="project" data-project style="--tone: #130d09">
-          <a class="project__card" href="#" data-cursor-target="View case" aria-label="Shift — Interactive experience, 2024. View case study">
+          <a class="project__card" href="work/shift.html" data-transition="Shift" data-cursor-target="View case" aria-label="Shift — Interactive experience, 2024. View case study">
             <div class="project__info">
               <div class="project__top">
                 <span class="project__num">05</span>
