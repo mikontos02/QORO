@@ -106,7 +106,7 @@ html.lenis, html.lenis body { height: auto; }
 
 .eyebrow {
   display: inline-block;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -724,7 +724,7 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
   padding: 6px 12px;
   border: 1px solid rgba(225, 224, 204, 0.2);
   border-radius: 999px;
-  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1;
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1;
   color: rgba(225, 224, 204, 0.8);
   transition: border-color 0.4s ease, background-color 0.4s ease;
 }
@@ -843,7 +843,7 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
   width: 20px; height: 20px;
   fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
 }
-.svc__num { font-size: 10px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.svc__num { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .svc__title { font-size: 16px; font-weight: 400; color: var(--cream); }
 .svc__list { display: flex; flex-direction: column; gap: 8px; }
 .svc__list li {
@@ -1122,7 +1122,7 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
 .footer__col p { line-height: 1.65; color: rgba(225, 224, 204, 0.7); }
 .footer__col--wide { grid-column: span 2; }
 .footer__heading {
-  font-size: 10px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 12px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--muted);
 }
 .footer__clock { font-size: 12px !important; color: var(--muted) !important; }

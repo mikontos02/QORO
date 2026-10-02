@@ -111,7 +111,7 @@
   padding-top: 14px;
   border-top: 1px solid rgba(225, 224, 204, 0.14);
 }
-.cs-hero__facts dt { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.cs-hero__facts dt { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
 .cs-hero__facts dd { font-size: 14px; color: var(--cream); }
 .cs-hero__facts div:last-child { text-align: right; }
 
@@ -152,7 +152,7 @@
   padding: 16px 0;
   border-bottom: 1px solid var(--line);
 }
-.cs-fact dt { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); padding-top: 5px; }
+.cs-fact dt { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); padding-top: 5px; }
 .cs-fact dd { font-size: 16px; color: var(--cream); }
 .cs-fact ul { display: flex; flex-wrap: wrap; gap: 6px; }
 .cs-fact li {
@@ -271,7 +271,7 @@
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
   transition: flex-grow 0.8s var(--ease-expo), transform 0.6s var(--ease-expo);
 }
-.cs-swatch__role { position: absolute; top: 18px; left: 18px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; }
+.cs-swatch__role { position: absolute; top: 18px; left: 18px; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; }
 .cs-swatch__name { font-size: clamp(22px, 2.4vw, 34px); letter-spacing: -0.02em; line-height: 1; }
 .cs-swatch__hex { font-size: 13px; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; opacity: 0.8; }
 @media (min-width: 768px) {
@@ -331,7 +331,7 @@
   overflow: hidden;
 }
 .cs-board__type { min-height: 280px; }
-.cs-board__cap { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; }
+.cs-board__cap { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; }
 .cs-board__word { font-size: clamp(72px, 12vw, 200px); line-height: 0.8; white-space: nowrap; }
 .cs-board__dots { display: flex; gap: 8px; }
 .cs-board__dots i { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(127, 127, 127, 0.45); }
