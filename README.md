@@ -15,6 +15,7 @@ index.html      homepage
 work.html       Work archive — all projects
 about.html      About page: studio, philosophy, principles, people
 services.html   Services page: capabilities, process and work
+pricing.html    Pricing page: starting points, comparison, scope, FAQ
 contact.html    Contact page with the project brief form
 style.css       shared design system, components and motion
 script.js       shared behaviour: nav, menu, reveals, transitions, cursor
@@ -24,6 +25,9 @@ about/
 services/
   services.js   service disclosures, hover previews, project rows
   services.css  services page layouts
+pricing/
+  pricing.js    "Which option fits?" helper
+  pricing.css   pricing page layouts
 contact/
   contact.js    brief form: custom selects, validation, submission
   contact.css   form and contact layouts
@@ -62,3 +66,27 @@ The "Enquiry sent" state appears only after the endpoint returns a 2xx.
 The About page shows a studio statement until real people are added. Add
 team members to the `TEAM` list at the top of `about/about.js` (name, role,
 bio and an optional 4:5 portrait in `assets/team/`). Never add fictional people.
+
+## Design system
+
+All pages share the tokens at the top of `style.css`. Use them for new pages
+instead of hard-coded values:
+
+- **Type roles:** `--text-h1` (inner-page heroes, with `.page-title`),
+  `--text-h2` (full-width section titles), `--text-h2-sm` (side-column titles),
+  `--text-h3`, `--text-h3-sm`, `--text-h4`, `--text-statement`,
+  `--text-display` (manifesto moments), `--text-project` (project names),
+  `--text-body-lg`, `--text-body`, `--text-small`, `--text-label`.
+  Labels are 14px below 1024px and 12px above, tracked at `--tracking-label`.
+- **Spacing:** `--space-2xs` … `--space-4xl`, `--head-gap` (eyebrow → title),
+  `--head-space` (section heading → content) and `--section-pad`. Every
+  `main > section` gets `--section-pad` top and bottom automatically, so the
+  gap between sections is always the same.
+- **Layout:** `.container` with `--container` / `--gutter`; the gutter equals
+  `--frame`, so content lines up with the framed panels.
+- **Components:** `.pill` (primary), `.btn-outline` (secondary), `.row-cta`
+  (full-width link row), `.section-head`, `.eyebrow`.
+
+Deliberate exceptions: the homepage and Work wordmarks, the homepage intro and
+services headings (from the original reference), project-name titles and the
+CTA headline.

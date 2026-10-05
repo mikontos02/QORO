@@ -60,10 +60,11 @@
     ['About', `${ROOT}about.html`],
     ['Work', `${ROOT}work.html`, true],
     ['Services', `${ROOT}services.html`],
-    ['Studio', `${ROOT}index.html#studio`],
-    ['Pricing', `${ROOT}index.html#pricing`],
+    ['Pricing', `${ROOT}pricing.html`],
     ['Contact', `${ROOT}contact.html`]
   ];
+  // The footer also links to the homepage Studio section
+  const footerLinks = [...navLinks.slice(0, 3), ['Studio', `${ROOT}index.html#studio`], ...navLinks.slice(3)];
 
   const nav = `
   <header class="nav nav--brand" data-nav>
@@ -109,7 +110,7 @@
       <nav class="footer__nav" aria-label="Footer">
         <div class="footer__col">
           <h3 class="footer__heading">Studio</h3>
-          <ul>${navLinks.map(([l, href]) => `<li><a class="link" href="${href}" data-transition="${l}">${l}</a></li>`).join('')}</ul>
+          <ul>${footerLinks.map(([l, href]) => `<li><a class="link" href="${href}" data-transition="${l}">${l}</a></li>`).join('')}</ul>
         </div>
         <div class="footer__col">
           <h3 class="footer__heading">Connect</h3>
@@ -400,7 +401,7 @@
       </div>
     </a>
     <div class="cs-next__actions container">
-      <a class="cs-outline magnetic" href="${ROOT}work.html" data-transition="Work">
+      <a class="btn-outline cs-outline magnetic" href="${ROOT}work.html" data-transition="Work">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
         Back to work
       </a>

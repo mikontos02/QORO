@@ -72,7 +72,7 @@
      Floating preview — follows the cursor over collapsed services & projects
      ------------------------------------------------------------------------ */
   if (preview && finePointer && !reduceMotion) {
-    const img = $('[data-sv-preview-img]', preview);
+    let img = null; // created on first hover, so no empty <img> ships with the page
     const s = { x: 0, y: 0, tx: 0, ty: 0, raf: 0, started: false };
 
     const tick = () => {
@@ -92,6 +92,12 @@
     $$('[data-preview]').forEach((el) => {
       el.addEventListener('pointerenter', (e) => {
         if (el.getAttribute('aria-expanded') === 'true') return; // an open service already shows its visual
+        if (!img) {
+          img = document.createElement('img');
+          img.alt = '';
+          img.decoding = 'async';
+          $('[data-sv-preview-inner]', preview).append(img);
+        }
         if (img.getAttribute('src') !== el.dataset.preview) img.src = el.dataset.preview;
         move(e.clientX, e.clientY);
         preview.classList.add('is-on');

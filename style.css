@@ -33,14 +33,61 @@
   --radius-frame: 16px;   /* framed panel radius */
   --radius-card: 16px;
   --container: 1480px;
-  --gutter: 16px;
+  --gutter: var(--frame); /* content edges align with the framed panels */
+
+  /* Typography — one scale for every page.
+     Display roles (wordmarks, project names, CTA headline) stay deliberate exceptions. */
+  --font-display: var(--sans);
+  --font-body: var(--sans);
+  --font-accent: var(--serif);
+
+  --text-label: 14px;                              /* uppercase labels & metadata (12px from 1024px) */
+  --text-small: 14px;                              /* captions, notes, hints */
+  --text-body: 16px;
+  --text-body-lg: 18px;
+  --text-h4: clamp(20px, 2vw, 30px);               /* FAQ questions, minor headings */
+  --text-h3-sm: clamp(26px, 2.8vw, 44px);          /* list headings: factors, outcomes */
+  --text-h3: clamp(32px, 4vw, 56px);               /* step names, principles */
+  --text-statement: clamp(30px, 4.6vw, 80px);      /* large body statements */
+  --text-h2-sm: clamp(36px, 4.6vw, 72px);          /* section titles in a side column */
+  --text-h2: clamp(40px, 6.2vw, 104px);            /* full-width section titles */
+  --text-display: clamp(52px, 9vw, 176px);         /* manifesto moments */
+  --text-h1: clamp(60px, 13vw, 120px);             /* inner-page hero titles */
+  --text-project: clamp(64px, 21vw, 150px);        /* project names as wordmarks */
+
+  --lh-display: 0.86;
+  --lh-heading: 0.92;
+  --lh-snug: 1.05;
+  --lh-body: 1.5;
+  --tracking-display: -0.06em;
+  --tracking-h2: -0.035em;
+  --tracking-h3: -0.04em;
+  --tracking-label: 0.2em;
+  --tracking-meta: 0.12em;
+
+  /* Spacing — page → section → group → element */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --head-gap: 20px;                                /* eyebrow → title */
+  --head-space: clamp(40px, 4.4vw, 64px);          /* section heading → content */
+  --section-pad: clamp(48px, 6vw, 96px);           /* top & bottom of every content section */
 
   --noise-overlay: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --noise-bg: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @media (min-width: 768px) {
-  :root { --frame: 24px; --radius-frame: 32px; }
+  :root { --frame: 24px; --radius-frame: 32px; --text-project: clamp(96px, 15vw, 180px); }
+}
+@media (min-width: 1024px) {
+  :root { --text-label: 12px; --text-h1: clamp(104px, 10.5vw, 230px); --text-project: clamp(110px, 10.5vw, 240px); }
 }
 @media (min-width: 1920px) {
   :root { --container: 1680px; }
@@ -66,6 +113,7 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 ul, ol { list-style: none; }
 em { font-style: italic; }
+h1, h2, h3, h4, h5, h6, th { font-weight: 400; } /* every heading uses Almarai Regular unless a role says otherwise */
 sup { font-size: inherit; vertical-align: baseline; line-height: 0; }
 ::selection { background: var(--cream); color: var(--black); }
 
@@ -106,14 +154,13 @@ html.lenis, html.lenis body { height: auto; }
 
 .eyebrow {
   display: inline-block;
-  font-size: 12px;
+  font-size: var(--text-label);
   font-weight: 400;
-  letter-spacing: 0.24em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--ink);
 }
-.eyebrow__count { color: var(--muted); letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
-@media (min-width: 640px) { .eyebrow { font-size: 12px; } }
+.eyebrow__count { color: var(--muted); letter-spacing: var(--tracking-meta); font-variant-numeric: tabular-nums; }
 
 /* Serif italic accents inside any heading/copy */
 h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
@@ -413,7 +460,7 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
 .menu.is-open .menu__list li:nth-child(4) a { transition-delay: 0.3s; }
 .menu.is-open .menu__list li:nth-child(5) a { transition-delay: 0.36s; }
 .menu.is-open .menu__list li:nth-child(6) a { transition-delay: 0.42s; }
-.menu__num { font-size: 11px; letter-spacing: 0.12em; color: var(--muted); font-variant-numeric: tabular-nums; transform: translateY(-1.6em); }
+.menu__num { font-size: var(--text-label); letter-spacing: var(--tracking-meta); color: var(--muted); font-variant-numeric: tabular-nums; transform: translateY(-1.6em); }
 .menu__foot {
   position: relative;
   display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap;
@@ -587,7 +634,7 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
 /* ==========================================================================
    INTRO
    ========================================================================== */
-.intro { padding: 80px 16px; background: #000; }
+.intro { padding-inline: 16px; background: #000; }
 .intro__panel {
   max-width: 72rem; margin-inline: auto;
   display: flex; flex-direction: column; align-items: center; gap: 40px;
@@ -607,13 +654,13 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
   color: var(--ink);
 }
 @media (min-width: 640px) {
-  .intro { padding: 112px 24px; }
+  .intro { padding-inline: 24px; }
   .intro__panel { padding: 80px 40px; }
   .intro__title { font-size: 36px; line-height: 0.9; }
   .intro__body { font-size: 16px; }
 }
 @media (min-width: 768px) {
-  .intro { padding-block: 128px; }
+
   .intro__panel { padding: 96px 64px; }
   .intro__title { font-size: 48px; }
   .intro__body { font-size: 16px; }
@@ -625,24 +672,24 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
    SECTION HEAD (Work)
    ========================================================================== */
 .section-head {
-  display: flex; flex-direction: column; gap: 28px;
-  padding-bottom: 48px;
+  display: flex; flex-direction: column; gap: var(--space-xl);
+  padding-bottom: var(--head-space);
 }
-.section-head__main { display: flex; flex-direction: column; gap: 20px; }
+.section-head__main { display: flex; flex-direction: column; gap: var(--head-gap); }
 .section-head__title {
   max-width: 14ch;
-  font-size: clamp(40px, 6.2vw, 104px); font-weight: 400;
-  line-height: 0.92; letter-spacing: -0.03em;
+  font-size: var(--text-h2); font-weight: 400;
+  line-height: var(--lh-heading); letter-spacing: var(--tracking-h2);
   color: var(--cream);
 }
 .section-head__note {
   max-width: 22rem;
-  font-size: 16px; line-height: 1.4;
+  font-size: var(--text-body); line-height: var(--lh-body);
   color: var(--muted);
 }
 @media (min-width: 768px) {
-  .section-head { flex-direction: row; justify-content: space-between; align-items: flex-end; padding-bottom: 64px; }
-  .section-head__note { font-size: 16px; padding-bottom: 0.6em; }
+  .section-head { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+  .section-head__note { padding-bottom: 0.6em; }
 }
 
 /* ==========================================================================
@@ -671,8 +718,8 @@ html.is-leaving [data-transition-active] img {
    SERVICES — reference feature grid, extended to 5 disciplines
    ========================================================================== */
 .services {
-  position: relative; overflow: hidden;
-  padding-block: 80px;
+  position: relative;
+  overflow: hidden;
   background: #000;
 }
 .services__head {
@@ -802,7 +849,7 @@ html.is-leaving [data-transition-active] img {
 }
 
 @media (min-width: 640px) {
-  .services { padding-block: 112px; }
+
   .services__title, .services__sub { font-size: 24px; }
   .services__grid { gap: 8px; }
   .svc__icon { width: 48px; height: 48px; }
@@ -810,7 +857,7 @@ html.is-leaving [data-transition-active] img {
   .svc__list li, .svc__link { font-size: 16px; }
 }
 @media (min-width: 768px) {
-  .services { padding-block: 128px; }
+
   .services__head { margin-bottom: 64px; }
   .services__title, .services__sub { font-size: 30px; }
   .services__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
@@ -833,7 +880,7 @@ html.is-leaving [data-transition-active] img {
 /* ==========================================================================
    STUDIO
    ========================================================================== */
-.studio { padding: 0 16px 80px; background: #000; }
+.studio { padding-inline: 16px; background: #000; }
 .studio__panel {
   max-width: var(--container); margin-inline: auto;
   display: grid; gap: 56px;
@@ -841,13 +888,13 @@ html.is-leaving [data-transition-active] img {
   border-radius: 32px;
   background: var(--panel);
 }
-.studio__intro { display: flex; flex-direction: column; gap: 24px; align-self: start; }
+.studio__intro { display: flex; flex-direction: column; gap: var(--head-gap); align-self: start; }
 .studio__title {
-  font-size: clamp(36px, 4.6vw, 64px); font-weight: 400;
-  line-height: 0.95; letter-spacing: -0.02em;
+  font-size: var(--text-h2-sm); font-weight: 400;
+  line-height: var(--lh-heading); letter-spacing: var(--tracking-h2);
   color: var(--cream);
 }
-.studio__text { max-width: 30rem; font-size: 15px; line-height: 1.5; color: rgba(222, 219, 200, 0.7); }
+.studio__text { max-width: 30rem; font-size: var(--text-body); line-height: var(--lh-body); color: rgba(222, 219, 200, 0.7); }
 .studio__principles { border-top: 1px solid var(--line); margin-top: 8px; }
 .studio__principles li {
   display: flex; align-items: baseline; gap: 16px;
@@ -855,7 +902,7 @@ html.is-leaving [data-transition-active] img {
   border-bottom: 1px solid var(--line);
   font-size: 16px; color: rgba(225, 224, 204, 0.85);
 }
-.studio__principles span { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: 0.08em; }
+.studio__principles span { font-size: var(--text-label); color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: var(--tracking-meta); }
 
 .disciplines { counter-reset: d; }
 .discipline {
@@ -887,13 +934,12 @@ html.is-leaving [data-transition-active] img {
   .discipline:hover .discipline__num { color: var(--cream); }
 }
 @media (min-width: 640px) {
-  .studio { padding: 0 24px 112px; }
+  .studio { padding-inline: 24px; }
   .studio__panel { padding: 64px 40px; }
   .discipline { grid-template-columns: 48px minmax(0, 1fr) auto; }
   .discipline__note { grid-column: 3; text-align: right; font-size: 20px; }
   .discipline__name { font-size: clamp(48px, 8.4vw, 112px); }
 }
-@media (min-width: 768px) { .studio { padding-bottom: 128px; } }
 @media (min-width: 1024px) {
   .studio__panel { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px; padding: 80px 64px; }
   .studio__intro { grid-column: span 5; position: sticky; top: 120px; }
@@ -905,8 +951,8 @@ html.is-leaving [data-transition-active] img {
    PRICING — three ways of working together, set like a studio proposal
    ========================================================================== */
 .pricing {
-  position: relative; overflow: hidden;
-  padding-block: 80px 96px;
+  position: relative;
+  overflow: hidden;
   background: #000;
 }
 .pricing__title { max-width: 16ch; }
@@ -952,11 +998,11 @@ html.is-leaving [data-transition-active] img {
 }
 
 .tier__head { display: flex; align-items: baseline; gap: 14px; }
-.tier__num { font-size: 12px; letter-spacing: 0.12em; color: var(--tier-muted); font-variant-numeric: tabular-nums; }
-.tier__name { font-size: 14px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; }
+.tier__num { font-size: var(--text-label); letter-spacing: var(--tracking-meta); color: var(--tier-muted); font-variant-numeric: tabular-nums; }
+.tier__name { font-size: 14px; font-weight: 400; letter-spacing: var(--tracking-label); text-transform: uppercase; }
 
 .tier__price { display: flex; flex-direction: column; gap: 6px; margin-top: 36px; }
-.tier__from { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tier-muted); }
+.tier__from { font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--tier-muted); }
 .tier__amount {
   display: block; overflow: hidden;
   padding: 0.06em 0 0.1em; margin: -0.06em 0 -0.1em;
@@ -985,7 +1031,7 @@ html.is-leaving [data-transition-active] img {
   transition: transform 0.9s var(--ease-expo);
 }
 
-.tier__fit { max-width: 30ch; font-size: 16px; line-height: 1.4; color: var(--tier-muted); }
+.tier__fit { max-width: 30ch; font-size: var(--text-body); line-height: var(--lh-body); color: var(--tier-muted); }
 
 .tier__list, .tier__actions, .tier__fit, .tier__details {
   transition: opacity 0.9s var(--ease-expo), transform 0.9s var(--ease-expo);
@@ -1025,8 +1071,8 @@ html.is-leaving [data-transition-active] img {
   border-bottom: 1px solid var(--tier-line);
 }
 .tier__details-inner > div:first-child { margin-top: 20px; border-top: 1px solid var(--tier-line); }
-.tier__details-inner dt { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tier-muted); padding-top: 3px; }
-.tier__details-inner dd { font-size: 15px; }
+.tier__details-inner dt { font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--tier-muted); padding-top: 3px; }
+.tier__details-inner dd { font-size: var(--text-body); }
 
 .tier__actions {
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
@@ -1035,7 +1081,7 @@ html.is-leaving [data-transition-active] img {
 .tier__toggle {
   display: inline-flex; align-items: center; gap: 10px;
   min-height: 44px;
-  font-size: 15px; color: var(--tier-fg);
+  font-size: var(--text-body); color: var(--tier-fg);
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }
@@ -1076,8 +1122,8 @@ html.is-leaving [data-transition-active] img {
 }
 .row-cta__text {
   max-width: 14ch;
-  font-size: clamp(40px, 6vw, 104px);
-  line-height: 0.92; letter-spacing: -0.045em;
+  font-size: var(--text-h2);
+  line-height: var(--lh-heading); letter-spacing: var(--tracking-h2);
 }
 .row-cta__text em { font-family: var(--serif); font-style: italic; letter-spacing: -0.02em; }
 .row-cta__action { display: inline-flex; align-items: center; gap: 18px; width: fit-content; }
@@ -1126,7 +1172,7 @@ html.is-leaving [data-transition-active] img {
 }
 
 @media (min-width: 640px) {
-  .pricing { padding-block: 112px 128px; }
+
   .tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; row-gap: 20px; }
   /* Tablet: Signature leads across the full width, Starter & Custom share the row below */
   .tier--signature { grid-column: 1 / -1; order: -1; padding: 40px 36px 32px; }
@@ -1136,7 +1182,7 @@ html.is-leaving [data-transition-active] img {
   .row-cta { margin-top: 112px; }
 }
 @media (min-width: 768px) {
-  .pricing { padding-block: 128px 144px; }
+
   .row-cta { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
   .row-cta__icon { width: 88px; height: 88px; }
 }
@@ -1202,7 +1248,8 @@ html.is-leaving [data-transition-active] img {
   transition: transform 0.7s var(--ease-expo);
 }
 .cta__copy {
-  padding: 7px 14px;
+  min-height: 36px;
+  padding: 7px 16px;
   border: 1px solid rgba(225, 224, 204, 0.25);
   border-radius: 999px;
   font-size: 12px; line-height: 1; color: var(--cream);
@@ -1265,7 +1312,7 @@ html.is-leaving [data-transition-active] img {
 .footer__col p { line-height: 1.65; color: rgba(225, 224, 204, 0.7); }
 .footer__col--wide { grid-column: span 2; }
 .footer__heading {
-  font-size: 12px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: var(--text-label); font-weight: 400; letter-spacing: var(--tracking-label); text-transform: uppercase;
   color: var(--muted);
 }
 .footer__clock { font-size: 12px !important; color: var(--muted) !important; }
@@ -1310,6 +1357,46 @@ html.is-leaving [data-transition-active] img {
 @media (min-width: 768px) {
   .footer { padding-top: 128px; }
   .footer__lead { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+}
+
+/* ==========================================================================
+   SHARED PAGE SYSTEM — the same roles look the same on every page
+   ========================================================================== */
+
+/* One vertical rhythm: every content section has the same top & bottom space,
+   so the gap between any two sections is always 2 × --section-pad.
+   Framed heroes, framed CTAs, case-study heroes and pinned strips are exceptions. */
+main > section:not(.hero):not(.cta):not(.cs-hero):not(.cs-next):not([data-hscroll]) {
+  padding-block: var(--section-pad);
+}
+
+/* Inner-page hero title (About, Services, Pricing, Contact) */
+.hero .page-title {
+  display: block;
+  font-size: var(--text-h1);
+  line-height: var(--lh-display); letter-spacing: var(--tracking-display);
+}
+.page-title .w--em { letter-spacing: -0.025em; }
+
+/* Secondary button — same height as the pill */
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 22px;
+  border: 1px solid rgba(225, 224, 204, 0.3); border-radius: 999px;
+  background: transparent;
+  font: inherit; font-size: var(--text-body); line-height: 1;
+  color: var(--cream);
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+.btn-outline svg {
+  width: 14px; height: 14px;
+  fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.5s var(--ease-expo);
+}
+@media (hover: hover) {
+  .btn-outline:hover { background: var(--cream); color: var(--black); border-color: var(--cream); }
+  .btn-outline:hover svg { transform: translateX(-3px); }
 }
 
 /* ==========================================================================
@@ -1398,9 +1485,6 @@ html.is-lifting .curtain__label > span { transform: translate3d(0, -110%, 0); tr
   .footer__base,
   .footer__legal .link { font-size: 14px; }
   .footer__clock { font-size: 14px !important; }
-}
-@media (min-width: 640px) and (max-width: 1023px) {
-  .eyebrow { font-size: 14px; }
 }
 @media (max-width: 767px) {
   .nav__link { font-size: 14px; }

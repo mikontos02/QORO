@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pricing — Starting points | Qoro</title>
+  <meta name="description" content="Qoro pricing: clear starting points for bespoke creative work. Starter from €2,500, Signature from €5,000, and Custom projects scoped together.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Pricing — Qoro">
+  <meta property="og:description" content="Digital experiences, built with intent.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Helvetica,Arial' font-size='40' fill='%23e1e0cc'%3Eq%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="services/services.css">
+  <link rel="stylesheet" href="pricing/pricing.css">
+
+  <!-- Flag JS early so reveal states never flash un-styled content -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="curtain" aria-hidden="true" data-curtain><span class="curtain__label"><span data-curtain-label></span></span></div>
+  <script>try{var t=sessionStorage.getItem('qoro:transition');if(t!==null){sessionStorage.removeItem('qoro:transition');document.documentElement.classList.add('is-arriving');document.querySelector('[data-curtain-label]').textContent=t;}}catch(e){}</script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav nav--brand" data-nav>
+    <nav class="nav__tab" aria-label="Primary">
+      <a class="nav__brand" href="index.html" aria-label="Qoro — home" data-transition="Qoro">Qoro<sup>*</sup></a>
+      <ul class="nav__list">
+        <li><a class="nav__link" href="about.html" data-transition="About">About</a></li>
+        <li><a class="nav__link" href="work.html" data-transition="Work">Work</a></li>
+        <li><a class="nav__link" href="services.html" data-transition="Services">Services</a></li>
+        <li><a class="nav__link" href="pricing.html" aria-current="page">Pricing</a></li>
+        <li><a class="nav__link" href="contact.html" data-transition="Contact">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="nav__toggle-label" data-menu-label>Menu</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-menu>
+    <div class="menu__frame">
+      <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+      <div class="noise noise--overlay" aria-hidden="true"></div>
+      <ol class="menu__list">
+        <li><a href="about.html" data-menu-link data-transition="About"><span class="menu__num">01</span>About</a></li>
+        <li><a href="work.html" data-menu-link data-transition="Work"><span class="menu__num">02</span>Work</a></li>
+        <li><a href="services.html" data-menu-link data-transition="Services"><span class="menu__num">03</span>Services</a></li>
+        <li><a href="pricing.html" data-menu-link><span class="menu__num">04</span>Pricing</a></li>
+        <li><a href="contact.html" data-menu-link data-transition="Contact"><span class="menu__num">05</span><em>Contact</em></a></li>
+      </ol>
+      <div class="menu__foot">
+        <a href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+        <div class="menu__social">
+          <a href="#" aria-label="Qoro on Instagram">Instagram</a>
+          <a href="#" aria-label="Qoro on LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contextual cursor (fine pointers only) -->
+  <div class="cursor" aria-hidden="true" data-cursor><span class="cursor__ball"><span data-cursor-label>View</span></span></div>
+
+  <main id="main">
+
+    <!-- ============ PRICING HERO (reuses the hero frame system) ============ -->
+    <section class="hero sv-hero pr-hero" id="top" aria-labelledby="pr-title">
+      <div class="hero__frame" data-hero-frame>
+        <div class="cinematic" aria-hidden="true">
+          <div class="cinematic__blob"></div>
+          <div class="cinematic__light" data-hero-light></div>
+          <div class="cinematic__vignette"></div>
+        </div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <p class="hero__meta hero__meta--left" data-reveal data-delay="0.9">Pricing</p>
+        <p class="hero__meta hero__meta--right" data-reveal data-delay="1">Starting points, not packages</p>
+
+        <div class="hero__content">
+          <h1 class="hero__title page-title" id="pr-title" data-split data-stagger="0.09">Let’s talk about <em>investment.</em></h1>
+          <div class="hero__aside">
+            <p class="hero__lead" data-reveal data-delay="0.5" data-rise-only>
+              Every project is different. These starting points show where we begin, <em>from focused work to fully bespoke experiences.</em>
+            </p>
+            <ol class="sv-index pr-index" aria-label="Pricing options" data-reveal data-delay="0.7">
+              <li><a class="sv-index__row" href="#starter"><span class="sv-index__num">01</span><span class="sv-index__name">Starter</span><span class="pr-index__price">from €2,500</span></a></li>
+              <li><a class="sv-index__row" href="#signature"><span class="sv-index__num">02</span><span class="sv-index__name">Signature</span><span class="pr-index__price">from €5,000</span></a></li>
+              <li><a class="sv-index__row" href="#custom"><span class="sv-index__num">03</span><span class="sv-index__name">Custom</span><span class="pr-index__price">Let’s talk</span></a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THREE OPTIONS (reuses the homepage tier system) ============ -->
+    <section class="pricing pr-options" aria-labelledby="pr-options-title">
+      <div class="noise noise--bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow" data-reveal>Three ways to work with us</span>
+            <h2 class="section-head__title" id="pr-options-title" data-split>Clear starting points, <em>bespoke work.</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-delay="0.2">Hover a service for what it means. Open the details to see typical deliverables.</p>
+        </header>
+
+        <div class="tiers" data-reveal>
+          <article class="tier tier--starter" id="starter" data-tier style="--t:0" aria-labelledby="tier-starter-name">
+            <svg class="tier__star" viewBox="0 0 100 100" aria-hidden="true"><g stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M50 12v76"/><path d="M17.1 31 82.9 69"/><path d="M17.1 69 82.9 31"/></g></svg>
+            <header class="tier__head">
+              <span class="tier__num">01</span>
+              <h3 class="tier__name" id="tier-starter-name">Starter</h3>
+            </header>
+            <p class="tier__price"><span class="tier__from">From</span><span class="tier__amount"><span class="tier__amount-inner">€2,500</span></span></p>
+            <span class="tier__rule" aria-hidden="true"></span>
+            <p class="tier__fit">For smaller businesses, brands and focused projects that need a strong digital foundation.</p>
+            <h4 class="tier__label">Services</h4>
+            <ul class="tier__list pr-services" aria-label="Starter services"><li><span class="tier__svc">Digital Strategy</span><span class="tier__desc">Positioning and direction for the site</span></li><li><span class="tier__svc">Art Direction</span><span class="tier__desc">A visual tone that fits the brand</span></li><li><span class="tier__svc">Web Design</span><span class="tier__desc">A custom design, not a template</span></li><li><span class="tier__svc">Responsive Development</span><span class="tier__desc">Built for every screen size</span></li><li><span class="tier__svc">Basic Motion</span><span class="tier__desc">Considered transitions and states</span></li><li><span class="tier__svc">SEO Foundations</span><span class="tier__desc">Structure search engines can read</span></li></ul>
+            <div class="tier__details" id="tier-starter-details" data-tier-details>
+              <div class="tier__details-inner">
+                <h4 class="tier__label">Typical deliverables</h4>
+                <ul class="pr-deliverables"><li>Strategy direction</li><li>Custom website design</li><li>Responsive implementation</li><li>Essential interactions</li><li>Basic CMS / content structure where required</li></ul>
+              </div>
+            </div>
+            <div class="tier__actions">
+              <button class="tier__toggle" type="button" aria-expanded="false" aria-controls="tier-starter-details" data-tier-toggle>
+                <span data-tier-toggle-label>View details</span><span class="tier__toggle-icon" aria-hidden="true"></span>
+              </button>
+              <a class="pill magnetic" href="contact.html?plan=starter" data-transition="Starter">
+                <span class="pill__label">Start a project</span>
+                <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+              </a>
+            </div>
+          </article>
+          <article class="tier tier--signature" id="signature" data-tier style="--t:1" aria-labelledby="tier-signature-name">
+            <svg class="tier__star" viewBox="0 0 100 100" aria-hidden="true"><g stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M50 12v76"/><path d="M17.1 31 82.9 69"/><path d="M17.1 69 82.9 31"/></g></svg>
+            <header class="tier__head">
+              <span class="tier__num">02</span>
+              <h3 class="tier__name" id="tier-signature-name">Signature</h3>
+            </header>
+            <p class="tier__price"><span class="tier__from">From</span><span class="tier__amount"><span class="tier__amount-inner">€5,000</span></span></p>
+            <span class="tier__rule" aria-hidden="true"></span>
+            <p class="tier__fit">For brands that want a distinctive, high-end digital experience.</p>
+            <h4 class="tier__label">Services</h4>
+            <ul class="tier__list pr-services" aria-label="Signature services"><li><span class="tier__svc">Strategy</span><span class="tier__desc">What the experience says and to whom</span></li><li><span class="tier__svc">Creative Direction</span><span class="tier__desc">One visual language across everything</span></li><li><span class="tier__svc">UX/UI Design</span><span class="tier__desc">Journeys, interface and responsive systems</span></li><li><span class="tier__svc">Custom Web Design</span><span class="tier__desc">Bespoke layouts, type and rhythm</span></li><li><span class="tier__svc">Advanced Development</span><span class="tier__desc">Fast, accessible, built to last</span></li><li><span class="tier__svc">Motion &amp; Interactions</span><span class="tier__desc">A motion system with purpose</span></li><li><span class="tier__svc">CMS</span><span class="tier__desc">Content your team can manage</span></li><li><span class="tier__svc">SEO Foundations</span><span class="tier__desc">Structure search engines can read</span></li></ul>
+            <div class="tier__details" id="tier-signature-details" data-tier-details>
+              <div class="tier__details-inner">
+                <h4 class="tier__label">Typical deliverables</h4>
+                <ul class="pr-deliverables"><li>Strategic direction</li><li>Custom UX/UI</li><li>Bespoke website design</li><li>Advanced interactions</li><li>Responsive development</li><li>CMS integration</li><li>Motion system</li></ul>
+              </div>
+            </div>
+            <div class="tier__actions">
+              <button class="tier__toggle" type="button" aria-expanded="false" aria-controls="tier-signature-details" data-tier-toggle>
+                <span data-tier-toggle-label>View details</span><span class="tier__toggle-icon" aria-hidden="true"></span>
+              </button>
+              <a class="pill pill--dark magnetic" href="contact.html?plan=signature" data-transition="Signature">
+                <span class="pill__label">Start a project</span>
+                <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+              </a>
+            </div>
+          </article>
+          <article class="tier tier--custom" id="custom" data-tier style="--t:2" aria-labelledby="tier-custom-name">
+            <svg class="tier__star" viewBox="0 0 100 100" aria-hidden="true"><g stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M50 12v76"/><path d="M17.1 31 82.9 69"/><path d="M17.1 69 82.9 31"/></g></svg>
+            <header class="tier__head">
+              <span class="tier__num">03</span>
+              <h3 class="tier__name" id="tier-custom-name">Custom</h3>
+            </header>
+            <p class="tier__price"><span class="tier__from">Scope-led</span><span class="tier__amount"><span class="tier__amount-inner"><em>Let’s talk.</em></span></span></p>
+            <span class="tier__rule" aria-hidden="true"></span>
+            <p class="tier__fit">For ambitious projects that need a completely tailored creative and technical approach.</p>
+            <h4 class="tier__label">Services</h4>
+            <ul class="tier__list pr-services" aria-label="Custom services"><li><span class="tier__svc">Brand &amp; Digital Strategy</span><span class="tier__desc">Positioning across brand and digital</span></li><li><span class="tier__svc">Creative Direction</span><span class="tier__desc">Concept, narrative and art direction</span></li><li><span class="tier__svc">Bespoke UX/UI</span><span class="tier__desc">Product-grade journeys and interfaces</span></li><li><span class="tier__svc">Custom Digital Experience</span><span class="tier__desc">Built around a single idea</span></li><li><span class="tier__svc">Advanced Development</span><span class="tier__desc">Complex builds and integrations</span></li><li><span class="tier__svc">Motion &amp; Interaction</span><span class="tier__desc">Storytelling through movement</span></li><li><span class="tier__svc">3D / Experimental Work</span><span class="tier__desc">Where it genuinely helps</span></li><li><span class="tier__svc">Ongoing Digital Support</span><span class="tier__desc">A partner after launch</span></li></ul>
+            <div class="tier__details" id="tier-custom-details" data-tier-details>
+              <div class="tier__details-inner">
+                <h4 class="tier__label">Typical deliverables</h4>
+                <ul class="pr-deliverables"><li>Bespoke strategy</li><li>Brand and digital direction</li><li>Fully custom experience</li><li>Advanced technology</li><li>Complex integrations</li><li>Ongoing support</li></ul>
+              </div>
+            </div>
+            <div class="tier__actions">
+              <button class="tier__toggle" type="button" aria-expanded="false" aria-controls="tier-custom-details" data-tier-toggle>
+                <span data-tier-toggle-label>View details</span><span class="tier__toggle-icon" aria-hidden="true"></span>
+              </button>
+              <a class="pill magnetic" href="contact.html?plan=custom" data-transition="Custom">
+                <span class="pill__label">Let’s talk</span>
+                <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="pr-rule" data-reveal>
+          <p class="pr-rule__lead">These are starting points, <em>not boxes.</em></p>
+          <p class="pr-rule__text">We shape the scope around what the project actually needs. The final investment depends on scope, number of pages, design complexity, functionality, integrations, content, motion and technical requirements.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHICH OPTION FITS? ============ -->
+    <section class="pr-fit" aria-labelledby="pr-fit-title">
+      <div class="container pr-fit__grid">
+        <div class="pr-fit__intro">
+          <span class="eyebrow" data-reveal>Which option fits?</span>
+          <h2 class="pr-fit__title" id="pr-fit-title" data-split>What are you <em>building?</em></h2>
+          <p class="pr-fit__note" data-reveal data-delay="0.15">A quick pointer to a starting point. It isn’t a quote; your proposal is shaped around the real scope.</p>
+        </div>
+        <div class="pr-fit__main">
+          <fieldset class="pr-fit__options" data-reveal>
+            <legend class="sr-only">What are you building?</legend>
+              <label class="pr-fit__option"><input type="radio" name="fit" value="website" data-fit-option data-tier="starter"><span>A website</span></label>
+              <label class="pr-fit__option"><input type="radio" name="fit" value="brand" data-fit-option data-tier="signature"><span>Brand + website</span></label>
+              <label class="pr-fit__option"><input type="radio" name="fit" value="product" data-fit-option data-tier="custom"><span>A digital product or platform</span></label>
+              <label class="pr-fit__option"><input type="radio" name="fit" value="experimental" data-fit-option data-tier="custom"><span>Something experimental</span></label>
+          </fieldset>
+          <div class="pr-fit__result" aria-live="polite" data-fit-result>
+            <p class="pr-fit__placeholder">Choose one to see where most projects like it begin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPARE ============ -->
+    <section class="pr-compare" aria-labelledby="pr-compare-title">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow" data-reveal>Compare the options</span>
+            <h2 class="section-head__title" id="pr-compare-title" data-split>What’s <em>included?</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-delay="0.2">Every proposal is tailored, so treat this as a guide to where each option usually starts.</p>
+        </header>
+        <div class="pr-table-wrap" data-reveal role="region" aria-label="Comparison table — scrolls sideways on small screens" tabindex="0">
+          <table class="pr-table">
+            <caption class="sr-only">What is included in Starter, Signature and Custom</caption>
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr-only">Capability</span></th>
+                <th scope="col"><span class="pr-table__name">Starter</span><span class="pr-table__price">from €2,500</span></th>
+                <th scope="col" class="pr-table__sig"><span class="pr-table__name">Signature</span><span class="pr-table__price">from €5,000</span></th>
+                <th scope="col"><span class="pr-table__name">Custom</span><span class="pr-table__price">Let’s talk</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Strategy</th><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td></tr>
+              <tr><th scope="row">UX/UI</th><td class="pr-no"><span aria-hidden="true">—</span><span class="sr-only">Not included</span></td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td></tr>
+              <tr><th scope="row">Custom design</th><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td></tr>
+              <tr><th scope="row">Development</th><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td></tr>
+              <tr><th scope="row">Motion</th><td>Basic</td><td>Advanced</td><td>Custom</td></tr>
+              <tr><th scope="row">CMS</th><td>Optional</td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td></tr>
+              <tr><th scope="row">Advanced integrations</th><td class="pr-no"><span aria-hidden="true">—</span><span class="sr-only">Not included</span></td><td>Optional</td><td class="pr-yes"><span aria-hidden="true">✓</span><span class="sr-only">Included</span></td></tr>
+              <tr><th scope="row">3D / Experimental</th><td class="pr-no"><span aria-hidden="true">—</span><span class="sr-only">Not included</span></td><td>Optional</td><td>As required</td></tr>
+              <tr><th scope="row">Ongoing support</th><td>Optional</td><td>Optional</td><td>Available</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT SHAPES THE PRICE ============ -->
+    <section class="pr-factors" aria-labelledby="pr-factors-title">
+      <div class="container pr-factors__grid">
+        <div class="pr-factors__intro">
+          <span class="eyebrow" data-reveal>Scope</span>
+          <h2 class="pr-factors__title" id="pr-factors-title" data-split data-stagger="0.06">What shapes <em>the price?</em></h2>
+        </div>
+        <ol class="pr-factors__list">
+          <li class="pr-factor" data-reveal data-delay="0.00"><span class="pr-factor__num">01</span><h3 class="pr-factor__name">Scope</h3><p class="pr-factor__q">How much needs to be designed and built?</p></li>
+          <li class="pr-factor" data-reveal data-delay="0.05"><span class="pr-factor__num">02</span><h3 class="pr-factor__name">Complexity</h3><p class="pr-factor__q">How involved are the interactions and functionality?</p></li>
+          <li class="pr-factor" data-reveal data-delay="0.10"><span class="pr-factor__num">03</span><h3 class="pr-factor__name">Content</h3><p class="pr-factor__q">Is the content ready, or do you need help creating it?</p></li>
+          <li class="pr-factor" data-reveal data-delay="0.15"><span class="pr-factor__num">04</span><h3 class="pr-factor__name">Technology</h3><p class="pr-factor__q">CMS, e-commerce, APIs or custom functionality?</p></li>
+          <li class="pr-factor" data-reveal data-delay="0.20"><span class="pr-factor__num">05</span><h3 class="pr-factor__name">Motion</h3><p class="pr-factor__q">How much animation and interaction does it need?</p></li>
+          <li class="pr-factor" data-reveal data-delay="0.25"><span class="pr-factor__num">06</span><h3 class="pr-factor__name">Timeline</h3><p class="pr-factor__q">Is there a fixed date we need to work towards?</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ WHAT YOU GET ============ -->
+    <section class="pr-value" aria-labelledby="pr-value-title">
+      <div class="container">
+        <h2 class="pr-value__title" id="pr-value-title" data-split data-stagger="0.07">You’re not buying <em>a website.</em></h2>
+        <div class="pr-value__body">
+          <p class="pr-value__text" data-reveal>You’re investing in a digital experience designed around your brand, your audience and what you want to achieve. Depending on scope, a project can include:</p>
+          <ul class="pr-value__list" data-reveal data-delay="0.1"><li>Strategy</li><li>Creative direction</li><li>UX</li><li>UI</li><li>Development</li><li>Motion</li><li>Testing</li><li>Optimisation</li><li>Launch support</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS (reuses the Services process grid) ============ -->
+    <section class="sv-process pr-process" aria-labelledby="pr-process-title">
+      <div class="container">
+        <header class="section-head">
+          <div class="section-head__main">
+            <span class="eyebrow" data-reveal>How a project runs</span>
+            <h2 class="section-head__title" id="pr-process-title" data-split>From first call <em>to launch.</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-delay="0.2"><a class="link" href="services.html" data-transition="Services">More on how we work →</a></p>
+        </header>
+        <ol class="sv-steps" data-reveal>
+          <li class="sv-step" style="--s:0">
+            <span class="sv-step__num">01</span>
+            <h3 class="sv-step__name">Discover</h3>
+            <p class="sv-step__text">Understand the business, the audience and the objectives.</p>
+          </li>
+          <li class="sv-step" style="--s:1">
+            <span class="sv-step__num">02</span>
+            <h3 class="sv-step__name">Define</h3>
+            <p class="sv-step__text">Agree the strategy, the scope and the direction.</p>
+          </li>
+          <li class="sv-step" style="--s:2">
+            <span class="sv-step__num">03</span>
+            <h3 class="sv-step__name">Design</h3>
+            <p class="sv-step__text">Develop the visual and interaction system.</p>
+          </li>
+          <li class="sv-step" style="--s:3">
+            <span class="sv-step__num">04</span>
+            <h3 class="sv-step__name">Build</h3>
+            <p class="sv-step__text">Turn the approved design into a working experience.</p>
+          </li>
+          <li class="sv-step" style="--s:4">
+            <span class="sv-step__num">05</span>
+            <h3 class="sv-step__name">Refine</h3>
+            <p class="sv-step__text">Test, optimise and polish every detail.</p>
+          </li>
+          <li class="sv-step" style="--s:5">
+            <span class="sv-step__num">06</span>
+            <h3 class="sv-step__name">Launch</h3>
+            <p class="sv-step__text">Go live, and stay close after.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="pr-faq" aria-labelledby="pr-faq-title">
+      <div class="container pr-faq__grid">
+        <div class="pr-faq__intro">
+          <span class="eyebrow" data-reveal>FAQ</span>
+          <h2 class="pr-faq__title" id="pr-faq-title" data-split>Questions, <em>answered.</em></h2>
+          <p class="pr-faq__note" data-reveal data-delay="0.15">Something else? <a class="link" href="contact.html" data-transition="Contact">Ask us directly</a>.</p>
+        </div>
+        <div class="pr-faq__list" data-reveal>
+          <details class="pr-faq__item">
+            <summary class="pr-faq__q"><span class="pr-faq__num">01</span><span class="pr-faq__text">How do you determine the final price?</span><span class="pr-faq__icon" aria-hidden="true"></span></summary>
+            <div class="pr-faq__a"><p>After a first conversation we scope the project together: pages, functionality, content, motion and integrations. You then receive a written proposal for that scope.</p></div>
+          </details>
+          <details class="pr-faq__item">
+            <summary class="pr-faq__q"><span class="pr-faq__num">02</span><span class="pr-faq__text">What is included in the starting price?</span><span class="pr-faq__icon" aria-hidden="true"></span></summary>
+            <div class="pr-faq__a"><p>The services listed under each option, at a focused scope. Your proposal sets out exactly what is included for your project.</p></div>
+          </details>
+          <details class="pr-faq__item">
+            <summary class="pr-faq__q"><span class="pr-faq__num">03</span><span class="pr-faq__text">How long does a project take?</span><span class="pr-faq__icon" aria-hidden="true"></span></summary>
+            <div class="pr-faq__a"><p>It depends on the scope. We agree the timeline with you and set it out in your proposal.</p></div>
+          </details>
+          <details class="pr-faq__item">
+            <summary class="pr-faq__q"><span class="pr-faq__num">04</span><span class="pr-faq__text">Can you work with an existing brand?</span><span class="pr-faq__icon" aria-hidden="true"></span></summary>
+            <div class="pr-faq__a"><p>Yes. We can design within your existing identity, or refine it as part of the project.</p></div>
+          </details>
+          <details class="pr-faq__item">
+            <summary class="pr-faq__q"><span class="pr-faq__num">05</span><span class="pr-faq__text">Do you offer payment plans?</span><span class="pr-faq__icon" aria-hidden="true"></span></summary>
+            <div class="pr-faq__a"><!-- EDIT: add your payment terms here once they are defined. --><p>Payment terms are agreed as part of each proposal.</p></div>
+          </details>
+          <details class="pr-faq__item">
+            <summary class="pr-faq__q"><span class="pr-faq__num">06</span><span class="pr-faq__text">Do you provide ongoing support?</span><span class="pr-faq__icon" aria-hidden="true"></span></summary>
+            <div class="pr-faq__a"><!-- EDIT: describe your support offer here once it is defined. --><p>Support after launch is available for every option and can be scoped into your proposal.</p></div>
+          </details>
+          <details class="pr-faq__item">
+            <summary class="pr-faq__q"><span class="pr-faq__num">07</span><span class="pr-faq__text">Can I combine services?</span><span class="pr-faq__icon" aria-hidden="true"></span></summary>
+            <div class="pr-faq__a"><p>Yes. The options are starting points, not boxes. We shape the scope around what your project actually needs.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA (reuses the homepage contact frame) ============ -->
+    <section class="cta" id="start" aria-labelledby="cta-title">
+      <div class="cta__frame">
+        <div class="cinematic" aria-hidden="true"><div class="cinematic__blob"></div><div class="cinematic__vignette"></div></div>
+        <div class="noise noise--overlay" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="cta__top">
+          <span class="eyebrow" data-reveal>Next step</span>
+          <p class="cta__reply" data-reveal data-delay="0.1">Tell us what you’re building. We’ll help you find the right scope.</p>
+        </div>
+        <h2 class="cta__title" id="cta-title" data-split data-stagger="0.1">Not sure where you fit? <em>Let’s talk.</em></h2>
+        <div class="cta__bottom">
+          <div class="cta__email" data-reveal data-delay="0.3">
+            <a class="cta__email-link" href="mailto:hello@qoro.studio">hello@qoro.studio</a>
+            <button class="cta__copy" type="button" data-copy="hello@qoro.studio"><span data-copy-label>Copy</span></button>
+            <span class="sr-only" aria-live="polite" data-copy-status></span>
+          </div>
+          <div data-reveal data-delay="0.4">
+            <a class="pill magnetic" href="contact.html" data-transition="Contact">
+              <span class="pill__label">Start a project</span>
+              <span class="pill__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="noise noise--bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer__lead">
+        <p class="footer__statement" data-reveal>Independent design &amp; engineering studio. <em>Digital experiences, built with intent.</em></p>
+        <a class="footer__top" href="#top">Back to top
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg>
+        </a>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div class="footer__col">
+          <h3 class="footer__heading">Studio</h3>
+          <ul>
+            <li><a class="link" href="about.html" data-transition="About">About</a></li>
+            <li><a class="link" href="work.html" data-transition="Work">Work</a></li>
+            <li><a class="link" href="services.html" data-transition="Services">Services</a></li>
+            <li><a class="link" href="index.html#studio" data-transition="Studio">Studio</a></li>
+            <li><a class="link" href="pricing.html">Pricing</a></li>
+            <li><a class="link" href="contact.html" data-transition="Contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Connect</h3>
+          <ul>
+            <li><a class="link" href="mailto:hello@qoro.studio">Email</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on Instagram">Instagram</a></li>
+            <li><a class="link" href="#" aria-label="Qoro on LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__col--wide">
+          <h3 class="footer__heading">Visit</h3>
+          <p>London, Athens and wherever the work is.<br>
+            <a class="link" href="mailto:hello@qoro.studio">hello@qoro.studio</a></p>
+          <p class="footer__clock">London <time data-clock>--:--</time></p>
+        </div>
+      </nav>
+
+      <div class="footer__mark" aria-hidden="true" data-footer-mark>
+        <span>Q</span><span>o</span><span>r</span><span>o</span><sup>*</sup>
+      </div>
+
+      <div class="footer__base">
+        <p>© <span data-year>2026</span> Qoro Studio. All rights reserved.</p>
+        <div class="footer__legal">
+          <a class="link" href="#">Privacy</a>
+          <a class="link" href="#">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="pricing/pricing.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

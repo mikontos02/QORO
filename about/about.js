@@ -46,7 +46,7 @@
     // Fine pointers: the portrait follows the cursor over each name
     const preview = $('[data-ab-preview]');
     if (preview && finePointer && !reduceMotion) {
-      const img = $('[data-ab-preview-img]', preview);
+      let img = null; // created on first hover
       const s = { x: 0, y: 0, tx: 0, ty: 0, raf: 0, started: false };
       const tick = () => {
         s.x += (s.tx - s.x) * 0.16; s.y += (s.ty - s.y) * 0.16;
@@ -61,6 +61,7 @@
       addEventListener('pointermove', (e) => { if (preview.classList.contains('is-on')) move(e.clientX, e.clientY); }, { passive: true });
       $$('[data-photo]', teamList).forEach((el) => {
         el.addEventListener('pointerenter', (e) => {
+          if (!img) { img = document.createElement('img'); img.alt = ''; $('[data-ab-preview-inner]', preview).append(img); }
           img.src = el.dataset.photo; move(e.clientX, e.clientY); preview.classList.add('is-on');
         });
         el.addEventListener('pointerleave', () => preview.classList.remove('is-on'));
