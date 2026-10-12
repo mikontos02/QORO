@@ -117,11 +117,6 @@ h1, h2, h3, h4, h5, h6, th { font-weight: 400; } /* every heading uses Almarai R
 sup { font-size: inherit; vertical-align: baseline; line-height: 0; }
 ::selection { background: var(--cream); color: var(--black); }
 
-/* Lenis */
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-stopped { overflow: hidden; }
-
 /* ---------- Accessibility helpers ---------- */
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -174,7 +169,7 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
   position: absolute; inset: 0; pointer-events: none;
   background-size: 160px 160px;
 }
-.noise--overlay { background-image: var(--noise-overlay); opacity: 0.7; mix-blend-mode: overlay; }
+.noise--overlay { background-image: var(--noise-overlay); opacity: 0.075; } /* normal blend: overlay blending forced a full-frame re-blend every frame */
 .noise--bg {
   background-image: var(--noise-bg); opacity: 0.14;
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 240px, #000 calc(100% - 240px), transparent);
@@ -190,8 +185,6 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
     radial-gradient(42% 42% at 73% 62%, rgba(196, 162, 120, 0.22), transparent 72%),
     radial-gradient(70% 55% at 50% 112%, rgba(36, 30, 22, 0.92), transparent 72%),
     #070707;
-  filter: blur(40px);
-  will-change: transform;
   animation: drift 17s ease-in-out infinite alternate;
 }
 .cinematic--card .cinematic__blob {
@@ -232,7 +225,6 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
   line-height: 1;
   white-space: nowrap;
   transition: gap 0.3s var(--ease-expo), background-color 0.3s ease, transform 0.5s var(--ease-expo);
-  will-change: transform;
 }
 .pill__label { padding-block: 2px; }
 .pill__icon {
@@ -292,7 +284,6 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
 /* Word pull-up (reference: y 20 → 0, 0.6s expo, 0.08s stagger) */
 .w {
   display: inline-block;
-  will-change: transform;
 }
 .js [data-split] .w {
   opacity: 0;
@@ -512,9 +503,6 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
   border-radius: var(--radius-frame);
   overflow: hidden;
   background: #000;
-  transform: scale(calc(1 - var(--hp, 0) * 0.05));
-  transform-origin: 50% 100%;
-  will-change: transform;
 }
 .hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero__shade {
@@ -574,7 +562,7 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
   padding: 0.04em 0.08em 0.1em 0.02em;
   margin: -0.04em -0.08em -0.1em -0.02em;
 }
-.char { display: inline-block; will-change: transform; }
+.char { display: inline-block; }
 .js .hero__word .char {
   transform: translate3d(0, 108%, 0);
   transition: transform 1.25s var(--ease-expo);
@@ -696,14 +684,18 @@ h1 em, h2 em, h3 em, p em, .w--em, .svc__cta-text em, .menu__list em {
    SHARED IMAGE MOTION — clip reveal + parallax (homepage, Work, case studies)
    ========================================================================== */
 .js [data-img-reveal] {
-  clip-path: inset(10% 6% 10% 6% round var(--clip-r, var(--radius-frame)));
-  transition: clip-path 1.3s var(--ease-expo);
+  /* Compositor-only reveal: the frame opens from 90% while the image settles.
+     (A clip-path version repainted large images every frame while scrolling.)
+     `scale` is used instead of `transform` so it composes with parallax. */
+  opacity: 0;
+  scale: 0.9;
+  transition: opacity 0.7s var(--ease-expo), scale 1.3s var(--ease-expo);
 }
 .js [data-img-reveal] img {
   transform: scale(1.14);
   transition: transform 1.6s var(--ease-expo);
 }
-.js [data-img-reveal].is-in { clip-path: inset(0 0 0 0 round var(--clip-r, var(--radius-frame))); }
+.js [data-img-reveal].is-in { opacity: 1; scale: 1; }
 .js [data-img-reveal].is-in img { transform: scale(1.02); }
 
 [data-parallax] { transform: translate3d(0, var(--py, 0px), 0); will-change: transform; }
@@ -1359,6 +1351,9 @@ html.is-leaving [data-transition-active] img {
   .footer__lead { flex-direction: row; justify-content: space-between; align-items: flex-end; }
 }
 
+/* Decorative loops pause while off-screen (script.js toggles .is-offscreen) */
+.is-offscreen, .is-offscreen * { animation-play-state: paused !important; }
+
 /* ==========================================================================
    SHARED PAGE SYSTEM — the same roles look the same on every page
    ========================================================================== */
@@ -1462,7 +1457,7 @@ html.is-lifting .curtain__label > span { transform: translate3d(0, -110%, 0); tr
   .discipline { opacity: 1; }
   .hero__frame, .hero__content { transform: none !important; }
   .hero__content { opacity: 1 !important; }
-  .js [data-img-reveal] { clip-path: none !important; }
+  .js [data-img-reveal] { opacity: 1 !important; scale: 1 !important; }
   .js [data-img-reveal] img { transform: none !important; }
   [data-parallax] { transform: none !important; }
   .menu { transition: none; }

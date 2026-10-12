@@ -111,7 +111,7 @@
 
 /* ---------- Comparison: an information system, not a SaaS grid ---------- */
 .pr-compare { background: #000; }
-.pr-table-wrap { overflow-x: auto; border-radius: 8px; }
+.pr-table-wrap { position: relative; overflow-x: auto; border-radius: 8px; } /* contains the cells' visually hidden labels */
 .pr-table-wrap:focus-visible { outline: 2px solid var(--cream); outline-offset: 6px; }
 .pr-table {
   width: 100%; min-width: 560px;

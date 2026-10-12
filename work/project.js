@@ -431,6 +431,13 @@
      ========================================================================== */
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
+  // Palette expands only on real pointer movement, never from scrolling under the cursor
+  const palette = document.querySelector('.cs-palette');
+  if (palette) {
+    palette.addEventListener('pointermove', () => palette.classList.add('is-hovered'), { passive: true });
+    palette.addEventListener('pointerleave', () => palette.classList.remove('is-hovered'));
+  }
+
   // Copy colour values
   const hexStatus = document.querySelector('[data-hex-status]');
   $$('[data-copy-hex]').forEach((btn) => {

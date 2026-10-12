@@ -78,15 +78,20 @@
   const desktop = matchMedia('(min-width: 1024px)');
   let distance = 0;
   let enabled = false;
-  let ticking = false;
+  let sectionHeight = 0;
+  let lastX = null;
 
-  const apply = () => {
-    ticking = false;
-    if (!enabled) return;
-    const r = section.getBoundingClientRect();
-    const p = clamp(-r.top / (section.offsetHeight - innerHeight), 0, 1);
-    track.style.transform = `translate3d(${(-p * distance).toFixed(1)}px, 0, 0)`;
+  // Joins the shared scroll pass in script.js: measure in read(), move in write()
+  const read = () => (enabled ? section.getBoundingClientRect().top : null);
+  const write = (top) => {
+    if (top === null) return;
+    const p = clamp(-top / (sectionHeight - innerHeight), 0, 1);
+    const x = (-p * distance).toFixed(1);
+    if (x === lastX) return;
+    lastX = x;
+    track.style.transform = `translate3d(${x}px, 0, 0)`;
   };
+  const apply = () => write(read());
 
   const measure = () => {
     enabled = Boolean(section && track) && desktop.matches && !reduceMotion;
@@ -99,11 +104,13 @@
     }
     distance = Math.max(0, track.scrollWidth - innerWidth);
     section.style.height = `${distance + innerHeight}px`;
+    sectionHeight = distance + innerHeight; // cached: no offsetHeight reads while scrolling
+    lastX = null;
     apply();
   };
 
   if (section && track) {
-    addEventListener('scroll', () => { if (enabled && !ticking) { ticking = true; requestAnimationFrame(apply); } }, { passive: true });
+    (window.QORO_SCROLL || (window.QORO_SCROLL = [])).push({ read, write });
     addEventListener('resize', measure, { passive: true });
     desktop.addEventListener('change', measure);
     addEventListener('load', measure);
@@ -118,9 +125,7 @@
       const left = e.target.getBoundingClientRect().left - track.getBoundingClientRect().left;
       const p = clamp((left - innerWidth * 0.3) / distance, 0, 1);
       const top = section.getBoundingClientRect().top + scrollY + p * (section.offsetHeight - innerHeight);
-      const lenis = window.QORO && window.QORO.lenis;
-      if (lenis) lenis.scrollTo(top, { immediate: true, force: true });
-      else scrollTo({ top, behavior: 'auto' });
+      scrollTo({ top, behavior: 'auto' });
       apply();
     });
   }

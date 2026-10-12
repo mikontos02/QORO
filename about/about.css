@@ -25,7 +25,7 @@
 }
 .ab-who__text { max-width: 34rem; font-size: var(--text-body-lg); line-height: var(--lh-body); color: rgba(222, 219, 200, 0.72); }
 .ab-who__visual { position: relative; display: grid; gap: 12px; margin-top: 24px; }
-.ab-who__visual figure { position: relative; overflow: hidden; border-radius: var(--radius-card); --clip-r: var(--radius-card); background: #0b0b0b; }
+.ab-who__visual figure { position: relative; overflow: hidden; border-radius: var(--radius-card); background: #0b0b0b; }
 .ab-who__a { width: 70%; aspect-ratio: 4 / 5; }
 .ab-who__b { width: 88%; justify-self: end; aspect-ratio: 16 / 10; margin-top: -26%; z-index: 2; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.9); }
 .ab-who__inner { position: absolute; inset: -6% 0; }

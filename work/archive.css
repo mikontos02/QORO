@@ -55,7 +55,6 @@
 .wp__link > * { grid-column: 1 / -1; }
 
 .wp__fig {
-  --clip-r: var(--radius-card);
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-card);
@@ -73,7 +72,7 @@
   z-index: 2;
   box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.9);
 }
-.wp__fig--phone { grid-column: 8 / -1; aspect-ratio: 780 / 1688; border-radius: 22px; --clip-r: 22px; margin-top: -48%; }
+.wp__fig--phone { grid-column: 8 / -1; aspect-ratio: 780 / 1688; border-radius: 22px; margin-top: -48%; }
 
 .wp__heading { display: flex; align-items: flex-start; gap: 12px; }
 .wp__num {

@@ -208,7 +208,7 @@
   display: grid; gap: 12px;
   margin-block: 56px;
 }
-.cs-duo figure { --clip-r: var(--radius-card); position: relative; overflow: hidden; border-radius: var(--radius-card); background: #0b0b0b; }
+.cs-duo figure { position: relative; overflow: hidden; border-radius: var(--radius-card); background: #0b0b0b; }
 .cs-duo__a { aspect-ratio: 4 / 5; width: 72%; }
 .cs-duo__b { aspect-ratio: 16 / 10; width: 88%; justify-self: end; margin-top: -22%; z-index: 2; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8); }
 .cs-duo__inner { position: absolute; inset: -6% 0; }
@@ -277,8 +277,10 @@
   .cs-swatch__role { top: 24px; left: 24px; }
 }
 @media (hover: hover) and (min-width: 768px) {
-  .cs-palette:hover .cs-swatch { flex-grow: 0.8; }
-  .cs-palette .cs-swatch:hover { flex-grow: 2.2; }
+  /* .is-hovered is set on real pointer movement (project.js), so content
+     scrolling under a resting cursor doesn't trigger this layout animation */
+  .cs-palette.is-hovered .cs-swatch { flex-grow: 0.8; }
+  .cs-palette.is-hovered .cs-swatch:hover { flex-grow: 2.2; }
 }
 
 .cs-type { display: grid; gap: 4px; }
@@ -315,7 +317,7 @@
   color: var(--cream);
 }
 .cs-board { display: grid; gap: 12px; }
-.cs-board figure { --clip-r: var(--radius-card); position: relative; overflow: hidden; border-radius: var(--radius-card); background: #0b0b0b; }
+.cs-board figure { position: relative; overflow: hidden; border-radius: var(--radius-card); background: #0b0b0b; }
 .cs-board__ui { aspect-ratio: 4 / 5; }
 .cs-board__study { aspect-ratio: 4 / 5; }
 .cs-board__inner { position: absolute; inset: -6% 0; }
@@ -368,7 +370,6 @@
    ========================================================================== */
 
 .cs-screen {
-  --clip-r: 12px;
   position: relative; overflow: hidden;
   border-radius: 12px;
   background: #0b0b0b;
@@ -416,8 +417,6 @@
   overflow: hidden;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 40px 80px -30px rgba(0, 0, 0, 0.8);
 }
-.js .cs-phone[data-img-reveal] { clip-path: inset(8% 4% 8% 4% round 28px); }
-.js .cs-phone[data-img-reveal].is-in { clip-path: inset(0 round 28px); }
 .cs-phone img { width: 100%; height: auto; }
 @media (min-width: 768px) {
   .cs-phone { flex-basis: 40%; }

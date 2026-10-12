@@ -107,21 +107,12 @@
   $$('[data-index]').forEach((el) => el.style.setProperty('--index', el.dataset.index));
 
   /* ------------------------------------------------------------------------
-     Smooth scrolling (Lenis) — skipped for reduced motion
+     Scrolling is native. Measured: a smooth-scroll library added ~800ms of
+     glide after every wheel movement without improving frame rate.
      ------------------------------------------------------------------------ */
-  let lenis = null;
-  if (!reduceMotion && typeof window.Lenis === 'function') {
-    lenis = new window.Lenis({ duration: 1.15, smoothWheel: true, autoRaf: true });
-    window.QORO = Object.assign(window.QORO || {}, { lenis }); // lets page scripts scroll in step with Lenis
-  }
-
   const scrollToTarget = (target) => {
-    if (lenis) {
-      lenis.scrollTo(target, { duration: 1.4 });
-    } else {
-      const y = typeof target === 'number' ? target : target.getBoundingClientRect().top + scrollY;
-      window.scrollTo({ top: y, behavior: reduceMotion ? 'auto' : 'smooth' });
-    }
+    const y = typeof target === 'number' ? target : target.getBoundingClientRect().top + scrollY;
+    window.scrollTo({ top: y, behavior: reduceMotion ? 'auto' : 'smooth' });
   };
 
   /* ------------------------------------------------------------------------
@@ -190,59 +181,64 @@
   const measure = () => { vh = innerHeight; };
 
   let ticking = false;
+  // Last written values, so unchanged values never invalidate styles
+  const written = new WeakMap();
+  const write = (el, prop, value) => {
+    let w = written.get(el);
+    if (!w) { w = {}; written.set(el, w); }
+    if (w[prop] === value) return;
+    w[prop] = value;
+    el.style.setProperty(prop, value);
+  };
+  // Page scripts can join this pass: window.QORO_SCROLL.push({ read() {}, write() {} })
+  const pageTasks = window.QORO_SCROLL || (window.QORO_SCROLL = []);
 
   function update() {
     ticking = false;
-    const y = scrollY;
 
+    /* ---- READ: every measurement first, so the browser lays out once ---- */
+    const y = scrollY;
+    const scrubRects = scrubEls.map((el) => el.getBoundingClientRect());
+    const parallaxRects = parallax.map((el) => el.getBoundingClientRect());
+    const disciplineRects = disciplines.map((d) => d.getBoundingClientRect());
+    const asteriskRect = asterisk ? asterisk.parentElement.getBoundingClientRect() : null;
+    const taskData = pageTasks.map((t) => (t.read ? t.read() : null));
+
+    /* ---- WRITE ---- */
     // Navigation: dock inside the hero frame at the very top, float afterwards
     nav.classList.toggle('is-floating', y > 8);
 
     if (reduceMotion) return;
 
-    // Hero recedes as it leaves
-    if (heroFrame && y < vh * 1.2) {
-      heroFrame.style.setProperty('--hp', clamp(y / vh, 0, 1).toFixed(4));
-    }
+    // Hero content fades and rises as it leaves
+    if (heroFrame && y < vh * 1.2) write(heroFrame, '--hp', clamp(y / vh, 0, 1).toFixed(3));
 
-    // Scrubbed intro letters
-    scrubEls.forEach((el) => {
-      const r = el.getBoundingClientRect();
+    // Scrubbed letters (reference: offset start 0.8 → end 0.2)
+    scrubEls.forEach((el, i) => {
+      const r = scrubRects[i];
       if (r.bottom < -vh * 0.2 || r.top > vh) return;
-      const p = clamp((vh * 0.8 - r.top) / (vh * 0.6 + r.height), 0, 1);
-      el.style.setProperty('--p', p.toFixed(4));
+      write(el, '--p', clamp((vh * 0.8 - r.top) / (vh * 0.6 + r.height), 0, 1).toFixed(3));
     });
 
-    // Parallax images: read every rect first, then write (skips off-screen ones)
-    if (parallax.length) {
-      const rects = parallax.map((el) => el.getBoundingClientRect());
-      parallax.forEach((el, i) => {
-        const r = rects[i];
-        if (r.bottom < -200 || r.top > vh + 200) return;
-        const offset = (r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.parallax);
-        el.style.setProperty('--py', `${offset.toFixed(1)}px`);
-      });
-    }
+    // Parallax images (off-screen ones are skipped)
+    parallax.forEach((el, i) => {
+      const r = parallaxRects[i];
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      write(el, '--py', `${((r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.parallax)).toFixed(1)}px`);
+    });
 
-    // Studio disciplines light up as they rise, and stay lit (like the reference scrub)
-    if (disciplines.length) {
-      const centers = disciplines.map((d) => {
-        const r = d.getBoundingClientRect();
-        return r.top + r.height / 2;
-      });
-      disciplines.forEach((d, i) => {
-        const a = clamp((vh * 0.82 - centers[i]) / (vh * 0.22), 0, 1);
-        d.style.setProperty('--a', a.toFixed(3));
-      });
-    }
+    // Lists that light up as they rise, and stay lit
+    disciplines.forEach((d, i) => {
+      const r = disciplineRects[i];
+      write(d, '--a', clamp((vh * 0.82 - (r.top + r.height / 2)) / (vh * 0.22), 0, 1).toFixed(2));
+    });
 
     // Services asterisk turns with scroll
-    if (asterisk) {
-      const r = asterisk.parentElement.getBoundingClientRect();
-      if (r.bottom > 0 && r.top < vh) {
-        asterisk.style.setProperty('--rot', `${((vh - r.top) * 0.12).toFixed(2)}deg`);
-      }
+    if (asteriskRect && asteriskRect.bottom > 0 && asteriskRect.top < vh) {
+      write(asterisk, '--rot', `${((vh - asteriskRect.top) * 0.12).toFixed(1)}deg`);
     }
+
+    pageTasks.forEach((t, i) => { if (t.write) t.write(taskData[i]); });
   }
 
   const requestUpdate = () => {
@@ -255,6 +251,15 @@
   addEventListener('scroll', requestUpdate, { passive: true });
   addEventListener('resize', () => { measure(); requestUpdate(); }, { passive: true });
   update();
+
+  /* ------------------------------------------------------------------------
+     Decorative CSS loops (gradient drift, floating phones, pulses) only run
+     while visible — off-screen they would keep the GPU busy for nothing.
+     ------------------------------------------------------------------------ */
+  const loopObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e) => e.target.classList.toggle('is-offscreen', !e.isIntersecting));
+  }, { rootMargin: '100px 0px' });
+  $$('.cinematic, .cs-phone__float, .dot, .ab-think__hint').forEach((el) => loopObserver.observe(el));
 
   /* ------------------------------------------------------------------------
      Active section in the nav
@@ -296,7 +301,7 @@
     toggleLabel.textContent = 'Close';
     main.inert = true;
     footer.inert = true;
-    if (lenis) lenis.stop(); else root.style.overflow = 'hidden';
+    root.style.overflow = 'hidden';
     requestAnimationFrame(() => requestAnimationFrame(() => menu.classList.add('is-open')));
     setTimeout(() => { const first = $('[data-menu-link]', menu); if (first) first.focus(); }, 300);
   }
@@ -309,7 +314,7 @@
     toggleLabel.textContent = 'Menu';
     main.inert = false;
     footer.inert = false;
-    if (lenis) lenis.start(); else root.style.overflow = '';
+    root.style.overflow = '';
     const hide = () => { if (!menuOpen) menu.hidden = true; };
     if (reduceMotion) hide(); else setTimeout(hide, 800);
     if (restoreFocus) toggle.focus();
